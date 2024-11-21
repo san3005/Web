@@ -31,20 +31,22 @@ export default function Component() {
   };
 
   return (
-    <div className=" rounded-3xl flex flex-col items-center mx-auto ">
+    <div className="rounded-3xl flex flex-col items-center mx-auto">
       <motion.div
-        className=" bg-[#f0efe9]  rounded-3xl shadow-lg"
+        className="bg-[#F9F9F9] rounded-3xl shadow-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
       >
         {/* Tabs Section */}
         <header className="relative flex justify-center mb-6 top-2">
-          <div className="relative flex space-x-6 bg-gray-100 p-1 rounded-3xl w-[400px]">
+          <div className="relative flex space-x-6 bg-[#E8E8E8] p-1 rounded-3xl w-[400px]">
             {/* Sliding Background */}
             <motion.div
-              className="absolute top-1 bottom-1 rounded-full bg-[#ff6b2c]"
+              className="absolute top-1 bottom-1 rounded-full"
               style={{
+                backgroundColor:
+                  activeTab === "english" ? "#2A6F97" : "#ff6b2c",
                 width: "calc(50% - 8px)", // Ensure this width matches the button's width
                 x: springX,
               }}
@@ -55,7 +57,7 @@ export default function Component() {
                 key={tab}
                 className={cn(
                   "relative z-10 flex-1 py-2 rounded-full font-semibold transition-colors",
-                  activeTab === tab ? "text-white" : "text-gray-700",
+                  activeTab === tab ? "text-white" : "text-gray-700"
                 )}
                 onClick={() => handleTabChange(tab)}
                 onMouseEnter={() => setHoveredTab(tab)}

@@ -1670,63 +1670,64 @@ const messages = [
   },
 ];
 const emotionColors: Record<string, string> = {
-  Admiration: "bg-yellow-300 text-yellow-900",
-  Adoration: "bg-pink-300 text-pink-900",
-  AestheticAppreciation: "bg-purple-300 text-purple-900",
-  Amusement: "bg-orange-300 text-orange-900",
-  Anger: "bg-red-600 text-red-100",
-  Annoyance: "bg-red-400 text-red-900",
-  Anxiety: "bg-yellow-600 text-yellow-100",
-  Awe: "bg-indigo-300 text-indigo-900",
-  Awkwardness: "bg-gray-400 text-gray-900",
-  Boredom: "bg-gray-500 text-gray-900",
-  Calmness: "bg-blue-200 text-blue-900",
-  Concentration: "bg-teal-400 text-teal-900",
-  Confusion: "bg-gray-500 text-gray-900",
-  Contemplation: "bg-teal-300 text-teal-900",
-  Contempt: "bg-gray-600 text-gray-100",
-  Contentment: "bg-green-300 text-green-900",
-  Craving: "bg-red-300 text-red-900",
-  Desire: "bg-pink-400 text-pink-900",
-  Determination: "bg-orange-500 text-orange-900",
-  Disappointment: "bg-purple-400 text-purple-900",
-  Disapproval: "bg-red-500 text-red-100",
-  Disgust: "bg-green-600 text-green-100",
-  Distress: "bg-red-700 text-red-100",
-  Doubt: "bg-gray-500 text-gray-900",
-  Ecstasy: "bg-yellow-400 text-yellow-900",
-  Embarrassment: "bg-pink-400 text-pink-900",
-  EmpathicPain: "bg-red-500 text-red-100",
-  Enthusiasm: "bg-orange-400 text-orange-900",
+  Admiration: "bg-yellow-200 text-yellow-900",
+  Adoration: "bg-pink-200 text-pink-900",
+  Aesthetic_Appreciation: "bg-purple-200 text-purple-900",
+  Amusement: "bg-orange-200 text-orange-900",
+  Anger: "bg-red-300 text-red-900",
+  Annoyance: "bg-red-200 text-red-900",
+  Anxiety: "bg-yellow-300 text-yellow-900",
+  Awe: "bg-indigo-200 text-indigo-900",
+  Awkwardness: "bg-gray-200 text-gray-900",
+  Boredom: "bg-gray-300 text-gray-900",
+  Calmness: "bg-blue-50 text-blue-900",
+  Concentration: "bg-teal-200 text-teal-900",
+  Confusion: "bg-gray-300 text-gray-900",
+  Contemplation: "bg-teal-100 text-teal-900",
+  Contempt: "bg-gray-400 text-gray-900",
+  Contentment: "bg-green-200 text-green-900",
+  Craving: "bg-red-200 text-red-900",
+  Desire: "bg-pink-300 text-pink-900",
+  Determination: "bg-orange-300 text-orange-900",
+  Disappointment: "bg-purple-300 text-purple-900",
+  Disapproval: "bg-red-300 text-red-900",
+  Disgust: "bg-green-300 text-green-900",
+  Distress: "bg-red-400 text-red-900",
+  Doubt: "bg-gray-300 text-gray-900",
+  Ecstasy: "bg-yellow-300 text-yellow-900",
+  Embarrassment: "bg-pink-300 text-pink-900",
+  Empathic_Pain: "bg-purple-300 text-purple-900",
+  Enthusiasm: "bg-orange-200 text-orange-900",
   Entrancement: "bg-purple-200 text-purple-900",
-  Envy: "bg-green-500 text-green-100",
-  Excitement: "bg-orange-500 text-orange-900",
-  Fear: "bg-red-500 text-red-100",
-  Gratitude: "bg-yellow-300 text-yellow-900",
-  Guilt: "bg-gray-600 text-gray-100",
-  Horror: "bg-red-800 text-red-100",
-  Interest: "bg-blue-300 text-blue-900",
-  Joy: "bg-yellow-300 text-yellow-900",
-  Love: "bg-pink-500 text-pink-100",
-  Nostalgia: "bg-blue-400 text-blue-900",
-  Pain: "bg-red-600 text-red-100",
-  Pride: "bg-purple-500 text-purple-100",
-  Realization: "bg-blue-300 text-blue-900",
-  Relief: "bg-green-400 text-green-900",
-  Romance: "bg-pink-400 text-pink-900",
-  Sadness: "bg-blue-700 text-blue-100",
-  Sarcasm: "bg-gray-500 text-gray-900",
-  Satisfaction: "bg-green-500 text-green-900",
-  Shame: "bg-gray-700 text-gray-100",
-  SurpriseNegative: "bg-red-300 text-red-900",
-  SurprisePositive: "bg-yellow-300 text-yellow-900",
-  Sympathy: "bg-purple-300 text-purple-900",
-  Tiredness: "bg-gray-400 text-gray-900",
-  Triumph: "bg-yellow-500 text-yellow-900",
+  Envy: "bg-green-300 text-green-900",
+  Excitement: "bg-orange-300 text-orange-900",
+  Fear: "bg-red-300 text-red-900",
+  Gratitude: "bg-yellow-200 text-yellow-900",
+  Guilt: "bg-gray-400 text-gray-900",
+  Horror: "bg-red-300 text-red-900",
+  Interest: "bg-blue-200 text-blue-900",
+  Joy: "bg-yellow-200 text-yellow-900",
+  Love: "bg-pink-400 text-pink-900",
+  Nostalgia: "bg-blue-300 text-blue-900",
+  Pain: "bg-red-300 text-red-900",
+  Pride: "bg-purple-300 text-purple-900",
+  Realization: "bg-blue-200 text-blue-900",
+  Relief: "bg-green-200 text-green-900",
+  Romance: "bg-pink-300 text-pink-900",
+  Sadness: "bg-blue-400 text-blue-900",
+  Sarcasm: "bg-gray-300 text-gray-900",
+  Satisfaction: "bg-green-300 text-green-900",
+  Shame: "bg-gray-500 text-gray-900",
+  Surprise_Negative: "bg-red-200 text-red-900",
+  Surprise_Positive: "bg-yellow-200 text-yellow-900",
+  Sympathy: "bg-purple-200 text-purple-900",
+  Tiredness: "bg-gray-200 text-gray-900",
+  Triumph: "bg-yellow-300 text-yellow-900",
   // Fallback color to avoid errors
-  Default: "bg-gray-200 text-gray-900",
+  Neutral: "bg-orange-200 text-orange-900",
 };
-export default function VideoAnalysisDashboard() {
+
+export default function VideoAnalysisSpanishDashboard() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -1814,17 +1815,17 @@ export default function VideoAnalysisDashboard() {
   };
 
   return (
-    <section className="w-screen py-3 md:py-2 lg:py-2 bg-[#debe0ca5] rounded-3xl flex justify-center">
+    <section className="w-screen py-3 md:py-2 lg:py-2 bg-[#F9F9F9] rounded-3xl flex justify-center">
       <div className="w-full max-w-[96%] lg:max-w-[98%] rounded-3xl flex items-center justify-center mx-auto">
         <motion.div
-          className="w-full bg-[#FFF1C1] px-8 rounded-3xl p-6 shadow-lg"
+          className="w-full bg-[#FFFFFF] px-8 rounded-3xl p-6 shadow-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
           <header className="flex items-center justify-between mb-6">
-            <h1 className="text-2xl font-semibold text-[#6f6c5d]">
-              Video Analysis Dashboard
+            <h1 className="text-2xl font-semibold text-[#2A6F97]">
+              English Video Analysis Dashboard
             </h1>
           </header>
 
@@ -1832,7 +1833,7 @@ export default function VideoAnalysisDashboard() {
             {/* Video Section */}
             <div className="col-span-2 flex flex-col space-y-6">
               <motion.div
-                className="overflow-hidden bg-[#f0efe9] rounded-lg shadow-inner"
+                className="overflow-hidden bg-[#F5F5F5] rounded-lg shadow-inner"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
@@ -1881,7 +1882,7 @@ export default function VideoAnalysisDashboard() {
 
               {/* Current Emotion */}
               <div
-                className={`bg-[#e0ddd2] rounded-3xl shadow-inner p-4 text-lg font-semibold ${
+                className={`bg-[#F5F5F5] rounded-3xl shadow-inner p-4 text-lg font-semibold ${
                   emotionColors[currentEmotion] || emotionColors["Neutral"]
                 }`}
               >
@@ -1889,22 +1890,22 @@ export default function VideoAnalysisDashboard() {
               </div>
 
               {/* Transcript */}
-              <motion.div className="bg-[#e0ddd2] rounded-3xl shadow-inner p-4 mt-6">
-                <h2 className="text-xl font-semibold mb-4 text-[#6f6c5d]">
+              <motion.div className="bg-[#F5F5F5] rounded-3xl shadow-inner p-4 mt-6">
+                <h2 className="text-xl font-semibold mb-4 text-[#2A6F97]">
                   Transcript
                 </h2>
-                <div className="text-[#6f6c5d] text-lg">
+                <div className="text-[#4A4A4A] text-lg">
                   {currentMessage || "No transcript available for this time."}
                 </div>
               </motion.div>
             </div>
 
             {/* Summary Section */}
-            <motion.div className="col-span-1 bg-[#e0ddd2] rounded-3xl shadow-inner p-4">
-              <h2 className="font-semibold mb-4 text-2xl text-[#6f6c5d]">
+            <motion.div className="col-span-1 bg-[#F5F5F5] rounded-3xl shadow-inner p-4">
+              <h2 className="font-semibold mb-4 text-2xl text-[#2A6F97]">
                 Summary
               </h2>
-              <div className="text-[#6f6c5d]">{currentSummary}</div>
+              <div className="text-[#4A4A4A]">{currentSummary}</div>
             </motion.div>
           </div>
         </motion.div>

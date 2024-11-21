@@ -1,0 +1,438 @@
+[
+  {
+    "Time": 2.48,
+    "Final_Emotion": "Divertido"
+  },
+  {
+    "Time": 5.0,
+    "Final_Emotion": "Divertido"
+  },
+  {
+    "Time": 7.52,
+    "Final_Emotion": "Calma"
+  },
+  {
+    "Time": 17.52,
+    "Final_Emotion": "Calma"
+  },
+  {
+    "Time": 20.0,
+    "Final_Emotion": "Calma"
+  },
+  {
+    "Time": 22.48,
+    "Final_Emotion": "Calma"
+  },
+  {
+    "Time": 25.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 27.52,
+    "Final_Emotion": "Ansiedad"
+  },
+  {
+    "Time": 30.0,
+    "Final_Emotion": "Ansiedad"
+  },
+  {
+    "Time": 32.48,
+    "Final_Emotion": "Ansiedad"
+  },
+  {
+    "Time": 35.0,
+    "Final_Emotion": "Ansiedad"
+  },
+  {
+    "Time": 37.52,
+    "Final_Emotion": "Ansiedad"
+  },
+  {
+    "Time": 40.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 42.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 45.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 47.52,
+    "Final_Emotion": "Determinación"
+  },
+  {
+    "Time": 50.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 52.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 55.0,
+    "Final_Emotion": "Contemplación"
+  },
+  {
+    "Time": 57.52,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 60.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 62.48,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 65.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 67.52,
+    "Final_Emotion": "Amor"
+  },
+  {
+    "Time": 70.0,
+    "Final_Emotion": "Deseo"
+  },
+  {
+    "Time": 72.48,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 75.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 82.48,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 87.52,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 90.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 92.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 95.0,
+    "Final_Emotion": "Determinación"
+  },
+  {
+    "Time": 97.52,
+    "Final_Emotion": "Calma"
+  },
+  {
+    "Time": 100.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 102.48,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 105.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 107.52,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 110.0,
+    "Final_Emotion": "Asombro"
+  },
+  {
+    "Time": 112.48,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 115.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 117.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 120.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 122.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 125.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 127.52,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 130.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 132.48,
+    "Final_Emotion": "Calma"
+  },
+  {
+    "Time": 135.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 137.52,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 142.48,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 145.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 147.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 150.0,
+    "Final_Emotion": "Alegría"
+  },
+  {
+    "Time": 152.48,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 155.0,
+    "Final_Emotion": "Determinación"
+  },
+  {
+    "Time": 157.52,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 160.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 162.48,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 165.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 167.52,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 170.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 172.48,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 175.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 177.52,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 180.0,
+    "Final_Emotion": "Alegría"
+  },
+  {
+    "Time": 187.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 190.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 192.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 195.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 197.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 200.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 202.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 205.0,
+    "Final_Emotion": "Awe"
+  },
+  {
+    "Time": 207.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 210.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 212.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 215.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 217.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 220.0,
+    "Final_Emotion": "Asombro"
+  },
+  {
+    "Time": 222.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 225.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 227.52,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 230.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 232.48,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 235.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 237.52,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 240.0,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 242.48,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 245.0,
+    "Final_Emotion": "Determinación"
+  },
+  {
+    "Time": 247.52,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 250.0,
+    "Final_Emotion": "Interés"
+  },
+  {
+    "Time": 252.48,
+    "Final_Emotion": "Concentración"
+  },
+  {
+    "Time": 255.0,
+    "Final_Emotion": "Determinación"
+  },
+  {
+    "Time": 257.52,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 260.0,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 262.48,
+    "Final_Emotion": "Interés"
+  },
+  {
+    "Time": 265.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 267.52,
+    "Final_Emotion": "Satisfacción"
+  },
+  {
+    "Time": 270.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 272.48,
+    "Final_Emotion": "Interés"
+  },
+  {
+    "Time": 275.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 277.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 280.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 282.48,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 285.0,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 287.52,
+    "Final_Emotion": "Confusión"
+  },
+  {
+    "Time": 290.0,
+    "Final_Emotion": "Satisfacción"
+  },
+  {
+    "Time": 292.48,
+    "Final_Emotion": "Tristeza"
+  },
+  {
+    "Time": 295.0,
+    "Final_Emotion": "Concentración"
+  }
+]
