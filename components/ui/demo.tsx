@@ -1847,7 +1847,7 @@ export default function VideoAnalysisSpanishDashboard() {
                       setDuration(videoRef.current?.duration || 0)
                     }
                   >
-                    <source src="/video.mp4" type="video/mp4" />
+                    <source src="./video.mp4" type="video/mp4" />
                   </video>
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent rounded-3xl">
                     <div className="flex items-center text-white">
