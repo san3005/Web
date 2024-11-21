@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { BorderBeam } from "@/components/ui/border-beam";
+import { BorderBeam } from "@/components/ui/border-beam"; // Adjust path as necessary
 
+const linearGradients = ["linear-gradient(to bottom right, #C4B5FD, #E0C3FC)"];
 export const StickyScroll = ({
   contentClassName,
 }: {
@@ -15,19 +16,19 @@ export const StickyScroll = ({
     {
       title: "Multi-Modal Analysis",
       description:
-        "Capture emotional nuances from both visual and audio cues, providing a more comprehensive view of mental health.",
+        "Capture emotional nuances from both visual and audio cues, providing a more comprehensive view of mental health. By analyzing facial expressions, vocal tone, and speech patterns, the system captures complex emotional states that contribute to a holistic understanding of mental health.",
       component: <BorderBeam />,
     },
     {
       title: "Session Summaries",
       description:
-        "Receive summarized insights for each session, designed to highlight key shifts in emotional and mental health.",
+        "Receive summarized insights for each session, designed to highlight key shifts in emotional and mental health. These summaries allow patients and practitioners to track changes over time, fostering a better understanding of the mental health journey and supporting more informed care decisions.",
     },
     {
       title: "AI-Powered Psychometric Insights",
       description:
-        "Leverage advanced AI-driven psychometric insights to gain a deeper understanding of emotional and behavioral patterns.",
-      component: <BorderBeam />,
+        "Leverage advanced AI-driven psychometric insights to gain a deeper understanding of emotional and behavioral patterns. The system provides interpretations based on emotional and behavioral data, helping practitioners and patients uncover underlying psychological factors, and offering a new perspective on mental health.",
+      component: <BorderBeam />, // White background component for the second car
     },
   ];
 
@@ -38,15 +39,6 @@ export const StickyScroll = ({
     offset: ["start start", "end start"],
   });
   const cardLength = content.length;
-
-  const linearGradients = useMemo(
-    () => ["linear-gradient(to bottom right, #C4B5FD, #E0C3FC)"],
-    []
-  );
-
-  const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
-  );
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
@@ -60,34 +52,25 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
+  const backgroundColors = ["#F8F5FF"];
+
+  const [backgroundGradient, setBackgroundGradient] = useState(
+    linearGradients[0]
+  );
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard, linearGradients]);
+  }, [activeCard]); // Removed `linearGradients` from dependencies
 
   return (
     <motion.div
       animate={{
-        backgroundColor: backgroundGradient,
+        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="h-[32rem] overflow-y-auto -top-10 flex justify-center relative space-x-10 rounded-3xl p-10"
-      style={{
-        WebkitOverflowScrolling: "touch",
-        msOverflowStyle: "none",
-        scrollbarWidth: "none", // Firefox
-        overflow: "auto", // Ensures scroll functionality
-      }}
+      className="h-[32rem] overflow-y-auto -top-10 flex justify-center relative space-x-10 rounded-3xl p-10 hide-scrollbar"
       ref={ref}
     >
-      <style>
-        {`
-          /* Inline scrollbar styles for Webkit browsers */
-          ::-webkit-scrollbar {
-            display: none;
-          }
-        `}
-      </style>
-      <div className="relative flex items-start px-4">
-        <div className="max-w-2xl">
+      <div className="relative flex items-start px-4 ">
+        <div className="max-w-2xl ">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
               <motion.h2
@@ -116,7 +99,7 @@ export const StickyScroll = ({
           contentClassName
         )}
       >
-        {content[activeCard]?.component ?? null}
+        {content[activeCard].component ?? null}
       </div>
     </motion.div>
   );

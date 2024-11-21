@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { Github, Twitter, Facebook, Instagram } from "lucide-react";
+// import Link from "next/link";
+// import { Github, Twitter, Facebook, Instagram } from "lucide-react";
 
 export default function Foooter() {
   return (
@@ -8,7 +8,7 @@ export default function Foooter() {
         <p className="text-sm font-semibold mb-4">
           Transform emotions into actionable insights.
         </p>
-        <div className="flex justify-center gap-6 mb-4">
+        {/* <div className="flex justify-center gap-6 mb-4">
           <Link href="#" className="hover:text-[#4A4A4A]">
             <Twitter className="h-5 w-5" />
           </Link>
@@ -21,7 +21,7 @@ export default function Foooter() {
           <Link href="#" className="hover:text-[#4A4A4A]">
             <Instagram className="h-5 w-5" />
           </Link>
-        </div>
+        </div> */}
         <p className="text-xs text-[#6A6A6A]">
           © 2024 AI. All rights reserved.
         </p>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +11,10 @@ import {
   SkipForward,
   SkipBack,
 } from "lucide-react";
+import YouTube, { YouTubeEvent } from "react-youtube";
+import useYouTubePlayer from "@/components/ui/useYouTubePlayer"; // Import the custom hook
+
+const YOUTUBE_VIDEO_ID = "f5ei8uzAqfw";
 
 const summaries = [
   {
@@ -1727,91 +1731,48 @@ const emotionColors: Record<string, string> = {
   Neutral: "bg-orange-200 text-orange-900",
 };
 
-export default function VideoAnalysisSpanishDashboard() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [currentEmotion, setCurrentEmotion] = useState("Neutral");
-  const [currentSummary, setCurrentSummary] = useState("Loading...");
-  const [currentMessage, setCurrentMessage] = useState<string | null>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      setDuration(videoRef.current.duration || 0);
-    }
-  }, []);
-
-  useEffect(() => {
-    const findCurrentSummary = () => {
-      const summary = summaries
-        .slice()
-        .reverse()
-        .find((s) => currentTime >= s.Interval_Time);
-      setCurrentSummary(
-        summary ? summary.Psychometric_Summary : "No summary available."
-      );
-    };
-
-    const findCurrentEmotion = () => {
-      const closestEmotion = emotions.reduce((prev, curr) =>
-        Math.abs(curr.Time - currentTime) < Math.abs(prev.Time - currentTime)
-          ? curr
-          : prev
-      );
-      setCurrentEmotion(
-        closestEmotion ? closestEmotion.Final_Emotion : "Neutral"
-      );
-    };
-
-    const findCurrentMessage = () => {
-      const message = messages.find(
-        (msg) => currentTime >= msg.start && currentTime < msg.end
-      );
-      setCurrentMessage(message ? message.text : null);
-    };
-
-    findCurrentSummary();
-    findCurrentEmotion();
-    findCurrentMessage();
-  }, [currentTime]);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  const handleTimeUpdate = () => {
-    if (videoRef.current) {
-      setCurrentTime(videoRef.current.currentTime);
-    }
-  };
-
-  const seekVideo = (time: number) => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = time;
-      setCurrentTime(time);
-    }
-  };
+export default function VideoAnalysisYouTubeDashboard() {
+  const [player, setPlayer] = useState<YT.Player | null>(null);
+  const {
+    isPlaying,
+    isMuted,
+    currentTime,
+    duration,
+    togglePlay,
+    toggleMute,
+    seekVideo,
+    handlePlayerReady,
+    handlePlayerStateChange,
+  } = useYouTubePlayer(player);
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+  };
+
+  const findCurrentSummary = () => {
+    const summary = summaries
+      .slice()
+      .reverse()
+      .find((s) => currentTime >= s.Interval_Time);
+    return summary ? summary.Psychometric_Summary : "No summary available.";
+  };
+
+  const findCurrentEmotion = () => {
+    const closestEmotion = emotions.reduce((prev, curr) =>
+      Math.abs(curr.Time - currentTime) < Math.abs(prev.Time - currentTime)
+        ? curr
+        : prev
+    );
+    return closestEmotion ? closestEmotion.Final_Emotion : "Neutral";
+  };
+
+  const findCurrentMessage = () => {
+    const message = messages.find(
+      (msg) => currentTime >= msg.start && currentTime < msg.end
+    );
+    return message ? message.text : "No transcript available.";
   };
 
   return (
@@ -1825,7 +1786,7 @@ export default function VideoAnalysisSpanishDashboard() {
         >
           <header className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-semibold text-[#2A6F97]">
-              English Video Analysis Dashboard
+              YouTube Video Analysis Dashboard
             </h1>
           </header>
 
@@ -1839,16 +1800,26 @@ export default function VideoAnalysisSpanishDashboard() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="relative aspect-video bg-black rounded-2xl">
-                  <video
-                    ref={videoRef}
-                    className="w-full h-full object-cover rounded-lg"
-                    onTimeUpdate={handleTimeUpdate}
-                    onLoadedMetadata={() =>
-                      setDuration(videoRef.current?.duration || 0)
-                    }
-                  >
-                    <source src="./video.mp4" type="video/mp4" />
-                  </video>
+                  <YouTube
+                    videoId={YOUTUBE_VIDEO_ID}
+                    onReady={(event: YouTubeEvent) => {
+                      setPlayer(event.target); // Access the player instance
+                      handlePlayerReady(event);
+                    }}
+                    onStateChange={handlePlayerStateChange}
+                    opts={{
+                      height: "100%",
+                      width: "100%",
+                      playerVars: {
+                        autoplay: 0, // Prevent autoplay
+                        controls: 0, // Disable native YouTube controls
+                        modestbranding: 1, // Minimal YouTube branding
+                        rel: 0, // Disable related videos
+                        showinfo: 0, // Disable video info
+                      },
+                    }}
+                    className="w-full h-full"
+                  />
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent rounded-3xl">
                     <div className="flex items-center text-white">
                       <Button onClick={() => seekVideo(currentTime - 10)}>
@@ -1883,10 +1854,11 @@ export default function VideoAnalysisSpanishDashboard() {
               {/* Current Emotion */}
               <div
                 className={`bg-[#F5F5F5] rounded-3xl shadow-inner p-4 text-lg font-semibold ${
-                  emotionColors[currentEmotion] || emotionColors["Neutral"]
+                  emotionColors[findCurrentEmotion()] ||
+                  emotionColors["Neutral"]
                 }`}
               >
-                Current Emotion: {currentEmotion || "Neutral"}
+                Current Emotion: {findCurrentEmotion()}
               </div>
 
               {/* Transcript */}
@@ -1895,7 +1867,7 @@ export default function VideoAnalysisSpanishDashboard() {
                   Transcript
                 </h2>
                 <div className="text-[#4A4A4A] text-lg">
-                  {currentMessage || "No transcript available for this time."}
+                  {findCurrentMessage()}
                 </div>
               </motion.div>
             </div>
@@ -1905,7 +1877,7 @@ export default function VideoAnalysisSpanishDashboard() {
               <h2 className="font-semibold mb-4 text-2xl text-[#2A6F97]">
                 Summary
               </h2>
-              <div className="text-[#4A4A4A]">{currentSummary}</div>
+              <div className="text-[#4A4A4A]">{findCurrentSummary()}</div>
             </motion.div>
           </div>
         </motion.div>

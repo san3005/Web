@@ -1,8 +1,8 @@
-import type { NextConfig } from "next";
+const isProd = process.env.NODE_ENV === "production";
+const repoName = "web"; // Replace with your repository name
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  output: "export",
+module.exports = {
+  // output: "export",
+  // assetPrefix: isProd ? `/${repoName}/` : "",
+  // basePath: isProd ? `/${repoName}` : "",
 };
-
-export default nextConfig;

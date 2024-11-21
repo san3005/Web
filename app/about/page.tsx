@@ -1,97 +1,113 @@
 import Image from "next/image";
-import Foooter from "@/components/ui/footer";
-import Navbar from "@/components/ui/navbar";
+import Footer from "@/components/ui/footer";
+import Navbar from "./navbar";
+import { Mail } from "lucide-react";
 
 export default function AboutPage() {
-  const teamMembers = {
-    leader: {
-      name: "Dr. Sekharan",
+  const teamMembers = [
+    {
+      name: "Chandra Sekharan",
       role: "Professor",
-      image: "/Professor Illustration.png", // Correct path in public directory
+      workingAt: "TAMUCC",
+
+      image: "/Professor Illustration.png", // No 'public/' prefix
+      email: "chandra.sekharan@tamucc.edu",
     },
-    coreTeam: [
-      {
-        name: "Santhosh G.",
-        role: "Task Research Worker",
-        image: "/Profile Picture Illustration.png", // Correct path in public directory
-      },
-      {
-        name: "Balakrishna Kilaru",
-        role: "Task Research Worker",
-        image: "/Male Avatar.png", // Correct path in public directory
-      },
-    ],
-  };
+    {
+      name: "Santosh G.",
+      role: "Task Research Worker",
+      workingAt: "TAMUCC",
+      image: "/Male Avatar.png", // No 'public/' prefix
+      email: "venkata.gurajada@tamucc.edu",
+      linkedin: "https://linkedin.com/in/aaron",
+    },
+    {
+      name: "Bala K.",
+      role: "Task Research Worker",
+      workingAt: "TAMUCC",
+
+      image: "/Profile Picture Illustration.png", // No 'public/' prefix
+      email: "nisarg@example.com",
+      linkedin: "https://linkedin.com/in/nisarg",
+    },
+  ];
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen bg-[#FFF5E1]">
       <Navbar />
 
-      <main className="flex flex-col min-h-screen -mt-16">
-        <section className="w-full  md:py-24 lg:py-32 bg-gradient-to-b from-[#FFF5E1] via-[#FFD8A8] to-[#FFC1C1] text-center">
-          <div className="container px-4 md:px-6">
-            <h1 className="text-4xl font-bold tracking-tighter text-[#4A4A4A] sm:text-5xl">
-              About{" "}
-              <span className="bg-gradient-to-r from-[#FFA726] via-[#FF7043] to-[#FF7043] text-transparent bg-clip-text">
-                Us{" "}
+      <main className="flex-grow">
+        <section className="w-full py-24 bg-white text-center">
+          <div className="container mx-auto px-4 md:px-6">
+            <h1 className="text-5xl font-bold tracking-tighter text-[#4A4A4A]">
+              We&#39;re building
+              <p> </p>
+              <span className="text-[#FF7043]">
+                Emotional AI tools that empower mental health
               </span>
             </h1>
-            <p className="mt-4 mx-auto font-semibold max-w-[700px] text-[#8B4513] md:text-xl">
-              Our team is developing advanced AI tools that analyze emotions,
-              behavior patterns, and psychometric data.
+            <p className="mt-4 mx-auto max-w-[700px] text-lg text-[#8B4513]">
+              Our mission is to tackle the challenges in emotional AI
+              applications for mental health by delivering a user-friendly and
+              intuitive design. We aim to create solutions that provide
+              actionable insights while offering a natural and empathetic
+              experience, making emotional analysis a valuable tool rather than
+              a complex task.
             </p>
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter text-center text-[#4A4A4A] sm:text-4xl md:text-5xl">
+        <section className="w-full bg-[#FFF5E1] pb-20">
+          <div className="container mx-auto px-4 sm:px-2 md:px-4">
+            <h2 className="text-3xl mt-8 sm:text-2xl md:text-3xl font-bold tracking-tighter text-center text-[#4A4A4A] mb-12">
               Meet Our Team
             </h2>
 
-            {/* Leader */}
-            <div className="flex flex-col items-center text-center mt-16 mb-12">
-              <Image
-                src={teamMembers.leader.image}
-                alt={teamMembers.leader.name}
-                width={200}
-                height={200}
-                className="rounded-full"
-              />
-              <h3 className="text-2xl font-bold mt-4 text-[#4A4A4A]">
-                {teamMembers.leader.name}
-              </h3>
-              <p className="text-lg text-[#FF7043] font-semibold">
-                {teamMembers.leader.role}
-              </p>
-            </div>
-
-            {/* Core Team */}
-            <div className="grid gap-12 sm:grid-cols-2">
-              {teamMembers.coreTeam.map((member) => (
+            <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] justify-items-center">
+              {teamMembers.map((member) => (
                 <div
                   key={member.name}
-                  className="flex flex-col items-center text-center"
+                  className="flex rounded-3xl flex-col items-center hover:shadow-xl text-center bg-white p-6  shadow-md max-w-[400px] mx-auto min-h-[250px]"
                 >
                   <Image
                     src={member.image}
                     alt={member.name}
-                    width={160}
-                    height={160}
-                    className="rounded-full"
+                    width={100}
+                    height={100}
+                    className="rounded-full object-cover"
                   />
                   <h4 className="text-xl font-bold mt-4 text-[#4A4A4A]">
                     {member.name}
                   </h4>
                   <p className="text-[#FFA726] font-semibold">{member.role}</p>
+                  <p className="text-sm text-[#4A4A4A]">
+                    Working at: {member.workingAt}
+                  </p>
+
+                  <div className="flex space-x-4 mt-4">
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="text-[#FF7043] hover:underline"
+                    >
+                      <Mail className="h-5 w-5" />
+                    </a>
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#FF7043] hover:underline"
+                    >
+                      {/* <Linkedin className="h-5 w-5" /> */}
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
       </main>
-      <Foooter />
+
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,6 +11,11 @@ import {
   SkipForward,
   SkipBack,
 } from "lucide-react";
+import YouTube, { YouTubeEvent } from "react-youtube";
+
+import useYouTubePlayer from "@/components/ui/useYouTubePlayer"; // Import the custom hook
+
+const YOUTUBE_VIDEO_ID = "nS2rFRhSAJA";
 
 const summaries = [
   {
@@ -1043,21 +1048,29 @@ const emotionColors: Record<string, string> = {
 };
 
 export default function VideoAnalysisDashboard() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  const [player, setPlayer] = useState<YT.Player | null>(null);
+
   const [currentSummary, setCurrentSummary] = useState("");
   const [currentMessage, setCurrentMessage] = useState<string | null>(null);
   const [currentEmotion, setCurrentEmotion] = useState("Neutral");
   const [isEnglish, setIsEnglish] = useState(false); // Boolean for translation
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      setDuration(videoRef.current.duration || 0);
-    }
-  }, []);
+  // const videoRef = useRef<HTMLVideoElement>(null);
+  const {
+    isPlaying,
+    isMuted,
+    currentTime,
+    duration,
+    togglePlay,
+    toggleMute,
+    seekVideo,
+    handlePlayerReady,
+    handlePlayerStateChange,
+  } = useYouTubePlayer(player);
+  // useEffect(() => {
+  //   if (videoRef.current) {
+  //     setDuration(videoRef.current.duration || 0);
+  //   }
+  // }, []);
 
   useEffect(() => {
     const findCurrentSummary = () => {
@@ -1111,36 +1124,11 @@ export default function VideoAnalysisDashboard() {
     findCurrentEmotion();
   }, [currentTime, isEnglish]);
 
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  const handleTimeUpdate = () => {
-    if (videoRef.current) {
-      setCurrentTime(videoRef.current.currentTime);
-    }
-  };
-
-  const seekVideo = (time: number) => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = time;
-      setCurrentTime(time);
-    }
-  };
+  // const handleTimeUpdate = () => {
+  //   if (videoRef.current) {
+  //     setCurrentTime(videoRef.current.currentTime);
+  //   }
+  // };
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
@@ -1175,7 +1163,7 @@ export default function VideoAnalysisDashboard() {
                   : "bg-[#4A4A4A] text-white hover:bg-[#2A6F97]"
               }`}
             >
-              {isEnglish ? "View in Spanish" : "Ver en Inglés"}
+              {isEnglish ? "  View in Spanish" : "Ver en Inglés"}
             </Button>
           </header>
 
@@ -1188,17 +1176,27 @@ export default function VideoAnalysisDashboard() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="relative aspect-video bg-[#000000] rounded-2xl">
-                  <video
-                    ref={videoRef}
-                    className="w-full h-full object-cover rounded-lg"
-                    onTimeUpdate={handleTimeUpdate}
-                    onLoadedMetadata={() =>
-                      setDuration(videoRef.current?.duration || 0)
-                    }
-                  >
-                    <source src="./video2.mp4" type="video/mp4" />
-                  </video>
+                <div className="relative aspect-video bg-black rounded-2xl">
+                  <YouTube
+                    videoId={YOUTUBE_VIDEO_ID}
+                    onReady={(event: YouTubeEvent) => {
+                      setPlayer(event.target); // Access the player instance
+                      handlePlayerReady(event);
+                    }}
+                    onStateChange={handlePlayerStateChange}
+                    opts={{
+                      height: "100%",
+                      width: "100%",
+                      playerVars: {
+                        autoplay: 0, // Prevent autoplay
+                        controls: 0, // Disable native YouTube controls
+                        modestbranding: 1, // Minimal YouTube branding
+                        rel: 0, // Disable related videos
+                        showinfo: 0, // Disable video info
+                      },
+                    }}
+                    className="w-full h-full"
+                  />
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent rounded-3xl">
                     <div className="flex items-center text-white">
                       <Button onClick={() => seekVideo(currentTime - 10)}>
