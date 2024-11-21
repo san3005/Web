@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import Image from "next/image"; // Changed from {Image}
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -60,6 +60,8 @@ export default function Navbar() {
                 className="w-auto h-8"
                 src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/logo.svg"
                 alt="logo"
+                width={500}
+                height={300}
               />
             </Link>
           </div>
