@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -55,7 +56,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-black">
-              <img
+              <Image
                 className="w-auto h-8"
                 src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/logo.svg"
                 alt="logo"

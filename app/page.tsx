@@ -5,8 +5,7 @@ import BoxReveal from "@/components/ui/box-reveal";
 import Navbar from "@/components/ui/navbar";
 import { Button } from "@/components/ui/button";
 import Howitworks from "@/components/ui/how-it-works";
-import Demo from "@/components/ui/demo";
-import VideoAnalysisDashboard from "@/components/ui/demo";
+
 import { StickyScrollRevealDemo } from "@/components/ui/StickyScrollRevealDemo";
 import Foooter from "@/components/ui/footer";
 import TabbedDashboard from "@/components/ui/TabbedDashboard";
