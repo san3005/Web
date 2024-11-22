@@ -1213,7 +1213,7 @@ export default function VideoAnalysisDashboard() {
                       </Button>
                       <input
                         type="range"
-                        className="ml-4 w-full"
+                        className="ml-4 w-full h-3 md:h-2 lg:h-2"
                         min={0}
                         max={duration}
                         step="0.1"

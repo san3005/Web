@@ -1836,13 +1836,14 @@ export default function VideoAnalysisYouTubeDashboard() {
                       </Button>
                       <input
                         type="range"
-                        className="ml-4 w-full"
+                        className="ml-4 w-full h-3 md:h-2 lg:h-2"
                         min={0}
                         max={duration}
                         step="0.1"
                         value={currentTime}
                         onChange={(e) => seekVideo(Number(e.target.value))}
                       />
+
                       <span className="ml-4">
                         {formatTime(currentTime)} / {formatTime(duration)}
                       </span>

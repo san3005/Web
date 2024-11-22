@@ -17,6 +17,12 @@ export default function Home() {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const scrollTolearn = () => {
+    const section = document.querySelector("#HowItworks");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <div className="flex flex-col gap-4">
       {/* Navbar always accessible at the top */}
@@ -60,7 +66,10 @@ export default function Home() {
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
                       {/* Primary Button */}
-                      <button className="px-6 py-2 rounded-full bg-gray-100 text-lg font-semibold text-gray-800 transition-all duration-300 shadow-none hover:shadow-[0_0px_8px_rgba(0,0,0,0.15)] hover:bg-gray-200 hover:text-gray-900">
+                      <button
+                        className="px-6 py-2 rounded-full bg-gray-100 text-lg font-semibold text-gray-800 transition-all duration-300 shadow-none hover:shadow-[0_0px_8px_rgba(0,0,0,0.15)] hover:bg-gray-200 hover:text-gray-900"
+                        onClick={scrollTolearn}
+                      >
                         Learn More
                       </button>
 
