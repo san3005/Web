@@ -1072,12 +1072,43 @@ export default function VideoAnalysisDashboard() {
   //   }
   // }, []);
 
+  const [isVideoEnded, setIsVideoEnded] = useState(true); // State for video end
+
+  const overallSummary = {
+    Psychometric_Summary_Spanish:
+      "Durante la sesión, la oradora, una psicóloga, aborda la complejidad de la ansiedad y su relación con las experiencias de vida. Expresa la importancia de reconocer y escuchar las señales del cuerpo como un indicador de malestar emocional. Asimismo, comparte vivencias personales que subrayan la carga emocional que puede acarrear la pérdida y el duelo, destacando cómo eventos traumáticos pueden llevar a un estado de desesperanza y parálisis emocional. La repetición de ciertas frases y la profundización en sus recuerdos revelan una introspección significativa, sugiriendo que, a pesar de las dificultades, hay un reconocimiento del potencial resiliente del ser humano. Esto se manifiesta en su creencia en la capacidad de recuperación, aunque también se observa una lucha interna con la tristeza y la ansiedad, evidenciada por sus descripciones de síntomas físicos y emocionales asociados a situaciones que no puede cambiar. Los datos emocionales de apoyo revelan una mezcla de emociones que enriquecen esta narrativa. La expresión de confusión y tristeza, combinada con momentos de calma y determinación, sugiere que, aunque la oradora enfrenta retos significativos, también halla momentos de claridad y fortaleza. Las emociones de alegría y asombro que emergen en ciertos momentos indican una capacidad de asimilar experiencias y reflexionar sobre el crecimiento personal. Sin embargo, la ansiedad persiste, especialmente en contextos laborales, donde se siente abrumada antes de enfrentar su entorno. Este conflicto interno entre el deseo de superación y la lucha constante con la ansiedad revela un estado psicológico complejo que merece atención y posiblemente intervención profesional para facilitar su proceso de sanación. En resumen, la oradora muestra una profunda comprensión de las emociones humanas, combinada con un deseo de ayudar a otros a navegar por sus propios desafíos emocionales, lo que refleja un compromiso tanto profesional como personal con la salud mental.",
+    Psychometric_Summary_English:
+      "During the session, the speaker, a psychologist, addresses the complexity of anxiety and its relationship with life experiences. She expresses the importance of recognizing and listening to the body's signals as an indicator of emotional distress. Additionally, she shares personal experiences that underscore the emotional burden that loss and grief can carry, highlighting how traumatic events can lead to a state of hopelessness and emotional paralysis. The repetition of certain phrases and the deepening of her memories reveal significant introspection, suggesting that, despite the difficulties, there is an acknowledgment of the resilient potential of human beings. This is manifested in her belief in the capacity for recovery, although an internal struggle with sadness and anxiety is also observed, evidenced by her descriptions of physical and emotional symptoms associated with situations she cannot change.The supporting emotional data reveal a mix of emotions that enrich this narrative. The expression of confusion and sadness, combined with moments of calm and determination, suggests that, although the speaker faces significant challenges, she also finds moments of clarity and strength. The emotions of joy and wonder that emerge at certain moments indicate an ability to assimilate experiences and reflect on personal growth. However, anxiety persists, especially in work contexts, where she feels overwhelmed before facing her environment. This internal conflict between the desire for improvement and the constant struggle with anxiety reveals a complex psychological state that deserves attention and possibly professional intervention to facilitate her healing process. In summary, the speaker demonstrates a deep understanding of human emotions, combined with a desire to help others navigate their own emotional challenges, reflecting both a professional and personal commitment to mental health.",
+  };
+  useEffect(() => {
+    // Check if the video is near the end
+    if (duration > 0 && currentTime >= duration - 1.0) {
+      setIsVideoEnded(true);
+    } else {
+      setIsVideoEnded(false);
+    }
+  }, [currentTime, duration]);
   useEffect(() => {
     const findCurrentSummary = () => {
+      if (isVideoEnded) {
+        console.log("Displaying overall summary");
+        // Return overall summary if the video has ended
+        setCurrentSummary(
+          isEnglish
+            ? overallSummary.Psychometric_Summary_English
+            : overallSummary.Psychometric_Summary_Spanish
+        );
+        return;
+      }
+
+      // Otherwise, return the current interval's summary
       const summary = summaries
         .slice()
         .reverse()
         .find((s) => currentTime >= s.Interval_Time);
+
+      console.log("Current interval summary:", summary);
+
       setCurrentSummary(
         summary
           ? isEnglish
@@ -1122,7 +1153,12 @@ export default function VideoAnalysisDashboard() {
     findCurrentSummary();
     findCurrentMessage();
     findCurrentEmotion();
-  }, [currentTime, isEnglish]);
+  }, [
+    currentTime,
+    isEnglish,
+    overallSummary.Psychometric_Summary_English,
+    overallSummary.Psychometric_Summary_Spanish,
+  ]);
 
   // const handleTimeUpdate = () => {
   //   if (videoRef.current) {
@@ -1140,6 +1176,12 @@ export default function VideoAnalysisDashboard() {
     setIsEnglish(!isEnglish);
   };
 
+  const handleSeek = (time: number) => {
+    seekVideo(time);
+    if (time < duration) {
+      setIsVideoEnded(false); // Reset final summary when seeking back
+    }
+  };
   return (
     <section className="w-screen py-3 md:py-2 lg:py-2 bg-[#F9F9F9] rounded-3xl flex justify-center">
       <div className="w-full max-w-[96%] lg:max-w-[98%] rounded-3xl flex items-center justify-center mx-auto">
@@ -1180,26 +1222,26 @@ export default function VideoAnalysisDashboard() {
                   <YouTube
                     videoId={YOUTUBE_VIDEO_ID}
                     onReady={(event: YouTubeEvent) => {
-                      setPlayer(event.target); // Access the player instance
+                      setPlayer(event.target); // Store the player instance
                       handlePlayerReady(event);
                     }}
-                    onStateChange={handlePlayerStateChange}
+                    onStateChange={handlePlayerStateChange} // Attach the state change handler
                     opts={{
                       height: "100%",
                       width: "100%",
                       playerVars: {
                         autoplay: 0, // Prevent autoplay
                         controls: 0, // Disable native YouTube controls
-                        modestbranding: 1, // Minimal YouTube branding
+                        modestbranding: 1, // Minimal branding
                         rel: 0, // Disable related videos
-                        showinfo: 0, // Disable video info
                       },
                     }}
                     className="w-full h-full"
                   />
+
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent rounded-3xl">
                     <div className="flex items-center text-white">
-                      <Button onClick={() => seekVideo(currentTime - 10)}>
+                      <Button onClick={() => handleSeek(currentTime - 10)}>
                         <SkipBack />
                       </Button>
                       <Button onClick={togglePlay}>
@@ -1218,7 +1260,7 @@ export default function VideoAnalysisDashboard() {
                         max={duration}
                         step="0.1"
                         value={currentTime}
-                        onChange={(e) => seekVideo(Number(e.target.value))}
+                        onChange={(e) => handleSeek(Number(e.target.value))}
                       />
                       <span className="ml-4">
                         {formatTime(currentTime)} / {formatTime(duration)}
@@ -1255,9 +1297,20 @@ export default function VideoAnalysisDashboard() {
 
             {/* Summary Section */}
             <motion.div className="col-span-1 bg-[#F5F5F5] rounded-3xl shadow-inner p-4">
-              <h2 className="font-semibold mb-4 text-2xl text-[#4A4A4A]">
-                {isEnglish ? "Summary" : "Resumen"}
+              <h2
+                className={`font-semibold mb-4 text-2xl ${
+                  isVideoEnded ? "text-[#2A6F97]" : "text-[#4A4A4A]"
+                }`}
+              >
+                {isVideoEnded
+                  ? isEnglish
+                    ? "Final Report"
+                    : "Informe Final"
+                  : isEnglish
+                    ? "Summary"
+                    : "Resumen"}
               </h2>
+
               <div className="text-[#4A4A4A]">{currentSummary}</div>
             </motion.div>
           </div>

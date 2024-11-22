@@ -1744,14 +1744,52 @@ export default function VideoAnalysisYouTubeDashboard() {
     handlePlayerReady,
     handlePlayerStateChange,
   } = useYouTubePlayer(player);
-
+  const [isVideoEnded, setIsVideoEnded] = useState(false); // State for video end
+  const overallSummary = `
+ The individual discusses their experience with Dissociative Identity Disorder (DID), 
+ characterized by the presence of multiple personalities,
+  which they refer to as "alters." This condition, often misunderstood and stigmatized, 
+  is presented as a complex interplay of traumatic childhood experiences leading to 
+  the development of distinct identities as coping mechanisms. 
+  The speaker reflects on the challenges of living with this disorder, 
+  particularly the feelings of confusion and disorientation that accompany 
+  frequent switches between alters. They describe early symptoms,
+   such as amnesia, which escalated over time, initially dismissed as normal 
+   forgetfulness until therapy revealed a deeper underlying condition. 
+   The narrative indicates a struggle for acceptance and understanding of this 
+   identity, alongside an acknowledgment that these alters serve protective 
+   roles formed in response to past trauma. Throughout the discourse, emotional cues 
+   reveal a tapestry of feelings—confusion and doubt are prevalent as the individual 
+   navigates their experiences and the societal perceptions of their condition. 
+   There are moments of sadness intertwined with a sense of nostalgia for a unified self, 
+   alongside expressions of amusement when discussing certain alters. The desire for control
+    and understanding of their identity is evident, reflecting a journey from resistance to a 
+    more collaborative approach with their alters, which has fostered a greater sense of 
+    calmness and acceptance. The integration of these emotional states conveys a multifaceted 
+    psychological landscape marked by both distress and resilience, highlighting the 
+    complexities of living with DID and the ongoing therapeutic process that aims 
+ to reconcile these divided aspects of the self.
+`;
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
   };
 
+  const handleSeek = (time: number) => {
+    seekVideo(time);
+    if (time < duration) {
+      setIsVideoEnded(false); // Reset final summary when seeking back
+    }
+  };
+
   const findCurrentSummary = () => {
+    if (isVideoEnded) {
+      // Return overall summary if the video has ended
+      return overallSummary;
+    }
+
+    // Otherwise, return the current interval's summary
     const summary = summaries
       .slice()
       .reverse()
@@ -1806,7 +1844,13 @@ export default function VideoAnalysisYouTubeDashboard() {
                       setPlayer(event.target); // Access the player instance
                       handlePlayerReady(event);
                     }}
-                    onStateChange={handlePlayerStateChange}
+                    onStateChange={(event: YT.OnStateChangeEvent) => {
+                      handlePlayerStateChange(event);
+                      if (event.data === 0) {
+                        // YouTube Player State 'Ended'
+                        setIsVideoEnded(true);
+                      }
+                    }}
                     opts={{
                       height: "100%",
                       width: "100%",
@@ -1820,9 +1864,10 @@ export default function VideoAnalysisYouTubeDashboard() {
                     }}
                     className="w-full h-full"
                   />
+                  ;
                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent rounded-3xl">
                     <div className="flex items-center text-white">
-                      <Button onClick={() => seekVideo(currentTime - 10)}>
+                      <Button onClick={() => handleSeek(currentTime - 10)}>
                         <SkipBack />
                       </Button>
                       <Button onClick={togglePlay}>
@@ -1841,7 +1886,7 @@ export default function VideoAnalysisYouTubeDashboard() {
                         max={duration}
                         step="0.1"
                         value={currentTime}
-                        onChange={(e) => seekVideo(Number(e.target.value))}
+                        onChange={(e) => handleSeek(Number(e.target.value))}
                       />
 
                       <span className="ml-4">
@@ -1876,9 +1921,12 @@ export default function VideoAnalysisYouTubeDashboard() {
             {/* Summary Section */}
             <motion.div className="col-span-1 bg-[#F5F5F5] rounded-3xl shadow-inner p-4">
               <h2 className="font-semibold mb-4 text-2xl text-[#2A6F97]">
-                Summary
+                {isVideoEnded ? "Final Report" : "Summary"}
               </h2>
-              <div className="text-[#4A4A4A]">{findCurrentSummary()}</div>
+
+              <div className="text-[#4A4A4A] text-justify">
+                {findCurrentSummary()}
+              </div>
             </motion.div>
           </div>
         </motion.div>
