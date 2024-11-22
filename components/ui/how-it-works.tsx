@@ -1,5 +1,3 @@
-import { Download, Lock, Plus } from "lucide-react";
-
 export default function HowItWorks() {
   return (
     <section className="w-full py-0 md:py-2 lg:pt-0 lg:pb-4 bg-white flex justify-center md:pb-4 sm:pb-4">
