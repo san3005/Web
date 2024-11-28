@@ -9,6 +9,8 @@ import Howitworks from "@/components/ui/how-it-works";
 import { StickyScrollRevealDemo } from "@/components/ui/StickyScrollRevealDemo";
 import Foooter from "@/components/ui/footer";
 import TabbedDashboard from "@/components/ui/TabbedDashboard";
+import FloatingFeedbackButton from "@/components/ui/FloatingFeedbackButton";
+import AcceptedReviews from "@/components/ui/acceptedreviews";
 
 export default function Home() {
   const scrollToDemo = () => {
@@ -25,6 +27,8 @@ export default function Home() {
   };
   return (
     <div className="flex flex-col gap-4">
+      <FloatingFeedbackButton />
+
       {/* Navbar always accessible at the top */}
       <Navbar />
 
@@ -96,6 +100,12 @@ export default function Home() {
         <div id="HowItworks">
           <Howitworks />
         </div>
+        <div className=" bg-[#fff]  pb-5 ">
+          <div className="bg-[#F7F5EB] rounded-3xl">
+            <AcceptedReviews />
+          </div>
+        </div>
+
         <div className="bg-[#fff] " id="features">
           <StickyScrollRevealDemo />
         </div>

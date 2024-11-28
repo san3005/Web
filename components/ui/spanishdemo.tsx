@@ -1087,7 +1087,8 @@ export default function VideoAnalysisDashboard() {
     } else {
       setIsVideoEnded(false);
     }
-  }, [currentTime, duration]);
+  }, [currentTime, duration]); // Added correct dependencies
+
   useEffect(() => {
     const findCurrentSummary = () => {
       if (isVideoEnded) {
@@ -1156,6 +1157,7 @@ export default function VideoAnalysisDashboard() {
   }, [
     currentTime,
     isEnglish,
+    isVideoEnded, // Added `isVideoEnded` as a dependency
     overallSummary.Psychometric_Summary_English,
     overallSummary.Psychometric_Summary_Spanish,
   ]);
