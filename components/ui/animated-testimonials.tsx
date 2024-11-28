@@ -27,9 +27,7 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   }, [testimonials.length]);
 
-  const isActive = (index: number) => {
-    return index === active;
-  };
+  const isActive = (index: number) => index === active;
 
   useEffect(() => {
     if (autoplay) {
@@ -43,6 +41,7 @@ export const AnimatedTestimonials = ({
   return (
     <div className="max-w-sm md:max-w-4xl mx-auto antialiased font-sans px-4 md:px-8 lg:px-12 py-20">
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+        {/* Image Section */}
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
@@ -79,9 +78,7 @@ export const AnimatedTestimonials = ({
                 >
                   <Image
                     src={testimonial.src}
-                    alt={`Testimonial image from ${
-                      testimonial.name || "a user"
-                    }`}
+                    alt="Testimonial image"
                     width={500}
                     height={500}
                     draggable={false}
@@ -92,6 +89,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
+        {/* Quote Section */}
         <div className="flex justify-between flex-col py-4">
           <motion.div
             key={active}
@@ -112,12 +110,6 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold text-[#718282]">
-              {testimonials[active].name}
-            </h3>
-            <p className="text-sm text-[#718282] opacity-70">
-              {testimonials[active].designation}
-            </p>
             <motion.p className="text-lg font-semibold text-[#718282] mt-8">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
@@ -144,6 +136,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
+          {/* Navigation Buttons */}
           <div className="flex gap-4 pt-12 md:pt-0">
             <button
               onClick={handlePrev}
