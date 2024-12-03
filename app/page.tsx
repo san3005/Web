@@ -47,7 +47,7 @@ export default function Home() {
           interactive={true}
         >
           <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-800 z-40 rounded-3xl">
-            <main className="container px-4 py-16 md:py-24 lg:py-32">
+            <main className="container px-4 py-16 md:py-24 lg:py-32 ">
               <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
                   <p className="text-lg text-muted-foreground">
@@ -57,9 +57,9 @@ export default function Home() {
                 </BoxReveal>
 
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl pb-10">
                     Transform{" "}
-                    <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r  from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                       Emotions{" "}
                     </span>
                     into Actionable Insights

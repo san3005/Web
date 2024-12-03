@@ -47,7 +47,7 @@ export const AnimatedTestimonials = ({
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
-                  key={testimonial.src}
+                  key={`${testimonial.src}-${index}`} // Make the key unique by appending the index
                   initial={{
                     opacity: 0,
                     scale: 0.9,

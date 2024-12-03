@@ -33,7 +33,7 @@ const FloatingFeedbackButton: React.FC = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="fixed bottom-8 right-8 z-50"
+            className="fixed bottom-8 right-8 z-[9999]"
           >
             <PulsatingButton
               pulseColor="rgba(147, 51, 234, 0.5)"
@@ -51,7 +51,7 @@ const FloatingFeedbackButton: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-[99999]"
             aria-hidden={!showFeedbackForm}
             aria-modal="true"
             role="dialog"
