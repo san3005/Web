@@ -13,9 +13,9 @@ export default function HowItWorks() {
               How it works
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              SenseBridge AI is a personalized mental health assistant,
-              leveraging all interactions to deliver real-time psychometric
-              analysis and insights.
+              AI is a personalized mental health assistant, leveraging all
+              interactions to deliver real-time psychometric analysis and
+              insights.
             </p>
           </div>
           <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-3 md:gap-12 lg:gap-16 items-start pt-8 md:pt-10">
