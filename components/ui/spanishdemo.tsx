@@ -1195,7 +1195,7 @@ export default function VideoAnalysisDashboard() {
         >
           <header className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-semibold text-[#4A4A4A]">
-              {isEnglish ? "Video Insights " : "Análisis de Video"}
+              {isEnglish ? "Video Insights " : "Perspectivas de video"}
             </h1>
             <Button
               onClick={toggleTranslation}
