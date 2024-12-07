@@ -41,554 +41,554 @@ const summaries = [
   },
 ];
 
-const emotions = [
-  {
-    Time: 2.48,
-    Final_Emotion_Spanish: "Divertido",
-    Final_Emotion_English: "Amused",
-  },
-  {
-    Time: 5.0,
-    Final_Emotion_Spanish: "Divertido",
-    Final_Emotion_English: "Amused",
-  },
-  {
-    Time: 7.52,
-    Final_Emotion_Spanish: "Calma",
-    Final_Emotion_English: "Calm",
-  },
-  {
-    Time: 17.52,
-    Final_Emotion_Spanish: "Calma",
-    Final_Emotion_English: "Calm",
-  },
-  {
-    Time: 20.0,
-    Final_Emotion_Spanish: "Calma",
-    Final_Emotion_English: "Calm",
-  },
-  {
-    Time: 22.48,
-    Final_Emotion_Spanish: "Calma",
-    Final_Emotion_English: "Calm",
-  },
-  {
-    Time: 25.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 27.52,
-    Final_Emotion_Spanish: "Ansiedad",
-    Final_Emotion_English: "Anxiety",
-  },
-  {
-    Time: 30.0,
-    Final_Emotion_Spanish: "Ansiedad",
-    Final_Emotion_English: "Anxiety",
-  },
-  {
-    Time: 32.48,
-    Final_Emotion_Spanish: "Ansiedad",
-    Final_Emotion_English: "Anxiety",
-  },
-  {
-    Time: 35.0,
-    Final_Emotion_Spanish: "Ansiedad",
-    Final_Emotion_English: "Anxiety",
-  },
-  {
-    Time: 37.52,
-    Final_Emotion_Spanish: "Ansiedad",
-    Final_Emotion_English: "Anxiety",
-  },
-  {
-    Time: 40.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 42.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 45.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 47.52,
-    Final_Emotion_Spanish: "Determinación",
-    Final_Emotion_English: "Determination",
-  },
-  {
-    Time: 50.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 52.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 55.0,
-    Final_Emotion_Spanish: "Contemplación",
-    Final_Emotion_English: "Contemplation",
-  },
-  {
-    Time: 57.52,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 60.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 62.48,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 65.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 67.52,
-    Final_Emotion_Spanish: "Amor",
-    Final_Emotion_English: "Love",
-  },
-  {
-    Time: 70.0,
-    Final_Emotion_Spanish: "Deseo",
-    Final_Emotion_English: "Desire",
-  },
-  {
-    Time: 72.48,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 75.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 82.48,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 87.52,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 90.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 92.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 95.0,
-    Final_Emotion_Spanish: "Determinación",
-    Final_Emotion_English: "Determination",
-  },
-  {
-    Time: 97.52,
-    Final_Emotion_Spanish: "Calma",
-    Final_Emotion_English: "Calm",
-  },
-  {
-    Time: 100.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 102.48,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 105.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 107.52,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 110.0,
-    Final_Emotion_Spanish: "Asombro",
-    Final_Emotion_English: "Awe",
-  },
-  {
-    Time: 112.48,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 115.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 117.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 120.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 122.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 125.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 127.52,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 130.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 132.48,
-    Final_Emotion_Spanish: "Calma",
-    Final_Emotion_English: "Calm",
-  },
-  {
-    Time: 135.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 137.52,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 142.48,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 145.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 147.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 150.0,
-    Final_Emotion_Spanish: "Alegría",
-    Final_Emotion_English: "Joy",
-  },
-  {
-    Time: 152.48,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 155.0,
-    Final_Emotion_Spanish: "Determinación",
-    Final_Emotion_English: "Determination",
-  },
-  {
-    Time: 157.52,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 160.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  // Continue for the rest of the array...
-  {
-    Time: 162.48,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 165.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 167.52,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 170.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 172.48,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 175.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 177.52,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 180.0,
-    Final_Emotion_Spanish: "Alegría",
-    Final_Emotion_English: "Joy",
-  },
-  {
-    Time: 187.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 190.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 192.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 195.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 197.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 200.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 202.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 205.0,
-    Final_Emotion_Spanish: "Asombro",
-    Final_Emotion_English: "Awe",
-  },
-  {
-    Time: 207.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 210.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 212.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 215.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 217.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 220.0,
-    Final_Emotion_Spanish: "Asombro",
-    Final_Emotion_English: "Awe",
-  },
-  {
-    Time: 222.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 225.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 227.52,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 230.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 232.48,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 235.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 237.52,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 240.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 242.48,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 245.0,
-    Final_Emotion_Spanish: "Determinación",
-    Final_Emotion_English: "Determination",
-  },
-  {
-    Time: 247.52,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 250.0,
-    Final_Emotion_Spanish: "Interés",
-    Final_Emotion_English: "Interest",
-  },
-  {
-    Time: 252.48,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-  {
-    Time: 255.0,
-    Final_Emotion_Spanish: "Determinación",
-    Final_Emotion_English: "Determination",
-  },
-  {
-    Time: 257.52,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 260.0,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 262.48,
-    Final_Emotion_Spanish: "Interés",
-    Final_Emotion_English: "Interest",
-  },
-  {
-    Time: 265.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 267.52,
-    Final_Emotion_Spanish: "Satisfacción",
-    Final_Emotion_English: "Satisfaction",
-  },
-  {
-    Time: 270.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 272.48,
-    Final_Emotion_Spanish: "Interés",
-    Final_Emotion_English: "Interest",
-  },
-  {
-    Time: 275.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 277.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 280.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 282.48,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 285.0,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 287.52,
-    Final_Emotion_Spanish: "Confusión",
-    Final_Emotion_English: "Confusion",
-  },
-  {
-    Time: 290.0,
-    Final_Emotion_Spanish: "Satisfacción",
-    Final_Emotion_English: "Satisfaction",
-  },
-  {
-    Time: 292.48,
-    Final_Emotion_Spanish: "Tristeza",
-    Final_Emotion_English: "Sadness",
-  },
-  {
-    Time: 295.0,
-    Final_Emotion_Spanish: "Concentración",
-    Final_Emotion_English: "Concentration",
-  },
-];
+// const emotions = [
+//   {
+//     Time: 2.48,
+//     Final_Emotion_Spanish: "Divertido",
+//     Final_Emotion_English: "Amused",
+//   },
+//   {
+//     Time: 5.0,
+//     Final_Emotion_Spanish: "Divertido",
+//     Final_Emotion_English: "Amused",
+//   },
+//   {
+//     Time: 7.52,
+//     Final_Emotion_Spanish: "Calma",
+//     Final_Emotion_English: "Calm",
+//   },
+//   {
+//     Time: 17.52,
+//     Final_Emotion_Spanish: "Calma",
+//     Final_Emotion_English: "Calm",
+//   },
+//   {
+//     Time: 20.0,
+//     Final_Emotion_Spanish: "Calma",
+//     Final_Emotion_English: "Calm",
+//   },
+//   {
+//     Time: 22.48,
+//     Final_Emotion_Spanish: "Calma",
+//     Final_Emotion_English: "Calm",
+//   },
+//   {
+//     Time: 25.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 27.52,
+//     Final_Emotion_Spanish: "Ansiedad",
+//     Final_Emotion_English: "Anxiety",
+//   },
+//   {
+//     Time: 30.0,
+//     Final_Emotion_Spanish: "Ansiedad",
+//     Final_Emotion_English: "Anxiety",
+//   },
+//   {
+//     Time: 32.48,
+//     Final_Emotion_Spanish: "Ansiedad",
+//     Final_Emotion_English: "Anxiety",
+//   },
+//   {
+//     Time: 35.0,
+//     Final_Emotion_Spanish: "Ansiedad",
+//     Final_Emotion_English: "Anxiety",
+//   },
+//   {
+//     Time: 37.52,
+//     Final_Emotion_Spanish: "Ansiedad",
+//     Final_Emotion_English: "Anxiety",
+//   },
+//   {
+//     Time: 40.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 42.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 45.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 47.52,
+//     Final_Emotion_Spanish: "Determinación",
+//     Final_Emotion_English: "Determination",
+//   },
+//   {
+//     Time: 50.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 52.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 55.0,
+//     Final_Emotion_Spanish: "Contemplación",
+//     Final_Emotion_English: "Contemplation",
+//   },
+//   {
+//     Time: 57.52,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 60.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 62.48,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 65.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 67.52,
+//     Final_Emotion_Spanish: "Amor",
+//     Final_Emotion_English: "Love",
+//   },
+//   {
+//     Time: 70.0,
+//     Final_Emotion_Spanish: "Deseo",
+//     Final_Emotion_English: "Desire",
+//   },
+//   {
+//     Time: 72.48,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 75.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 82.48,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 87.52,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 90.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 92.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 95.0,
+//     Final_Emotion_Spanish: "Determinación",
+//     Final_Emotion_English: "Determination",
+//   },
+//   {
+//     Time: 97.52,
+//     Final_Emotion_Spanish: "Calma",
+//     Final_Emotion_English: "Calm",
+//   },
+//   {
+//     Time: 100.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 102.48,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 105.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 107.52,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 110.0,
+//     Final_Emotion_Spanish: "Asombro",
+//     Final_Emotion_English: "Awe",
+//   },
+//   {
+//     Time: 112.48,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 115.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 117.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 120.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 122.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 125.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 127.52,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 130.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 132.48,
+//     Final_Emotion_Spanish: "Calma",
+//     Final_Emotion_English: "Calm",
+//   },
+//   {
+//     Time: 135.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 137.52,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 142.48,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 145.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 147.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 150.0,
+//     Final_Emotion_Spanish: "Alegría",
+//     Final_Emotion_English: "Joy",
+//   },
+//   {
+//     Time: 152.48,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 155.0,
+//     Final_Emotion_Spanish: "Determinación",
+//     Final_Emotion_English: "Determination",
+//   },
+//   {
+//     Time: 157.52,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 160.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   // Continue for the rest of the array...
+//   {
+//     Time: 162.48,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 165.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 167.52,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 170.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 172.48,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 175.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 177.52,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 180.0,
+//     Final_Emotion_Spanish: "Alegría",
+//     Final_Emotion_English: "Joy",
+//   },
+//   {
+//     Time: 187.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 190.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 192.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 195.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 197.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 200.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 202.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 205.0,
+//     Final_Emotion_Spanish: "Asombro",
+//     Final_Emotion_English: "Awe",
+//   },
+//   {
+//     Time: 207.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 210.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 212.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 215.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 217.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 220.0,
+//     Final_Emotion_Spanish: "Asombro",
+//     Final_Emotion_English: "Awe",
+//   },
+//   {
+//     Time: 222.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 225.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 227.52,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 230.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 232.48,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 235.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 237.52,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 240.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 242.48,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 245.0,
+//     Final_Emotion_Spanish: "Determinación",
+//     Final_Emotion_English: "Determination",
+//   },
+//   {
+//     Time: 247.52,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 250.0,
+//     Final_Emotion_Spanish: "Interés",
+//     Final_Emotion_English: "Interest",
+//   },
+//   {
+//     Time: 252.48,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+//   {
+//     Time: 255.0,
+//     Final_Emotion_Spanish: "Determinación",
+//     Final_Emotion_English: "Determination",
+//   },
+//   {
+//     Time: 257.52,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 260.0,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 262.48,
+//     Final_Emotion_Spanish: "Interés",
+//     Final_Emotion_English: "Interest",
+//   },
+//   {
+//     Time: 265.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 267.52,
+//     Final_Emotion_Spanish: "Satisfacción",
+//     Final_Emotion_English: "Satisfaction",
+//   },
+//   {
+//     Time: 270.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 272.48,
+//     Final_Emotion_Spanish: "Interés",
+//     Final_Emotion_English: "Interest",
+//   },
+//   {
+//     Time: 275.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 277.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 280.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 282.48,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 285.0,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 287.52,
+//     Final_Emotion_Spanish: "Confusión",
+//     Final_Emotion_English: "Confusion",
+//   },
+//   {
+//     Time: 290.0,
+//     Final_Emotion_Spanish: "Satisfacción",
+//     Final_Emotion_English: "Satisfaction",
+//   },
+//   {
+//     Time: 292.48,
+//     Final_Emotion_Spanish: "Tristeza",
+//     Final_Emotion_English: "Sadness",
+//   },
+//   {
+//     Time: 295.0,
+//     Final_Emotion_Spanish: "Concentración",
+//     Final_Emotion_English: "Concentration",
+//   },
+// ];
 
 const messages = [
   {
@@ -934,125 +934,125 @@ const messages = [
 
 // Continue the rest following the same pattern...
 
-const emotionColors: Record<string, string> = {
-  // Spanish Emotions
-  Admiración: "bg-yellow-200 text-yellow-800",
-  Adoración: "bg-pink-200 text-pink-800",
-  ApreciaciónEstética: "bg-purple-200 text-purple-800",
-  Diversión: "bg-orange-200 text-orange-800",
-  Divertido: "bg-orange-300 text-orange-900",
-  Ira: "bg-red-300 text-red-800",
-  Molestia: "bg-red-200 text-red-800",
-  Ansiedad: "bg-yellow-300 text-yellow-800",
-  Asombro: "bg-indigo-200 text-indigo-800",
-  Incomodidad: "bg-gray-200 text-gray-800",
-  Aburrimiento: "bg-gray-300 text-gray-800",
-  Calma: "bg-blue-100 text-blue-800",
-  Concentración: "bg-teal-200 text-teal-800",
-  Confusión: "bg-gray-300 text-gray-800",
-  Contemplación: "bg-teal-100 text-teal-800",
-  Desprecio: "bg-gray-400 text-gray-900",
-  Satisfacción: "bg-green-200 text-green-800",
-  Antojo: "bg-red-200 text-red-800",
-  Deseo: "bg-pink-300 text-pink-800",
-  Determinación: "bg-orange-300 text-orange-800",
-  Decepción: "bg-purple-300 text-purple-800",
-  Desaprobación: "bg-red-300 text-red-800",
-  Asco: "bg-green-300 text-green-800",
-  Angustia: "bg-red-400 text-red-800",
-  Duda: "bg-gray-300 text-gray-800",
-  Éxtasis: "bg-yellow-300 text-yellow-800",
-  Vergüenza: "bg-pink-300 text-pink-800",
-  DolorEmpático: "bg-red-300 text-red-800",
-  Entusiasmo: "bg-orange-200 text-orange-800",
-  Fascinación: "bg-purple-200 text-purple-800",
-  Envidia: "bg-green-300 text-green-800",
-  Emoción: "bg-orange-300 text-orange-800",
-  Miedo: "bg-red-300 text-red-800",
-  Gratitud: "bg-yellow-200 text-yellow-800",
-  Culpa: "bg-gray-400 text-gray-900",
-  Horror: "bg-red-400 text-red-800",
-  Interés: "bg-blue-200 text-blue-800",
-  Alegría: "bg-yellow-200 text-yellow-800",
-  Amor: "bg-pink-400 text-pink-900",
-  Nostalgia: "bg-blue-300 text-blue-800",
-  Dolor: "bg-red-300 text-red-800",
-  Orgullo: "bg-purple-300 text-purple-800",
-  Realización: "bg-blue-200 text-blue-800",
-  Alivio: "bg-green-200 text-green-800",
-  Romance: "bg-pink-300 text-pink-800",
-  Tristeza: "bg-blue-400 text-blue-900",
-  Sarcasmo: "bg-gray-300 text-gray-800",
-  SatisfacciónPlena: "bg-green-300 text-green-800",
-  VergüenzaAjena: "bg-gray-400 text-gray-900",
-  SorpresaNegativa: "bg-red-200 text-red-800",
-  SorpresaPositiva: "bg-yellow-200 text-yellow-800",
-  Simpatía: "bg-purple-200 text-purple-800",
-  Cansancio: "bg-gray-200 text-gray-800",
-  Triunfo: "bg-yellow-300 text-yellow-800",
+// const emotionColors: Record<string, string> = {
+//   // Spanish Emotions
+//   Admiración: "bg-yellow-200 text-yellow-800",
+//   Adoración: "bg-pink-200 text-pink-800",
+//   ApreciaciónEstética: "bg-purple-200 text-purple-800",
+//   Diversión: "bg-orange-200 text-orange-800",
+//   Divertido: "bg-orange-300 text-orange-900",
+//   Ira: "bg-red-300 text-red-800",
+//   Molestia: "bg-red-200 text-red-800",
+//   Ansiedad: "bg-yellow-300 text-yellow-800",
+//   Asombro: "bg-indigo-200 text-indigo-800",
+//   Incomodidad: "bg-gray-200 text-gray-800",
+//   Aburrimiento: "bg-gray-300 text-gray-800",
+//   Calma: "bg-blue-100 text-blue-800",
+//   Concentración: "bg-teal-200 text-teal-800",
+//   Confusión: "bg-gray-300 text-gray-800",
+//   Contemplación: "bg-teal-100 text-teal-800",
+//   Desprecio: "bg-gray-400 text-gray-900",
+//   Satisfacción: "bg-green-200 text-green-800",
+//   Antojo: "bg-red-200 text-red-800",
+//   Deseo: "bg-pink-300 text-pink-800",
+//   Determinación: "bg-orange-300 text-orange-800",
+//   Decepción: "bg-purple-300 text-purple-800",
+//   Desaprobación: "bg-red-300 text-red-800",
+//   Asco: "bg-green-300 text-green-800",
+//   Angustia: "bg-red-400 text-red-800",
+//   Duda: "bg-gray-300 text-gray-800",
+//   Éxtasis: "bg-yellow-300 text-yellow-800",
+//   Vergüenza: "bg-pink-300 text-pink-800",
+//   DolorEmpático: "bg-red-300 text-red-800",
+//   Entusiasmo: "bg-orange-200 text-orange-800",
+//   Fascinación: "bg-purple-200 text-purple-800",
+//   Envidia: "bg-green-300 text-green-800",
+//   Emoción: "bg-orange-300 text-orange-800",
+//   Miedo: "bg-red-300 text-red-800",
+//   Gratitud: "bg-yellow-200 text-yellow-800",
+//   Culpa: "bg-gray-400 text-gray-900",
+//   Horror: "bg-red-400 text-red-800",
+//   Interés: "bg-blue-200 text-blue-800",
+//   Alegría: "bg-yellow-200 text-yellow-800",
+//   Amor: "bg-pink-400 text-pink-900",
+//   Nostalgia: "bg-blue-300 text-blue-800",
+//   Dolor: "bg-red-300 text-red-800",
+//   Orgullo: "bg-purple-300 text-purple-800",
+//   Realización: "bg-blue-200 text-blue-800",
+//   Alivio: "bg-green-200 text-green-800",
+//   Romance: "bg-pink-300 text-pink-800",
+//   Tristeza: "bg-blue-400 text-blue-900",
+//   Sarcasmo: "bg-gray-300 text-gray-800",
+//   SatisfacciónPlena: "bg-green-300 text-green-800",
+//   VergüenzaAjena: "bg-gray-400 text-gray-900",
+//   SorpresaNegativa: "bg-red-200 text-red-800",
+//   SorpresaPositiva: "bg-yellow-200 text-yellow-800",
+//   Simpatía: "bg-purple-200 text-purple-800",
+//   Cansancio: "bg-gray-200 text-gray-800",
+//   Triunfo: "bg-yellow-300 text-yellow-800",
 
-  // English Emotions
-  Admiration: "bg-yellow-200 text-yellow-800",
-  Adoration: "bg-pink-200 text-pink-800",
-  AestheticAppreciation: "bg-purple-200 text-purple-800",
-  Amusement: "bg-orange-200 text-orange-800",
-  Amused: "bg-orange-200 text-orange-800",
+//   // English Emotions
+//   Admiration: "bg-yellow-200 text-yellow-800",
+//   Adoration: "bg-pink-200 text-pink-800",
+//   AestheticAppreciation: "bg-purple-200 text-purple-800",
+//   Amusement: "bg-orange-200 text-orange-800",
+//   Amused: "bg-orange-200 text-orange-800",
 
-  Angry: "bg-red-300 text-red-800",
-  Annoyance: "bg-red-200 text-red-800",
-  Anxiety: "bg-yellow-300 text-yellow-800",
-  Awe: "bg-indigo-200 text-indigo-800",
-  Discomfort: "bg-gray-200 text-gray-800",
-  Boredom: "bg-gray-300 text-gray-800",
-  Calm: "bg-blue-100 text-blue-800",
-  Concentration: "bg-teal-200 text-teal-800",
-  Confusion: "bg-gray-300 text-gray-800",
-  Contemplation: "bg-teal-100 text-teal-800",
-  Contempt: "bg-gray-400 text-gray-900",
-  Satisfaction: "bg-green-200 text-green-800",
-  Craving: "bg-red-200 text-red-800",
-  Desire: "bg-pink-300 text-pink-800",
-  Determination: "bg-orange-300 text-orange-800",
-  Disappointment: "bg-purple-300 text-purple-800",
-  Disapproval: "bg-red-300 text-red-800",
-  Disgust: "bg-green-300 text-green-800",
-  Distress: "bg-red-400 text-red-800",
-  Doubt: "bg-gray-300 text-gray-800",
-  Ecstasy: "bg-yellow-300 text-yellow-800",
-  Embarrassment: "bg-pink-300 text-pink-800",
-  EmpatheticPain: "bg-red-300 text-red-800",
-  Enthusiasm: "bg-orange-200 text-orange-800",
-  Fascination: "bg-purple-200 text-purple-800",
-  Envy: "bg-green-300 text-green-800",
-  Excitement: "bg-orange-300 text-orange-800",
-  Fear: "bg-red-300 text-red-800",
-  Gratitude: "bg-yellow-200 text-yellow-800",
-  Guilt: "bg-gray-400 text-gray-900",
-  Interest: "bg-blue-200 text-blue-800",
-  Joy: "bg-yellow-200 text-yellow-800",
-  Love: "bg-pink-400 text-pink-900",
-  Pain: "bg-red-300 text-red-800",
-  Pride: "bg-purple-300 text-purple-800",
-  Achievement: "bg-blue-200 text-blue-800",
-  Relief: "bg-green-200 text-green-800",
-  Sadness: "bg-blue-400 text-blue-900",
-  Sarcasm: "bg-gray-300 text-gray-800",
-  Fulfillment: "bg-green-300 text-green-800",
-  Sympathy: "bg-purple-200 text-purple-800",
-  Tiredness: "bg-gray-200 text-gray-800",
-  Triumph: "bg-yellow-300 text-yellow-800",
+//   Angry: "bg-red-300 text-red-800",
+//   Annoyance: "bg-red-200 text-red-800",
+//   Anxiety: "bg-yellow-300 text-yellow-800",
+//   Awe: "bg-indigo-200 text-indigo-800",
+//   Discomfort: "bg-gray-200 text-gray-800",
+//   Boredom: "bg-gray-300 text-gray-800",
+//   Calm: "bg-blue-100 text-blue-800",
+//   Concentration: "bg-teal-200 text-teal-800",
+//   Confusion: "bg-gray-300 text-gray-800",
+//   Contemplation: "bg-teal-100 text-teal-800",
+//   Contempt: "bg-gray-400 text-gray-900",
+//   Satisfaction: "bg-green-200 text-green-800",
+//   Craving: "bg-red-200 text-red-800",
+//   Desire: "bg-pink-300 text-pink-800",
+//   Determination: "bg-orange-300 text-orange-800",
+//   Disappointment: "bg-purple-300 text-purple-800",
+//   Disapproval: "bg-red-300 text-red-800",
+//   Disgust: "bg-green-300 text-green-800",
+//   Distress: "bg-red-400 text-red-800",
+//   Doubt: "bg-gray-300 text-gray-800",
+//   Ecstasy: "bg-yellow-300 text-yellow-800",
+//   Embarrassment: "bg-pink-300 text-pink-800",
+//   EmpatheticPain: "bg-red-300 text-red-800",
+//   Enthusiasm: "bg-orange-200 text-orange-800",
+//   Fascination: "bg-purple-200 text-purple-800",
+//   Envy: "bg-green-300 text-green-800",
+//   Excitement: "bg-orange-300 text-orange-800",
+//   Fear: "bg-red-300 text-red-800",
+//   Gratitude: "bg-yellow-200 text-yellow-800",
+//   Guilt: "bg-gray-400 text-gray-900",
+//   Interest: "bg-blue-200 text-blue-800",
+//   Joy: "bg-yellow-200 text-yellow-800",
+//   Love: "bg-pink-400 text-pink-900",
+//   Pain: "bg-red-300 text-red-800",
+//   Pride: "bg-purple-300 text-purple-800",
+//   Achievement: "bg-blue-200 text-blue-800",
+//   Relief: "bg-green-200 text-green-800",
+//   Sadness: "bg-blue-400 text-blue-900",
+//   Sarcasm: "bg-gray-300 text-gray-800",
+//   Fulfillment: "bg-green-300 text-green-800",
+//   Sympathy: "bg-purple-200 text-purple-800",
+//   Tiredness: "bg-gray-200 text-gray-800",
+//   Triumph: "bg-yellow-300 text-yellow-800",
 
-  // Default Color
-  Predeterminado: "bg-gray-100 text-gray-800",
-  Default: "bg-gray-100 text-gray-800",
-};
+//   // Default Color
+//   Predeterminado: "bg-gray-100 text-gray-800",
+//   Default: "bg-gray-100 text-gray-800",
+// };
 
 export default function VideoAnalysisDashboard() {
   const [player, setPlayer] = useState<YT.Player | null>(null);
 
   const [currentSummary, setCurrentSummary] = useState("");
   const [currentMessage, setCurrentMessage] = useState<string | null>(null);
-  const [currentEmotion, setCurrentEmotion] = useState("Neutral");
+  // const [currentEmotion, setCurrentEmotion] = useState("Neutral");
   const [isEnglish, setIsEnglish] = useState(false); // Boolean for translation
   // const videoRef = useRef<HTMLVideoElement>(null);
   const {
@@ -1134,26 +1134,26 @@ export default function VideoAnalysisDashboard() {
       );
     };
 
-    const findCurrentEmotion = () => {
-      const closestEmotion = emotions.reduce((prev, curr) =>
-        Math.abs(curr.Time - currentTime) < Math.abs(prev.Time - currentTime)
-          ? curr
-          : prev
-      );
-      setCurrentEmotion(
-        closestEmotion
-          ? isEnglish
-            ? closestEmotion.Final_Emotion_English
-            : closestEmotion.Final_Emotion_Spanish
-          : isEnglish
-            ? "Neutral"
-            : "Neutral"
-      );
-    };
+    // const findCurrentEmotion = () => {
+    //   const closestEmotion = emotions.reduce((prev, curr) =>
+    //     Math.abs(curr.Time - currentTime) < Math.abs(prev.Time - currentTime)
+    //       ? curr
+    //       : prev
+    //   );
+    //   setCurrentEmotion(
+    //     closestEmotion
+    //       ? isEnglish
+    //         ? closestEmotion.Final_Emotion_English
+    //         : closestEmotion.Final_Emotion_Spanish
+    //       : isEnglish
+    //         ? "Neutral"
+    //         : "Neutral"
+    //   );
+    // };
 
     findCurrentSummary();
     findCurrentMessage();
-    findCurrentEmotion();
+    // findCurrentEmotion();
   }, [
     currentTime,
     isEnglish,
@@ -1195,9 +1195,7 @@ export default function VideoAnalysisDashboard() {
         >
           <header className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-semibold text-[#4A4A4A]">
-              {isEnglish
-                ? "Video Analysis Dashboard"
-                : "Panel de Análisis de Video"}
+              {isEnglish ? "Video Insights " : "Análisis de Video"}
             </h1>
             <Button
               onClick={toggleTranslation}
@@ -1224,18 +1222,26 @@ export default function VideoAnalysisDashboard() {
                   <YouTube
                     videoId={YOUTUBE_VIDEO_ID}
                     onReady={(event: YouTubeEvent) => {
-                      setPlayer(event.target); // Store the player instance
+                      setPlayer(event.target); // Access the player instance
                       handlePlayerReady(event);
                     }}
-                    onStateChange={handlePlayerStateChange} // Attach the state change handler
+                    onStateChange={(event: YT.OnStateChangeEvent) => {
+                      handlePlayerStateChange(event);
+                      if (event.data === 0) {
+                        // YouTube Player State 'Ended'
+                        setIsVideoEnded(true);
+                      }
+                    }}
                     opts={{
                       height: "100%",
                       width: "100%",
                       playerVars: {
                         autoplay: 0, // Prevent autoplay
                         controls: 0, // Disable native YouTube controls
-                        modestbranding: 1, // Minimal branding
-                        rel: 0, // Disable related videos
+                        modestbranding: 1, // Enable minimal YouTube branding
+                        rel: 0, // Restrict related videos to the same channel
+                        showinfo: 0, // Hide video info
+                        end: 0, // Specify an endpoint if you want the video to stop early
                       },
                     }}
                     className="w-full h-full"
@@ -1273,7 +1279,7 @@ export default function VideoAnalysisDashboard() {
               </motion.div>
 
               {/* Current Emotion */}
-              <div
+              {/* <div
                 className={`bg-[#F5F5F5] rounded-3xl shadow-inner p-4 text-lg font-semibold ${
                   emotionColors[currentEmotion] || emotionColors["Neutral"]
                 }`}
@@ -1281,7 +1287,7 @@ export default function VideoAnalysisDashboard() {
                 {isEnglish
                   ? `Current Emotion: ${currentEmotion}`
                   : `Emoción Actual: ${currentEmotion}`}
-              </div>
+              </div> */}
 
               {/* Transcript */}
               <motion.div className="bg-[#F5F5F5] rounded-3xl shadow-inner p-4 mt-6">

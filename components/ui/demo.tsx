@@ -44,912 +44,912 @@ const summaries = [
   },
 ];
 
-const emotions = [
-  {
-    Time: 2.5025,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 5.005,
-    Final_Emotion: "Contempt",
-  },
-  {
-    Time: 29.988291666666665,
-    Final_Emotion: "Joy",
-  },
-  {
-    Time: 29.988291666666665,
-    Final_Emotion: "Contempt",
-  },
-  {
-    Time: 32.49079166666667,
-    Final_Emotion: "Contempt",
-  },
-  {
-    Time: 34.993291666666664,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 37.49579166666666,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 39.99829166666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 45.00329166666666,
-    Final_Emotion: "Contempt",
-  },
-  {
-    Time: 50.008291666666665,
-    Final_Emotion: "Calmness",
-  },
-  {
-    Time: 52.51079166666666,
-    Final_Emotion: "Contempt",
-  },
-  {
-    Time: 55.01329166666666,
-    Final_Emotion: "Nostalgia",
-  },
-  {
-    Time: 57.515791666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 60.01829166666666,
-    Final_Emotion: "Nostalgia",
-  },
-  {
-    Time: 62.52079166666666,
-    Final_Emotion: "Amusement",
-  },
-  {
-    Time: 64.98158333333333,
-    Final_Emotion: "Interest",
-  },
-  {
-    Time: 67.48408333333333,
-    Final_Emotion: "Tiredness",
-  },
-  {
-    Time: 69.98658333333333,
-    Final_Emotion: "Joy",
-  },
-  {
-    Time: 72.48908333333333,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 74.99158333333332,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 77.49408333333332,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 79.99658333333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 82.49908333333333,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 85.00158333333333,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 92.50908333333332,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 95.01158333333332,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 97.51408333333332,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 100.01658333333332,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 102.51908333333331,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 104.979875,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 107.482375,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 109.984875,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 112.487375,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 114.989875,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 117.492375,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 119.994875,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 122.497375,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 124.999875,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 127.502375,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 130.004875,
-    Final_Emotion: "Joy",
-  },
-  {
-    Time: 132.507375,
-    Final_Emotion: "Amusement",
-  },
-  {
-    Time: 135.009875,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 137.512375,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 140.014875,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 142.517375,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 145.01987499999998,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 147.48066666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 149.98316666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 152.48566666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 154.98816666666664,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 157.49066666666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 159.99316666666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 162.49566666666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 164.99816666666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 167.50066666666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 170.00316666666666,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 172.50566666666666,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 175.00816666666665,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 177.51066666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 177.51066666666665,
-    Final_Emotion: "Distress",
-  },
-  {
-    Time: 180.01316666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 185.01816666666664,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 187.52066666666664,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 187.52066666666664,
-    Final_Emotion: "Distress",
-  },
-  {
-    Time: 189.9814583333333,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 192.48395833333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 194.98645833333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 197.48895833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 199.99145833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 202.49395833333327,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 204.9964583333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 207.4989583333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 210.0014583333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 212.5039583333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 215.0064583333333,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 217.5089583333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 220.0114583333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 222.5139583333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 225.0164583333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 227.51895833333333,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 229.97975,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 232.48225,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 234.98475,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 234.98475,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 237.48725,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 239.98975,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 242.49225,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 244.99475,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 247.49725,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 249.99975,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 252.50225,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 255.00475,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 257.50725,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 260.00975,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 262.51225,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 265.01475,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 267.51725,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 270.01975,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 272.4805416666666,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 274.9830416666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 277.4855416666666,
-    Final_Emotion: "Desire",
-  },
-  {
-    Time: 279.9880416666667,
-    Final_Emotion: "Interest",
-  },
-  {
-    Time: 282.4905416666667,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 284.99304166666667,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 287.49554166666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 289.99804166666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 292.50054166666666,
-    Final_Emotion: "Awe",
-  },
-  {
-    Time: 295.00304166666666,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 297.50554166666666,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 300.00804166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 302.51054166666665,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 307.51554166666665,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 310.01804166666665,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 312.52054166666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 314.98133333333334,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 317.48383333333334,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 319.98633333333333,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 322.48883333333333,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 324.99133333333333,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 327.4938333333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 329.9963333333333,
-    Final_Emotion: "Pain",
-  },
-  {
-    Time: 332.4988333333333,
-    Final_Emotion: "Desire",
-  },
-  {
-    Time: 335.0013333333333,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 337.5038333333333,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 340.0063333333333,
-    Final_Emotion: "Interest",
-  },
-  {
-    Time: 345.0113333333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 347.5138333333333,
-    Final_Emotion: "Nostalgia",
-  },
-  {
-    Time: 350.0163333333333,
-    Final_Emotion: "Nostalgia",
-  },
-  {
-    Time: 352.5188333333333,
-    Final_Emotion: "Nostalgia",
-  },
-  {
-    Time: 354.979625,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 357.482125,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 359.984625,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 362.487125,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 364.989625,
-    Final_Emotion: "Boredom",
-  },
-  {
-    Time: 367.492125,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 369.994625,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 374.999625,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 377.502125,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 380.004625,
-    Final_Emotion: "Empathic Pain",
-  },
-  {
-    Time: 382.507125,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 385.009625,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 387.512125,
-    Final_Emotion: "Annoyance",
-  },
-  {
-    Time: 390.014625,
-    Final_Emotion: "Distress",
-  },
-  {
-    Time: 392.517125,
-    Final_Emotion: "Annoyance",
-  },
-  {
-    Time: 395.019625,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 397.48041666666666,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 402.48541666666665,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 404.98791666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 407.49041666666665,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 409.9929166666666,
-    Final_Emotion: "Awe",
-  },
-  {
-    Time: 412.4954166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 414.9979166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 417.5004166666666,
-    Final_Emotion: "Distress",
-  },
-  {
-    Time: 420.0029166666666,
-    Final_Emotion: "Disappointment",
-  },
-  {
-    Time: 422.5054166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 425.0079166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 427.5104166666666,
-    Final_Emotion: "Calmness",
-  },
-  {
-    Time: 430.0129166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 432.5154166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 435.0179166666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 437.5204166666666,
-    Final_Emotion: "Calmness",
-  },
-  {
-    Time: 439.9812083333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 442.4837083333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 444.9862083333333,
-    Final_Emotion: "Love",
-  },
-  {
-    Time: 447.4887083333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 449.9912083333333,
-    Final_Emotion: "Love",
-  },
-  {
-    Time: 452.4937083333333,
-    Final_Emotion: "Nostalgia",
-  },
-  {
-    Time: 454.9962083333333,
-    Final_Emotion: "Tiredness",
-  },
-  {
-    Time: 457.4987083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 460.0012083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 460.0012083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 462.5037083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 465.0062083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 467.5087083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 470.0112083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 472.5137083333333,
-    Final_Emotion: "Disapproval",
-  },
-  {
-    Time: 475.0162083333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 477.5187083333333,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 479.9795,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 482.482,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 484.9845,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 487.487,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 489.9895,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 492.492,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 494.9945,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 497.497,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 499.9995,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 502.502,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 505.0045,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 510.0095,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 512.512,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 515.0145,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 517.5169999999999,
-    Final_Emotion: "Horror",
-  },
-  {
-    Time: 520.0195,
-    Final_Emotion: "Tiredness",
-  },
-  {
-    Time: 520.0195,
-    Final_Emotion: "Distress",
-  },
-  {
-    Time: 522.4802916666666,
-    Final_Emotion: "Distress",
-  },
-  {
-    Time: 524.9827916666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 527.4852916666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 529.9877916666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 532.4902916666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 534.9927916666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 534.9927916666667,
-    Final_Emotion: "Pain",
-  },
-  {
-    Time: 537.4952916666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 539.9977916666667,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 542.5002916666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 545.0027916666667,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 547.5052916666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 550.0077916666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 552.5102916666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 555.0127916666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 557.5152916666666,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 560.0177916666667,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 562.5202916666666,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 564.9810833333333,
-    Final_Emotion: "Concentration",
-  },
-  {
-    Time: 567.4835833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 569.9860833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 572.4885833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 574.9910833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 577.4935833333333,
-    Final_Emotion: "Desire",
-  },
-  {
-    Time: 579.9960833333333,
-    Final_Emotion: "Desire",
-  },
-  {
-    Time: 582.4985833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 585.0010833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 587.5035833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 590.0060833333333,
-    Final_Emotion: "Confusion",
-  },
-  {
-    Time: 592.5085833333333,
-    Final_Emotion: "Contemplation",
-  },
-  {
-    Time: 595.0110833333333,
-    Final_Emotion: "Confusion",
-  },
-];
+// const emotions = [
+//   {
+//     Time: 2.5025,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 5.005,
+//     Final_Emotion: "Contempt",
+//   },
+//   {
+//     Time: 29.988291666666665,
+//     Final_Emotion: "Joy",
+//   },
+//   {
+//     Time: 29.988291666666665,
+//     Final_Emotion: "Contempt",
+//   },
+//   {
+//     Time: 32.49079166666667,
+//     Final_Emotion: "Contempt",
+//   },
+//   {
+//     Time: 34.993291666666664,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 37.49579166666666,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 39.99829166666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 45.00329166666666,
+//     Final_Emotion: "Contempt",
+//   },
+//   {
+//     Time: 50.008291666666665,
+//     Final_Emotion: "Calmness",
+//   },
+//   {
+//     Time: 52.51079166666666,
+//     Final_Emotion: "Contempt",
+//   },
+//   {
+//     Time: 55.01329166666666,
+//     Final_Emotion: "Nostalgia",
+//   },
+//   {
+//     Time: 57.515791666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 60.01829166666666,
+//     Final_Emotion: "Nostalgia",
+//   },
+//   {
+//     Time: 62.52079166666666,
+//     Final_Emotion: "Amusement",
+//   },
+//   {
+//     Time: 64.98158333333333,
+//     Final_Emotion: "Interest",
+//   },
+//   {
+//     Time: 67.48408333333333,
+//     Final_Emotion: "Tiredness",
+//   },
+//   {
+//     Time: 69.98658333333333,
+//     Final_Emotion: "Joy",
+//   },
+//   {
+//     Time: 72.48908333333333,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 74.99158333333332,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 77.49408333333332,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 79.99658333333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 82.49908333333333,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 85.00158333333333,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 92.50908333333332,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 95.01158333333332,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 97.51408333333332,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 100.01658333333332,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 102.51908333333331,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 104.979875,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 107.482375,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 109.984875,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 112.487375,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 114.989875,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 117.492375,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 119.994875,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 122.497375,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 124.999875,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 127.502375,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 130.004875,
+//     Final_Emotion: "Joy",
+//   },
+//   {
+//     Time: 132.507375,
+//     Final_Emotion: "Amusement",
+//   },
+//   {
+//     Time: 135.009875,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 137.512375,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 140.014875,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 142.517375,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 145.01987499999998,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 147.48066666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 149.98316666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 152.48566666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 154.98816666666664,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 157.49066666666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 159.99316666666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 162.49566666666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 164.99816666666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 167.50066666666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 170.00316666666666,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 172.50566666666666,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 175.00816666666665,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 177.51066666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 177.51066666666665,
+//     Final_Emotion: "Distress",
+//   },
+//   {
+//     Time: 180.01316666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 185.01816666666664,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 187.52066666666664,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 187.52066666666664,
+//     Final_Emotion: "Distress",
+//   },
+//   {
+//     Time: 189.9814583333333,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 192.48395833333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 194.98645833333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 197.48895833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 199.99145833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 202.49395833333327,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 204.9964583333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 207.4989583333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 210.0014583333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 212.5039583333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 215.0064583333333,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 217.5089583333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 220.0114583333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 222.5139583333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 225.0164583333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 227.51895833333333,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 229.97975,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 232.48225,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 234.98475,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 234.98475,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 237.48725,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 239.98975,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 242.49225,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 244.99475,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 247.49725,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 249.99975,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 252.50225,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 255.00475,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 257.50725,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 260.00975,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 262.51225,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 265.01475,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 267.51725,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 270.01975,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 272.4805416666666,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 274.9830416666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 277.4855416666666,
+//     Final_Emotion: "Desire",
+//   },
+//   {
+//     Time: 279.9880416666667,
+//     Final_Emotion: "Interest",
+//   },
+//   {
+//     Time: 282.4905416666667,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 284.99304166666667,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 287.49554166666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 289.99804166666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 292.50054166666666,
+//     Final_Emotion: "Awe",
+//   },
+//   {
+//     Time: 295.00304166666666,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 297.50554166666666,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 300.00804166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 302.51054166666665,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 307.51554166666665,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 310.01804166666665,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 312.52054166666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 314.98133333333334,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 317.48383333333334,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 319.98633333333333,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 322.48883333333333,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 324.99133333333333,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 327.4938333333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 329.9963333333333,
+//     Final_Emotion: "Pain",
+//   },
+//   {
+//     Time: 332.4988333333333,
+//     Final_Emotion: "Desire",
+//   },
+//   {
+//     Time: 335.0013333333333,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 337.5038333333333,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 340.0063333333333,
+//     Final_Emotion: "Interest",
+//   },
+//   {
+//     Time: 345.0113333333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 347.5138333333333,
+//     Final_Emotion: "Nostalgia",
+//   },
+//   {
+//     Time: 350.0163333333333,
+//     Final_Emotion: "Nostalgia",
+//   },
+//   {
+//     Time: 352.5188333333333,
+//     Final_Emotion: "Nostalgia",
+//   },
+//   {
+//     Time: 354.979625,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 357.482125,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 359.984625,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 362.487125,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 364.989625,
+//     Final_Emotion: "Boredom",
+//   },
+//   {
+//     Time: 367.492125,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 369.994625,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 374.999625,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 377.502125,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 380.004625,
+//     Final_Emotion: "Empathic Pain",
+//   },
+//   {
+//     Time: 382.507125,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 385.009625,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 387.512125,
+//     Final_Emotion: "Annoyance",
+//   },
+//   {
+//     Time: 390.014625,
+//     Final_Emotion: "Distress",
+//   },
+//   {
+//     Time: 392.517125,
+//     Final_Emotion: "Annoyance",
+//   },
+//   {
+//     Time: 395.019625,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 397.48041666666666,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 402.48541666666665,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 404.98791666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 407.49041666666665,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 409.9929166666666,
+//     Final_Emotion: "Awe",
+//   },
+//   {
+//     Time: 412.4954166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 414.9979166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 417.5004166666666,
+//     Final_Emotion: "Distress",
+//   },
+//   {
+//     Time: 420.0029166666666,
+//     Final_Emotion: "Disappointment",
+//   },
+//   {
+//     Time: 422.5054166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 425.0079166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 427.5104166666666,
+//     Final_Emotion: "Calmness",
+//   },
+//   {
+//     Time: 430.0129166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 432.5154166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 435.0179166666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 437.5204166666666,
+//     Final_Emotion: "Calmness",
+//   },
+//   {
+//     Time: 439.9812083333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 442.4837083333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 444.9862083333333,
+//     Final_Emotion: "Love",
+//   },
+//   {
+//     Time: 447.4887083333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 449.9912083333333,
+//     Final_Emotion: "Love",
+//   },
+//   {
+//     Time: 452.4937083333333,
+//     Final_Emotion: "Nostalgia",
+//   },
+//   {
+//     Time: 454.9962083333333,
+//     Final_Emotion: "Tiredness",
+//   },
+//   {
+//     Time: 457.4987083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 460.0012083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 460.0012083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 462.5037083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 465.0062083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 467.5087083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 470.0112083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 472.5137083333333,
+//     Final_Emotion: "Disapproval",
+//   },
+//   {
+//     Time: 475.0162083333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 477.5187083333333,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 479.9795,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 482.482,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 484.9845,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 487.487,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 489.9895,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 492.492,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 494.9945,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 497.497,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 499.9995,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 502.502,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 505.0045,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 510.0095,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 512.512,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 515.0145,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 517.5169999999999,
+//     Final_Emotion: "Horror",
+//   },
+//   {
+//     Time: 520.0195,
+//     Final_Emotion: "Tiredness",
+//   },
+//   {
+//     Time: 520.0195,
+//     Final_Emotion: "Distress",
+//   },
+//   {
+//     Time: 522.4802916666666,
+//     Final_Emotion: "Distress",
+//   },
+//   {
+//     Time: 524.9827916666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 527.4852916666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 529.9877916666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 532.4902916666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 534.9927916666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 534.9927916666667,
+//     Final_Emotion: "Pain",
+//   },
+//   {
+//     Time: 537.4952916666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 539.9977916666667,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 542.5002916666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 545.0027916666667,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 547.5052916666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 550.0077916666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 552.5102916666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 555.0127916666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 557.5152916666666,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 560.0177916666667,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 562.5202916666666,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 564.9810833333333,
+//     Final_Emotion: "Concentration",
+//   },
+//   {
+//     Time: 567.4835833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 569.9860833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 572.4885833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 574.9910833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 577.4935833333333,
+//     Final_Emotion: "Desire",
+//   },
+//   {
+//     Time: 579.9960833333333,
+//     Final_Emotion: "Desire",
+//   },
+//   {
+//     Time: 582.4985833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 585.0010833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 587.5035833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 590.0060833333333,
+//     Final_Emotion: "Confusion",
+//   },
+//   {
+//     Time: 592.5085833333333,
+//     Final_Emotion: "Contemplation",
+//   },
+//   {
+//     Time: 595.0110833333333,
+//     Final_Emotion: "Confusion",
+//   },
+// ];
 
 const messages = [
   {
@@ -1673,63 +1673,63 @@ const messages = [
     text: " I was in some pretty abusive relationships.",
   },
 ];
-const emotionColors: Record<string, string> = {
-  Admiration: "bg-yellow-200 text-yellow-900",
-  Adoration: "bg-pink-200 text-pink-900",
-  Aesthetic_Appreciation: "bg-purple-200 text-purple-900",
-  Amusement: "bg-orange-200 text-orange-900",
-  Anger: "bg-red-300 text-red-900",
-  Annoyance: "bg-red-200 text-red-900",
-  Anxiety: "bg-yellow-300 text-yellow-900",
-  Awe: "bg-indigo-200 text-indigo-900",
-  Awkwardness: "bg-gray-200 text-gray-900",
-  Boredom: "bg-gray-300 text-gray-900",
-  Calmness: "bg-blue-50 text-blue-900",
-  Concentration: "bg-teal-200 text-teal-900",
-  Confusion: "bg-gray-300 text-gray-900",
-  Contemplation: "bg-teal-100 text-teal-900",
-  Contempt: "bg-gray-400 text-gray-900",
-  Contentment: "bg-green-200 text-green-900",
-  Craving: "bg-red-200 text-red-900",
-  Desire: "bg-pink-300 text-pink-900",
-  Determination: "bg-orange-300 text-orange-900",
-  Disappointment: "bg-purple-300 text-purple-900",
-  Disapproval: "bg-red-300 text-red-900",
-  Disgust: "bg-green-300 text-green-900",
-  Distress: "bg-red-400 text-red-900",
-  Doubt: "bg-gray-300 text-gray-900",
-  Ecstasy: "bg-yellow-300 text-yellow-900",
-  Embarrassment: "bg-pink-300 text-pink-900",
-  Empathic_Pain: "bg-purple-300 text-purple-900",
-  Enthusiasm: "bg-orange-200 text-orange-900",
-  Entrancement: "bg-purple-200 text-purple-900",
-  Envy: "bg-green-300 text-green-900",
-  Excitement: "bg-orange-300 text-orange-900",
-  Fear: "bg-red-300 text-red-900",
-  Gratitude: "bg-yellow-200 text-yellow-900",
-  Guilt: "bg-gray-400 text-gray-900",
-  Horror: "bg-red-300 text-red-900",
-  Interest: "bg-blue-200 text-blue-900",
-  Joy: "bg-yellow-200 text-yellow-900",
-  Love: "bg-pink-400 text-pink-900",
-  Nostalgia: "bg-blue-300 text-blue-900",
-  Pain: "bg-red-300 text-red-900",
-  Pride: "bg-purple-300 text-purple-900",
-  Realization: "bg-blue-200 text-blue-900",
-  Relief: "bg-green-200 text-green-900",
-  Romance: "bg-pink-300 text-pink-900",
-  Sadness: "bg-blue-400 text-blue-900",
-  Sarcasm: "bg-gray-300 text-gray-900",
-  Satisfaction: "bg-green-300 text-green-900",
-  Shame: "bg-gray-500 text-gray-900",
-  Surprise_Negative: "bg-red-200 text-red-900",
-  Surprise_Positive: "bg-yellow-200 text-yellow-900",
-  Sympathy: "bg-purple-200 text-purple-900",
-  Tiredness: "bg-gray-200 text-gray-900",
-  Triumph: "bg-yellow-300 text-yellow-900",
-  // Fallback color to avoid errors
-  Neutral: "bg-orange-200 text-orange-900",
-};
+// const emotionColors: Record<string, string> = {
+//   Admiration: "bg-yellow-200 text-yellow-900",
+//   Adoration: "bg-pink-200 text-pink-900",
+//   Aesthetic_Appreciation: "bg-purple-200 text-purple-900",
+//   Amusement: "bg-orange-200 text-orange-900",
+//   Anger: "bg-red-300 text-red-900",
+//   Annoyance: "bg-red-200 text-red-900",
+//   Anxiety: "bg-yellow-300 text-yellow-900",
+//   Awe: "bg-indigo-200 text-indigo-900",
+//   Awkwardness: "bg-gray-200 text-gray-900",
+//   Boredom: "bg-gray-300 text-gray-900",
+//   Calmness: "bg-blue-50 text-blue-900",
+//   Concentration: "bg-teal-200 text-teal-900",
+//   Confusion: "bg-gray-300 text-gray-900",
+//   Contemplation: "bg-teal-100 text-teal-900",
+//   Contempt: "bg-gray-400 text-gray-900",
+//   Contentment: "bg-green-200 text-green-900",
+//   Craving: "bg-red-200 text-red-900",
+//   Desire: "bg-pink-300 text-pink-900",
+//   Determination: "bg-orange-300 text-orange-900",
+//   Disappointment: "bg-purple-300 text-purple-900",
+//   Disapproval: "bg-red-300 text-red-900",
+//   Disgust: "bg-green-300 text-green-900",
+//   Distress: "bg-red-400 text-red-900",
+//   Doubt: "bg-gray-300 text-gray-900",
+//   Ecstasy: "bg-yellow-300 text-yellow-900",
+//   Embarrassment: "bg-pink-300 text-pink-900",
+//   Empathic_Pain: "bg-purple-300 text-purple-900",
+//   Enthusiasm: "bg-orange-200 text-orange-900",
+//   Entrancement: "bg-purple-200 text-purple-900",
+//   Envy: "bg-green-300 text-green-900",
+//   Excitement: "bg-orange-300 text-orange-900",
+//   Fear: "bg-red-300 text-red-900",
+//   Gratitude: "bg-yellow-200 text-yellow-900",
+//   Guilt: "bg-gray-400 text-gray-900",
+//   Horror: "bg-red-300 text-red-900",
+//   Interest: "bg-blue-200 text-blue-900",
+//   Joy: "bg-yellow-200 text-yellow-900",
+//   Love: "bg-pink-400 text-pink-900",
+//   Nostalgia: "bg-blue-300 text-blue-900",
+//   Pain: "bg-red-300 text-red-900",
+//   Pride: "bg-purple-300 text-purple-900",
+//   Realization: "bg-blue-200 text-blue-900",
+//   Relief: "bg-green-200 text-green-900",
+//   Romance: "bg-pink-300 text-pink-900",
+//   Sadness: "bg-blue-400 text-blue-900",
+//   Sarcasm: "bg-gray-300 text-gray-900",
+//   Satisfaction: "bg-green-300 text-green-900",
+//   Shame: "bg-gray-500 text-gray-900",
+//   Surprise_Negative: "bg-red-200 text-red-900",
+//   Surprise_Positive: "bg-yellow-200 text-yellow-900",
+//   Sympathy: "bg-purple-200 text-purple-900",
+//   Tiredness: "bg-gray-200 text-gray-900",
+//   Triumph: "bg-yellow-300 text-yellow-900",
+//   // Fallback color to avoid errors
+//   Neutral: "bg-orange-200 text-orange-900",
+// };
 
 export default function VideoAnalysisYouTubeDashboard() {
   const [player, setPlayer] = useState<YT.Player | null>(null);
@@ -1797,14 +1797,14 @@ export default function VideoAnalysisYouTubeDashboard() {
     return summary ? summary.Psychometric_Summary : "No summary available.";
   };
 
-  const findCurrentEmotion = () => {
-    const closestEmotion = emotions.reduce((prev, curr) =>
-      Math.abs(curr.Time - currentTime) < Math.abs(prev.Time - currentTime)
-        ? curr
-        : prev
-    );
-    return closestEmotion ? closestEmotion.Final_Emotion : "Neutral";
-  };
+  // const findCurrentEmotion = () => {
+  //   const closestEmotion = emotions.reduce((prev, curr) =>
+  //     Math.abs(curr.Time - currentTime) < Math.abs(prev.Time - currentTime)
+  //       ? curr
+  //       : prev
+  //   );
+  //   return closestEmotion ? closestEmotion.Final_Emotion : "Neutral";
+  // };
 
   const findCurrentMessage = () => {
     const message = messages.find(
@@ -1824,7 +1824,7 @@ export default function VideoAnalysisYouTubeDashboard() {
         >
           <header className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-semibold text-[#2A6F97]">
-              YouTube Video Analysis Dashboard
+              Video Insights
             </h1>
           </header>
 
@@ -1857,7 +1857,7 @@ export default function VideoAnalysisYouTubeDashboard() {
                       playerVars: {
                         autoplay: 0, // Prevent autoplay
                         controls: 0, // Disable native YouTube controls
-                        modestbranding: 1, // Minimal YouTube branding
+                        modestbranding: 0, // Minimal YouTube branding
                         rel: 0, // Disable related videos
                         showinfo: 0, // Disable video info
                       },
@@ -1898,14 +1898,14 @@ export default function VideoAnalysisYouTubeDashboard() {
               </motion.div>
 
               {/* Current Emotion */}
-              <div
+              {/* <div
                 className={`bg-[#F5F5F5] rounded-3xl shadow-inner p-4 text-lg font-semibold ${
                   emotionColors[findCurrentEmotion()] ||
                   emotionColors["Neutral"]
                 }`}
               >
                 Current Emotion: {findCurrentEmotion()}
-              </div>
+              </div> */}
 
               {/* Transcript */}
               <motion.div className="bg-[#F5F5F5] rounded-3xl shadow-inner p-4 mt-6">

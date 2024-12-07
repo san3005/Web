@@ -9,7 +9,7 @@ import Image from "next/image"; // Changed from {Image}
 const menuItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Features", href: "#features" },
+  // { name: "Features", href: "#features" },
   { name: "How it Works", href: "#HowItworks" },
 ];
 
@@ -57,11 +57,11 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-black">
               <Image
-                className="w-auto h-8"
-                src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/logo.svg"
+                className="w-[4rem] h-15"
+                src="/logo1.jpg"
                 alt="logo"
-                width={500}
-                height={300}
+                width={800}
+                height={700}
               />
             </Link>
           </div>

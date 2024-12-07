@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { BorderBeam } from "@/components/ui/border-beam"; // Adjust path as necessary
 
 const linearGradients = ["linear-gradient(to bottom right, #C4B5FD, #E0C3FC)"];
 export const StickyScroll = ({
@@ -17,7 +16,6 @@ export const StickyScroll = ({
       title: "Multi-Modal Analysis",
       description:
         "Capture emotional nuances from both visual and audio cues, providing a more comprehensive view of mental health. By analyzing facial expressions, vocal tone, and speech patterns, the system captures complex emotional states that contribute to a holistic understanding of mental health.",
-      component: <BorderBeam />,
     },
     {
       title: "Session Summaries",
@@ -28,7 +26,6 @@ export const StickyScroll = ({
       title: "AI-Powered Psychometric Insights",
       description:
         "Leverage advanced AI-driven psychometric insights to gain a deeper understanding of emotional and behavioral patterns. The system provides interpretations based on emotional and behavioral data, helping practitioners and patients uncover underlying psychological factors, and offering a new perspective on mental health.",
-      component: <BorderBeam />, // White background component for the second car
     },
   ];
 
@@ -95,11 +92,11 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-60 w-80 rounded-md sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
-        {content[activeCard].component ?? null}
+        {/* Content without BorderBeam */}
       </div>
     </motion.div>
   );

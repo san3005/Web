@@ -7,11 +7,16 @@ import { db } from "../../lib/firebase";
 import { ConfirmationModal } from "@/components/ui/feedbackmodal";
 
 const FeedbackForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const [name, setName] = useState(""); // New state for name
   const [feedback, setFeedback] = useState("");
   const [isClosing, setIsClosing] = useState(false);
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  };
+
+  const handleFeedbackChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setFeedback(e.target.value);
   };
 
@@ -25,6 +30,7 @@ const FeedbackForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
     try {
       await addDoc(collection(db, "feedback"), {
+        name: name.trim() || "Anonymous", // Save name or "Anonymous"
         feedback,
         status: "Pending",
         timestamp: new Date(),
@@ -32,6 +38,7 @@ const FeedbackForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
       setShowConfirmation(true); // Show the confirmation modal
       setFeedback(""); // Clear the feedback input
+      setName(""); // Clear the name input
     } catch (error) {
       console.error("Error submitting feedback:", error);
       alert("An error occurred while submitting feedback. Please try again.");
@@ -40,6 +47,7 @@ const FeedbackForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   const handleClose = () => {
     setFeedback("");
+    setName(""); // Clear the name input
     setShowConfirmation(false); // Close modal
     setIsClosing(true); // Animate feedback form closure
     setTimeout(() => {
@@ -49,14 +57,12 @@ const FeedbackForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
   return (
     <>
-      {/* Conditionally Render Feedback Form */}
       {!showConfirmation && (
         <div
           className={`p-6 bg-white/60 backdrop-blur-md rounded-3xl shadow-lg relative transform transition-all duration-300 ${
             isClosing ? "opacity-0 scale-90" : "opacity-100 scale-100"
           }`}
         >
-          {/* Close Button */}
           <button
             onClick={handleClose}
             className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 transition-transform duration-300 hover:rotate-90 hover:scale-110 focus:outline-none"
@@ -82,11 +88,22 @@ const FeedbackForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           </h2>
           <form onSubmit={handleSubmit}>
             <label className="block mb-4">
+              <span className="text-gray-700">Name (Optional):</span>
+              <input
+                type="text"
+                name="name"
+                value={name}
+                onChange={handleNameChange}
+                placeholder="Enter your name (optional)"
+                className="w-full mt-2 p-4 border border-gray-300 rounded-xl bg-white/70 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+            </label>
+            <label className="block mb-4">
               <span className="text-gray-700">Feedback:</span>
               <textarea
                 name="feedback"
                 value={feedback}
-                onChange={handleChange}
+                onChange={handleFeedbackChange}
                 placeholder="Enter your feedback here..."
                 required
                 className="w-full mt-2 p-4 border border-gray-300 rounded-xl bg-white/70 text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400"
@@ -111,7 +128,6 @@ const FeedbackForm: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         </div>
       )}
 
-      {/* Display Confirmation Modal */}
       <AnimatePresence>
         {showConfirmation && <ConfirmationModal onClose={handleClose} />}
       </AnimatePresence>

@@ -47,7 +47,7 @@ export default function Component() {
               style={{
                 backgroundColor:
                   activeTab === "english" ? "#2A6F97" : "#ff6b2c",
-                width: "calc(50% - 8px)", // Ensure this width matches the button's width
+                width: "calc(51% - 8px)", // Ensure this width matches the button's width
                 x: springX,
               }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
@@ -67,7 +67,7 @@ export default function Component() {
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {tab === "english" ? "English Dashboard" : "Spanish Dashboard"}
+                {tab === "english" ? "English Version" : "Spanish Version"}
               </motion.button>
             ))}
           </div>

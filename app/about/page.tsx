@@ -6,7 +6,7 @@ import { Mail } from "lucide-react";
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "Chandra Sekharan",
+      name: "Chandra N Sekharan",
       role: "Professor",
       workingAt: "TAMUCC",
 

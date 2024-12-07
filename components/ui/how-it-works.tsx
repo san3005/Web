@@ -13,8 +13,8 @@ export default function HowItWorks() {
               How it works
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              AI is a personalized mental health assistant, leveraging all
-              interactions to deliver real-time psychometric analysis and
+              MindMatrix is a personalized mental health assistant, leveraging
+              all interactions to deliver real-time psychometric analysis and
               insights.
             </p>
           </div>
@@ -30,12 +30,14 @@ export default function HowItWorks() {
                 </div> */}
               </div>
               <h3 className="text-xl font-bold text-[#4B4453]">
-                Paste a YouTube Link
+                Multi-Modal Analysis{" "}
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
-                Start by pasting a YouTube link of the session or interaction.
-                The AI will process the video to extract emotional cues,
-                behavioral patterns, and other psychometric data.
+                Capture emotional nuances from both visual and audio cues,
+                providing a more comprehensive view of mental health. By
+                analyzing facial expressions, vocal tone, and speech patterns,
+                the system captures complex emotional states that contribute to
+                a holistic understanding of mental health.
               </p>
             </div>
 
@@ -50,12 +52,14 @@ export default function HowItWorks() {
                 </div> */}
               </div>
               <h3 className="text-xl font-bold text-[#4B4453]">
-                In-Depth Analysis
+                Session Summaries{" "}
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
-                The AI generates an in-depth report summarizing mental health
-                indicators, emotional trends, and behavioral insights observed
-                during the session.
+                Receive summarized insights for each session, designed to
+                highlight key shifts in emotional and mental health. These
+                summaries allow patients and practitioners to track changes over
+                time, fostering a better understanding of the mental health
+                journey and supporting more informed care decisions.
               </p>
             </div>
 
@@ -70,12 +74,15 @@ export default function HowItWorks() {
                 </div> */}
               </div>
               <h3 className="text-xl font-bold text-[#4B4453]">
-                Synchronized Playback
+                AI-Powered Psychometric Insights{" "}
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
-                Experience synchronized playback of the video with live
-                emotional markers. Watch the video alongside real-time tracked
-                emotions and psychological metrics as they occur.
+                Leverage advanced AI-driven psychometric insights to gain a
+                deeper understanding of emotional and behavioral patterns. The
+                system provides interpretations based on emotional and
+                behavioral data, helping practitioners and patients uncover
+                underlying psychological factors, and offering a new perspective
+                on mental health.
               </p>
             </div>
           </div>

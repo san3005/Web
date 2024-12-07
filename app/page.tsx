@@ -6,7 +6,7 @@ import Navbar from "@/components/ui/navbar";
 import { Button } from "@/components/ui/button";
 import Howitworks from "@/components/ui/how-it-works";
 
-import { StickyScrollRevealDemo } from "@/components/ui/StickyScrollRevealDemo";
+// import { StickyScrollRevealDemo } from "@/components/ui/StickyScrollRevealDemo";
 import Foooter from "@/components/ui/footer";
 import TabbedDashboard from "@/components/ui/TabbedDashboard";
 import FloatingFeedbackButton from "@/components/ui/FloatingFeedbackButton";
@@ -50,22 +50,29 @@ export default function Home() {
             <main className="container px-4 py-16 md:py-24 lg:py-32 ">
               <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
-                  <p className="text-lg text-muted-foreground">
-                    From video to insight—integrating emotions, speech, and
-                    psychometrics for better care.
-                  </p>
+                  <div className="font-semibold">
+                    <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl pb-10">
+                      <span className="bg-gradient-to-r  from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        Mind Matrix
+                      </span>
+                    </h1>
+                    is a state-of-art technology leveraging interactions to
+                    deliver real-time insights
+                  </div>
                 </BoxReveal>
 
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl pb-10">
-                    Transform{" "}
-                    <span className="bg-gradient-to-r  from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                      Emotions{" "}
-                    </span>
-                    into Actionable Insights
-                  </h1>
+                  <p>
+                    Discover deeper insights with MindMatrix. Leveraging
+                    research-based technologies to perceive expressions, tone,
+                    and speech, MindMatrix captures the essence of one \&apos s
+                    emotions and well-being, offering meaningful feedback.
+                    Reflecting the spoken and the unspoken, it empowers
+                    professionals and individuals seeking support to deepen
+                    understanding, foster genuine connections, and embark on a
+                    compassionate journey toward wellness.
+                  </p>
                 </BoxReveal>
-
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
@@ -83,7 +90,7 @@ export default function Home() {
                         className="border-purple-300 rounded-3xl font-semibold text-lg text-black hover:bg-purple-100 hover:text-purple-600 h-12 px-8"
                         onClick={scrollToDemo} // Add click event to scroll
                       >
-                        Watch free demo
+                        Watch Demo
                       </Button>
                     </div>
                   </div>
@@ -101,13 +108,13 @@ export default function Home() {
           <Howitworks />
         </div>
         <div className=" bg-[#fff]  pb-5 ">
-          <div className="bg-[#F7F5EB] rounded-3xl">
+          <div className="bg-[#Fff] rounded-3xl">
             <AcceptedReviews />
           </div>
         </div>
 
         <div className="bg-[#fff] " id="features">
-          <StickyScrollRevealDemo />
+          {/* <StickyScrollRevealDemo /> */}
         </div>
         <Foooter />
         {/* Add more sections with IDs */}
