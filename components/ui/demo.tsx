@@ -953,7 +953,7 @@ const summaries = [
 
 const messages = [
   {
-    start: 0.0,
+    start: 5.0,
     end: 12.16,
     text: " When someone hears the phrase multiple personalities, it likely stirs up images from the 1976",
   },

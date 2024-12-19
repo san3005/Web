@@ -11,6 +11,7 @@ const menuItems = [
   { name: "About", href: "/about" },
   // { name: "Features", href: "#features" },
   { name: "How it Works", href: "#HowItworks" },
+  { name: "Privacy", href: "/privacy" },
 ];
 
 export default function Navbar() {

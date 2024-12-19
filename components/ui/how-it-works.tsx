@@ -15,7 +15,7 @@ export default function HowItWorks() {
             <p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               MindMatrix is a personalized mental health assistant, leveraging
               all interactions to deliver real-time psychometric analysis and
-              insights.
+              insights. .
             </p>
           </div>
           <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-3 md:gap-12 lg:gap-16 items-start pt-8 md:pt-10">
@@ -33,11 +33,11 @@ export default function HowItWorks() {
                 Multi-Modal Analysis{" "}
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
-                Capture emotional nuances from both visual and audio cues,
-                providing a more comprehensive view of mental health. By
-                analyzing facial expressions, vocal tone, and speech patterns,
-                the system captures complex emotional states that contribute to
-                a holistic understanding of mental health.
+                Captures nuances from both visual and audio cues, providing a
+                more comprehensive view of mental health. By analyzing facial
+                expressions, vocal tone, and speech patterns, the system
+                captures complex states contributing to a holistic understanding
+                of mental health.
               </p>
             </div>
 
@@ -56,10 +56,10 @@ export default function HowItWorks() {
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
                 Receive summarized insights for each session, designed to
-                highlight key shifts in emotional and mental health. These
-                summaries allow patients and practitioners to track changes over
-                time, fostering a better understanding of the mental health
-                journey and supporting more informed care decisions.
+                highlight key shifts in mental health. These summaries allow
+                patients and practitioners to track changes over time, fostering
+                a better understanding of the mental health journey and
+                supporting more informed care decisions.
               </p>
             </div>
 
@@ -77,12 +77,11 @@ export default function HowItWorks() {
                 AI-Powered Psychometric Insights{" "}
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
-                Leverage advanced AI-driven psychometric insights to gain a
-                deeper understanding of emotional and behavioral patterns. The
-                system provides interpretations based on emotional and
-                behavioral data, helping practitioners and patients uncover
-                underlying psychological factors, and offering a new perspective
-                on mental health.
+                Leverages advanced AI-driven psychometric insights to gain a
+                deeper understanding of behavioral patterns. The system provides
+                interpretations based on data, uncovering underlying
+                psychological factors and offering a new perspective on mental
+                health.
               </p>
             </div>
           </div>

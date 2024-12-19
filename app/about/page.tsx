@@ -1,3 +1,6 @@
+"use client";
+
+import React from "react";
 import Image from "next/image";
 import Footer from "@/components/ui/footer";
 import Navbar from "./navbar";
@@ -9,15 +12,14 @@ export default function AboutPage() {
       name: "Chandra N Sekharan",
       role: "Professor",
       workingAt: "TAMUCC",
-
-      image: "/Professor Illustration.png", // No 'public/' prefix
+      image: "/Professor Illustration.png",
       email: "chandra.sekharan@tamucc.edu",
     },
     {
       name: "Santosh G.",
       role: "Task Research Worker",
       workingAt: "TAMUCC",
-      image: "/Male Avatar.png", // No 'public/' prefix
+      image: "/Male Avatar.png",
       email: "venkata.gurajada@tamucc.edu",
       linkedin: "https://linkedin.com/in/aaron",
     },
@@ -25,8 +27,7 @@ export default function AboutPage() {
       name: "Bala K.",
       role: "Task Research Worker",
       workingAt: "TAMUCC",
-
-      image: "/Profile Picture Illustration.png", // No 'public/' prefix
+      image: "/Profile Picture Illustration.png",
       email: "nisarg@example.com",
       linkedin: "https://linkedin.com/in/nisarg",
     },
@@ -47,12 +48,11 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="mt-4 mx-auto max-w-[700px] text-lg text-[#8B4513]">
-              Our mission is to tackle the challenges in emotional AI
-              applications for mental health by delivering a user-friendly and
-              intuitive design. We aim to create solutions that provide
-              actionable insights while offering a natural and empathetic
-              experience, making emotional analysis a valuable tool rather than
-              a complex task.
+              We&#39;re building AI tools that support mental health
+              practitioners, individuals, and communities. Our mission is to
+              provide useful outcomes to mental health challenges by delivering
+              keen insights. We aim to create solutions that provide actionable
+              observations, making them a valuable resource and useful artifact.
             </p>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function AboutPage() {
               {teamMembers.map((member) => (
                 <div
                   key={member.name}
-                  className="flex rounded-3xl flex-col items-center hover:shadow-xl text-center bg-white p-6  shadow-md max-w-[400px] mx-auto min-h-[250px]"
+                  className="flex rounded-3xl flex-col items-center hover:shadow-xl text-center bg-white p-6 shadow-md max-w-[400px] mx-auto min-h-[250px]"
                 >
                   <Image
                     src={member.image}
@@ -91,14 +91,16 @@ export default function AboutPage() {
                     >
                       <Mail className="h-5 w-5" />
                     </a>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#FF7043] hover:underline"
-                    >
-                      {/* <Linkedin className="h-5 w-5" /> */}
-                    </a>
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#FF7043] hover:underline"
+                      >
+                        {/* Add Linkedin Icon here */}
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}

@@ -86,27 +86,27 @@ export default function AcceptedReviews() {
   }
 
   return (
-    <div className="py-16 px-4 mx-auto max-w-[1400px]">
-      <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
+    <div className="py-12 px-4 mx-auto max-w-[1200px]">
+      <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
         What Our Users Say
       </h2>
       <div className="relative">
-        <Card className="overflow-hidden border rounded-3xl border-gray-200 shadow-lg bg-[#f2edeb] mx-auto max-w-8xl">
-          <CardContent className="p-6 md:p-12">
-            <div className="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+        <Card className="overflow-hidden border rounded-2xl border-gray-200 shadow-md bg-[#f2edeb] mx-auto max-w-6xl">
+          <CardContent className="p-4 md:p-8">
+            <div className="grid gap-4 md:grid-cols-2 md:gap-8 items-center">
               {/* Testimonial Text */}
-              <div className="space-y-4 order-2 md:order-1">
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800">
+              <div className="space-y-3 order-2 md:order-1">
+                <h3 className="text-lg md:text-xl font-semibold text-gray-800">
                   {testimonials[currentIndex]?.quote}
                 </h3>
                 <div className="space-y-1">
-                  <p className="text-base md:text-lg font-semibold text-gray-700">
+                  <p className="text-sm md:text-base font-medium text-gray-700">
                     ~{testimonials[currentIndex]?.name}
                   </p>
                 </div>
               </div>
               {/* Testimonial Image */}
-              <div className="relative aspect-square w-full max-w-[300px] md:max-w-[400px] mx-auto order-1 md:order-2">
+              <div className="relative aspect-square w-full max-w-[200px] md:max-w-[300px] mx-auto order-1 md:order-2">
                 <Image
                   src={testimonials[currentIndex]?.src}
                   alt={
@@ -114,7 +114,7 @@ export default function AcceptedReviews() {
                       .caption
                   }
                   fill
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-lg"
                 />
               </div>
             </div>
@@ -127,20 +127,20 @@ export default function AcceptedReviews() {
           <Button
             variant="outline"
             size="icon"
-            className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900 border-gray-300 shadow-md -translate-x-8"
+            className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900 border-gray-300 shadow-sm -translate-x-6"
             onClick={prevSlide}
           >
-            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
+            <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
             <span className="sr-only">Previous slide</span>
           </Button>
           {/* Right Button */}
           <Button
             variant="outline"
             size="icon"
-            className="h-10 w-10 md:h-12 md:w-12 rounded-full bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900 border-gray-300 shadow-md translate-x-8"
+            className="h-8 w-8 md:h-10 md:w-10 rounded-full bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900 border-gray-300 shadow-sm translate-x-6"
             onClick={nextSlide}
           >
-            <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
+            <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
             <span className="sr-only">Next slide</span>
           </Button>
         </div>

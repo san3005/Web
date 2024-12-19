@@ -5,12 +5,13 @@ import BoxReveal from "@/components/ui/box-reveal";
 import Navbar from "@/components/ui/navbar";
 import { Button } from "@/components/ui/button";
 import Howitworks from "@/components/ui/how-it-works";
-
 // import { StickyScrollRevealDemo } from "@/components/ui/StickyScrollRevealDemo";
 import Foooter from "@/components/ui/footer";
 import TabbedDashboard from "@/components/ui/TabbedDashboard";
 import FloatingFeedbackButton from "@/components/ui/FloatingFeedbackButton";
 import AcceptedReviews from "@/components/ui/acceptedreviews";
+import AudioTabbedDashboard from "@/components/ui/AudioTabbedDashboard";
+import FAQ from "@/components/ui/faq";
 
 export default function Home() {
   const scrollToDemo = () => {
@@ -61,18 +62,35 @@ export default function Home() {
                   </div>
                 </BoxReveal>
 
-                <BoxReveal boxColor="#E8C6D4" duration={0.5}>
-                  <p>
-                    Discover deeper insights with MindMatrix. Leveraging
-                    research-based technologies to perceive expressions, tone,
-                    and speech, MindMatrix captures the essence of one \&apos s
-                    emotions and well-being, offering meaningful feedback.
-                    Reflecting the spoken and the unspoken, it empowers
-                    professionals and individuals seeking support to deepen
-                    understanding, foster genuine connections, and embark on a
-                    compassionate journey toward wellness.
-                  </p>
-                </BoxReveal>
+                <p>
+                  <strong>Discover deeper insights with MindMatrix:</strong>
+                </p>
+                <ul>
+                  <li>
+                    <strong>Advanced Capabilities:</strong>
+                    Leveraging research-based technologies to perceive:
+                    <ul>
+                      <li>Expressions</li>
+                      <li>Tone</li>
+                      <li>Speech</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Emotional Analysis:</strong>
+                    Captures the essence of emotions and well-being, offering
+                    meaningful feedback.
+                  </li>
+                  <li>
+                    <strong>Empowering Support:</strong>
+                    Reflects both spoken and unspoken aspects of communication
+                    to:
+                    <ul>
+                      <li>Deepen understanding</li>
+                      <li>Foster genuine connections</li>
+                      <li>Embark on a compassionate journey toward wellness</li>
+                    </ul>
+                  </li>
+                </ul>
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
@@ -104,6 +122,10 @@ export default function Home() {
         <div id="video-analysis" className="bg-white -top-30 ">
           <TabbedDashboard />
         </div>
+        <div className="bg-white -top-30 mb-30"></div>
+        <div id="video-analysis" className="bg-white -top-30 ">
+          <AudioTabbedDashboard />
+        </div>
         <div id="HowItworks">
           <Howitworks />
         </div>
@@ -115,6 +137,9 @@ export default function Home() {
 
         <div className="bg-[#fff] " id="features">
           {/* <StickyScrollRevealDemo /> */}
+        </div>
+        <div className="bg-[#fff] mb-30 pb-30">
+          <FAQ />
         </div>
         <Foooter />
         {/* Add more sections with IDs */}

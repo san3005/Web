@@ -592,7 +592,7 @@ const summaries = [
 
 const messages = [
   {
-    start: 0.0,
+    start: 5.0,
     end: 13.0,
     text_Spanish:
       "Soy Elizabeth Flappes, psicóloga y creadora de contenido, y escritora de hasta que te caigas bien y querida yo.",
