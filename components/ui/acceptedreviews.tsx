@@ -96,7 +96,7 @@ export default function AcceptedReviews() {
             <div className="grid gap-4 md:grid-cols-2 md:gap-8 items-center">
               {/* Testimonial Text */}
               <div className="space-y-3 order-2 md:order-1">
-                <h3 className="text-lg md:text-xl font-semibold text-gray-800">
+                <h3 className="text-sm md:text-xl text-gray-800">
                   {testimonials[currentIndex]?.quote}
                 </h3>
                 <div className="space-y-1">
@@ -106,7 +106,7 @@ export default function AcceptedReviews() {
                 </div>
               </div>
               {/* Testimonial Image */}
-              <div className="relative aspect-square w-full max-w-[200px] md:max-w-[300px] mx-auto order-1 md:order-2">
+              <div className="relative aspect-square w-full max-w-[100px] md:max-w-[300px] mx-auto order-1 md:order-2">
                 <Image
                   src={testimonials[currentIndex]?.src}
                   alt={
