@@ -19,7 +19,7 @@ export default function AboutPage() {
       name: "Santosh G.",
       role: "Task Research Worker",
       workingAt: "TAMUCC",
-      image: "/Male Avatar.png",
+      image: "/Male Avatar.svg",
       email: "venkata.gurajada@tamucc.edu",
       linkedin: "https://linkedin.com/in/aaron",
     },

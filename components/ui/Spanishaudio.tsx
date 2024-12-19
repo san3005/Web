@@ -501,9 +501,7 @@ export default function AudioInsightsDashboard() {
         >
           <header className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-semibold text-[#4A4A4A]">
-              {isEnglish
-                ? "Spanish Audio Insights"
-                : "Perspectivas de Audio en Español"}
+              {isEnglish ? " Audio Insights" : "Perspectivas de Audio "}
             </h1>
             <Button
               onClick={toggleTranslation}
