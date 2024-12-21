@@ -11,14 +11,14 @@ export default function AboutPage() {
     {
       name: "Chandra N Sekharan",
       role: "Professor",
-      workingAt: "TAMUCC",
+      workingAt: "Texas A&M University Corpus Christi.",
       image: "/Professor Illustration.png",
       email: "chandra.sekharan@tamucc.edu",
     },
     {
       name: "Santosh G.",
       role: "Task Research Worker",
-      workingAt: "TAMUCC",
+      workingAt: "Texas A&M University Corpus Christi.",
       image: "/Male Avatar.svg",
       email: "venkata.gurajada@tamucc.edu",
       linkedin: "https://linkedin.com/in/aaron",
@@ -26,7 +26,7 @@ export default function AboutPage() {
     {
       name: "Bala K.",
       role: "Task Research Worker",
-      workingAt: "TAMUCC",
+      workingAt: "Texas A&M University Corpus Christi.",
       image: "/Profile Picture Illustration.png",
       email: "nisarg@example.com",
       linkedin: "https://linkedin.com/in/nisarg",
@@ -44,17 +44,19 @@ export default function AboutPage() {
               We&#39;re building
               <p> </p>
               <span className="text-[#FF7043]">
-                Emotional AI tools that empower mental health
+                Assistive Artificial Intelligence Technologies For Improving
+                Mental Health{" "}
               </span>
             </h1>
             <p className="mt-4 mx-auto max-w-[700px] text-lg text-[#8B4513]">
-              We&#39;re building AI tools that support mental health
-              practitioners, individuals, and communities. Our mission is to
-              provide useful outcomes to mental health challenges by delivering
-              keen insights. We aim to create solutions that provide actionable
-              observations, making them a valuable resource and useful artifact.
+              We are developing assistive artificial intelligence solutions to
+              support mental health practitioners, individuals, and communities.
+              Our mission is to improve mental health and well-being by
+              delivering insightful data and actionable observations. We strive
+              to create technologies that serve as valuable resources and
+              effective assets in promoting positive mental health.
             </p>
-          </div>
+          </div>{" "}
         </section>
 
         <section className="w-full bg-[#FFF5E1] pb-20">

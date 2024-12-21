@@ -14,8 +14,8 @@ export default function HowItWorks() {
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               MindMatrix is a personalized mental health assistant, leveraging
-              all interactions to deliver real-time psychometric analysis and
-              insights. .
+              all interactions to deliver real-time psychometric observations
+              and insights.
             </p>
           </div>
           <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-3 md:gap-12 lg:gap-16 items-start pt-8 md:pt-10">
@@ -30,11 +30,11 @@ export default function HowItWorks() {
                 </div> */}
               </div>
               <h3 className="text-xl font-bold text-[#4B4453]">
-                Multi-Modal Analysis{" "}
+                Multi-modal Input Analysis{" "}
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
                 Captures nuances from both visual and audio cues, providing a
-                more comprehensive view of mental health. By analyzing facial
+                more comprehensive view of mental health.By collecting facial
                 expressions, vocal tone, and speech patterns, the system
                 captures complex states contributing to a holistic understanding
                 of mental health.

@@ -2017,7 +2017,7 @@ const AudioPlayer = () => {
                   : "min-h-fit"
               }`}
             >
-              {findCurrentMessage() || "No transcript available."}
+              {findCurrentMessage() || "Play Audio to see the transcript ."}
             </div>
           </div>
 

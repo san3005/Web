@@ -53,44 +53,49 @@ export default function Home() {
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
                   <div className="font-semibold">
                     <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl pb-10">
-                      <span className="bg-gradient-to-r  from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                        Mind Matrix
+                      <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        MindMatrix
                       </span>
                     </h1>
-                    is a state-of-art technology leveraging interactions to
-                    deliver real-time insights
+                    <p>
+                      A state-of-the-art technology that leverages artificial
+                      intelligence to deliver real-time insights. Discover
+                      deeper connections with MindMatrix. We use research-based
+                      technologies to understand
+                    </p>
+                    <ul>
+                      <li>
+                        <strong>&#8226; Expressions</strong>
+                      </li>
+                      <li>
+                        <strong>&#8226; Tone</strong>
+                      </li>
+                      <li>
+                        <strong>&#8226; Speech </strong>
+                      </li>
+                    </ul>
                   </div>
                 </BoxReveal>
 
+                <p className="pt-6">
+                  <strong>Wellness Insights:</strong>
+                </p>
                 <p>
-                  <strong>Discover deeper insights with MindMatrix:</strong>
+                  Captures the essence of human wellness to offer meaningful
+                  feedback.
+                </p>
+
+                <p className="pt-4">
+                  <strong>Enhancing Support:</strong>
                 </p>
                 <ul>
+                  <li>&#8226; Deepen understanding</li>
+                  <li>&#8226; Foster genuine connections</li>
                   <li>
-                    <strong>Advanced Capabilities:</strong>
-                    Leveraging research-based technologies to perceive:
-                    <ul>
-                      <li>Expressions</li>
-                      <li>Tone</li>
-                      <li>Speech</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Emotional Analysis:</strong>
-                    Captures the essence of emotions and well-being, offering
-                    meaningful feedback.
-                  </li>
-                  <li>
-                    <strong>Empowering Support:</strong>
-                    Reflects both spoken and unspoken aspects of communication
-                    to:
-                    <ul>
-                      <li>Deepen understanding</li>
-                      <li>Foster genuine connections</li>
-                      <li>Embark on a compassionate journey toward wellness</li>
-                    </ul>
+                    &#8226; Embark on a compassionate journey toward wellness
                   </li>
                 </ul>
+
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
                     <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">

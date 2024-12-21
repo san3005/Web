@@ -734,8 +734,8 @@ const AudioPlayer = () => {
             >
               {findCurrentMessage() ||
                 (isEnglish
-                  ? "No transcript available."
-                  : "No hay transcripción disponible.")}
+                  ? "Play Audio to see the transcript ."
+                  : "Reproducir audio para ver la transcripción.")}
             </div>
           </div>
 

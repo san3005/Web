@@ -1810,7 +1810,7 @@ export default function VideoAnalysisYouTubeDashboard() {
     const message = messages.find(
       (msg) => currentTime >= msg.start && currentTime < msg.end
     );
-    return message ? message.text : "No transcript available.";
+    return message ? message.text : "Play video to see the transcript ";
   };
 
   return (

@@ -86,21 +86,21 @@ export default function AcceptedReviews() {
   }
 
   return (
-    <div className="py-12 px-4 mx-auto max-w-[1200px]">
-      <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+    <div className="py-6 px-2 mx-auto max-w-[800px]">
+      <h2 className="text-xl font-bold text-gray-800 text-center mb-6">
         What Our Users Say
       </h2>
       <div className="relative">
-        <Card className="overflow-hidden border rounded-2xl border-gray-200 shadow-md bg-[#f2edeb] mx-auto max-w-6xl">
+        <Card className="overflow-hidden border rounded-2xl border-gray-200 shadow-md bg-[#f2edeb] mx-auto max-w-4xl">
           <CardContent className="p-4 md:p-8">
             <div className="grid gap-4 md:grid-cols-2 md:gap-8 items-center">
               {/* Testimonial Text */}
               <div className="space-y-3 order-2 md:order-1">
-                <h3 className="text-sm md:text-xl text-gray-800">
+                <h3 className="text-xs md:text-sm text-gray-800">
                   {testimonials[currentIndex]?.quote}
                 </h3>
                 <div className="space-y-1">
-                  <p className="text-sm md:text-base font-medium text-gray-700">
+                  <p className="text-xs md:text-sm font-medium text-gray-700">
                     ~{testimonials[currentIndex]?.name}
                   </p>
                 </div>

@@ -6,7 +6,7 @@ export default function Foooter() {
     <section className="w-full border-t -mt-8 bg-[#f4f7f8] text-[#4A4A4A] py-8 rounded-xl">
       <div className="container mx-auto text-center -top-10">
         <p className="text-sm font-semibold mb-4">
-          Transform emotions into actionable insights.
+          Transform conversational sessions into Assistive Insights{" "}
         </p>
         {/* <div className="flex justify-center gap-6 mb-4">
           <Link href="#" className="hover:text-[#4A4A4A]">

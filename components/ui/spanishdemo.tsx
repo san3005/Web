@@ -1297,8 +1297,8 @@ export default function VideoAnalysisDashboard() {
                 <div className="text-[#4A4A4A] text-lg">
                   {currentMessage ||
                     (isEnglish
-                      ? "No transcript available for this time."
-                      : "No hay transcripción disponible para este momento.")}
+                      ? "Play video to see the transcript "
+                      : "Reproducir video para ver la transcripción.")}
                 </div>
               </motion.div>
             </div>

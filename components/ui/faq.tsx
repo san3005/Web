@@ -15,12 +15,12 @@ const faqData: FAQItem[] = [
   {
     question: "How does MindMatrix work?",
     answer:
-      "MindMatrix uses multi-modal analysis to examine both visual and audio signals. It captures facial expressions, vocal tones, and speech patterns to detect emotional nuances and provide a holistic view of mental health.",
+      "MindMatrix uses multi-modal input analysis to examine both visual and audio signals. It captures facial expressions, vocal tones, and speech patterns to detect emotional nuances and provide a holistic view of mental health.",
   },
   {
     question: "What are the key features of MindMatrix?",
     answer:
-      "Key features of MindMatrix include multi-modal analysis (examining both visual and audio signals), session summaries (providing concise overviews of each session), and AI-powered psychometric insights (interpreting emotional and behavioral patterns).",
+      "Key features of MindMatrix include multi-modal input analysis (examining both visual and audio signals), session summaries (providing concise overviews of each session), and AI-powered psychometric insights (interpreting emotional and behavioral patterns).",
   },
   {
     question: "Who can benefit from using MindMatrix?",
@@ -32,17 +32,45 @@ const faqData: FAQItem[] = [
     answer:
       "No, MindMatrix is not a replacement for traditional therapy. It's a tool designed to complement and enhance the work of mental health professionals by providing additional insights and data.",
   },
-  {
-    question: "How accurate are MindMatrix's insights?",
-    answer:
-      "MindMatrix uses advanced AI technology to provide accurate insights. However, as with any AI-based tool, its insights should be interpreted in conjunction with professional expertise and not used as a sole diagnostic tool.",
-  },
-  {
-    question: "How is my data protected when using MindMatrix?",
-    answer:
-      "MindMatrix takes data privacy seriously. All data is encrypted and stored securely. For specific details about data protection measures, please contact MindMatrix directly or refer to their privacy policy.",
-  },
 ];
+
+// const faqData: FAQItem[] = [
+//   {
+//     question: "What is MindMatrix?",
+//     answer:
+//       "MindMatrix is an advanced technology designed to provide real-time psychometric analysis and insights through interactive sessions. It analyzes facial expressions, vocal tones, and speech patterns to offer a comprehensive understanding of an individual's emotional and mental health.",
+//   },
+//   {
+//     question: "How does MindMatrix work?",
+//     answer:
+//       "MindMatrix uses multi-modal analysis to examine both visual and audio signals. It captures facial expressions, vocal tones, and speech patterns to detect emotional nuances and provide a holistic view of mental health.",
+//   },
+//   {
+//     question: "What are the key features of MindMatrix?",
+//     answer:
+//       "Key features of MindMatrix include multi-modal analysis (examining both visual and audio signals), session summaries (providing concise overviews of each session), and AI-powered psychometric insights (interpreting emotional and behavioral patterns).",
+//   },
+//   {
+//     question: "Who can benefit from using MindMatrix?",
+//     answer:
+//       "MindMatrix can benefit mental health professionals, therapists, counselors, and individuals seeking to gain deeper insights into their emotional and mental well-being.",
+//   },
+//   {
+//     question: "Is MindMatrix a replacement for traditional therapy?",
+//     answer:
+//       "No, MindMatrix is not a replacement for traditional therapy. It's a tool designed to complement and enhance the work of mental health professionals by providing additional insights and data.",
+//   },
+//   {
+//     question: "How accurate are MindMatrix's insights?",
+//     answer:
+//       "MindMatrix uses advanced AI technology to provide accurate insights. However, as with any AI-based tool, its insights should be interpreted in conjunction with professional expertise and not used as a sole diagnostic tool.",
+//   },
+//   {
+//     question: "How is my data protected when using MindMatrix?",
+//     answer:
+//       "MindMatrix takes data privacy seriously. All data is encrypted and stored securely. For specific details about data protection measures, please contact MindMatrix directly or refer to their privacy policy.",
+//   },
+// ];
 
 export default function FAQ() {
   const [openItems, setOpenItems] = useState<number[]>([]);
