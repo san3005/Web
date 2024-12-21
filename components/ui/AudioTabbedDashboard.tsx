@@ -31,7 +31,7 @@ export default function Component() {
   };
 
   return (
-    <div className="rounded-3xl flex flex-col items-center mx-auto">
+    <div className=" flex flex-col items-center mx-auto mt-10">
       <motion.div
         className="bg-[#fff] rounded-3xl shadow-lg"
         initial={{ opacity: 0 }}
@@ -39,7 +39,7 @@ export default function Component() {
         transition={{ duration: 0.3 }}
       >
         {/* Tabs Section */}
-        <header className="relative flex justify-center mb-6 top-2">
+        <header className="relative flex justify-center mb-6 top-2 ">
           <div className="relative flex space-x-6 bg-[#E8E8E8] p-1 rounded-3xl w-[400px]">
             {/* Sliding Background */}
             <motion.div

@@ -1,293 +1,3 @@
-// "use client";
-
-// import React, { useState, useRef, useEffect } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import {
-//   Play,
-//   Pause,
-//   SkipForward,
-//   SkipBack,
-//   Volume2,
-//   VolumeX,
-// } from "lucide-react";
-
-// const AUDIO_URL = "/English.webm";
-
-// const WaveBar = ({ active, height }: { active: boolean; height: number }) => (
-//   <motion.div
-//     className={`w-1 mx-[1px] rounded-full ${
-//       active ? "bg-amber-400" : "bg-gray-600/50"
-//     }`}
-//     animate={{
-//       height: height,
-//     }}
-//     transition={{
-//       duration: 0.2,
-//       ease: "easeOut",
-//     }}
-//   />
-// );
-
-// const AudioPlayer = () => {
-//   const [isPlaying, setIsPlaying] = useState(false);
-//   const [isMuted, setIsMuted] = useState(false);
-//   const [currentTime, setCurrentTime] = useState(0);
-//   const [duration, setDuration] = useState(0);
-//   const [isAudioEnded, setIsAudioEnded] = useState(false);
-//   const [error, setError] = useState<string | null>(null);
-//   const [waveHeights, setWaveHeights] = useState<number[]>([]);
-//   const audioRef = useRef<HTMLAudioElement | null>(null);
-//   const animationFrameRef = useRef<number>();
-
-//   // Initialize wave heights
-//   useEffect(() => {
-//     const heights = Array.from(
-//       { length: 50 },
-//       () => Math.floor(Math.random() * 12) + 4
-//     );
-//     setWaveHeights(heights);
-//   }, []);
-
-//   // Update wave heights periodically when playing
-//   useEffect(() => {
-//     const updateWaveHeights = () => {
-//       if (isPlaying) {
-//         setWaveHeights((prev) =>
-//           prev.map(() => Math.floor(Math.random() * 12) + 4)
-//         );
-//       }
-//     };
-
-//     let interval: NodeJS.Timeout;
-//     if (isPlaying) {
-//       interval = setInterval(updateWaveHeights, 100);
-//     }
-
-//     return () => {
-//       if (interval) clearInterval(interval);
-//     };
-//   }, [isPlaying]);
-
-//   useEffect(() => {
-//     const audio = audioRef.current;
-//     if (!audio) return;
-
-//     const updateTimeState = () => {
-//       setCurrentTime(audio.currentTime);
-//       if (isPlaying) {
-//         animationFrameRef.current = requestAnimationFrame(updateTimeState);
-//       }
-//     };
-
-//     const handleLoadedMetadata = () => {
-//       console.log("Metadata loaded - Duration:", audio.duration);
-//       setDuration(audio.duration);
-//       setCurrentTime(0);
-//     };
-
-//     const handleEnded = () => {
-//       setIsPlaying(false);
-//       setIsAudioEnded(true);
-//       if (animationFrameRef.current) {
-//         cancelAnimationFrame(animationFrameRef.current);
-//       }
-//     };
-
-//     const handleError = (e: Event) => {
-//       console.error("Audio error:", e);
-//       setError("Failed to load audio. Please try again later.");
-//     };
-
-//     // Add timeupdate event for backup
-//     const handleTimeUpdate = () => {
-//       setCurrentTime(audio.currentTime);
-//     };
-
-//     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-//     audio.addEventListener("ended", handleEnded);
-//     audio.addEventListener("error", handleError);
-//     audio.addEventListener("timeupdate", handleTimeUpdate);
-
-//     // Only start animation frame when playing
-//     if (isPlaying) {
-//       animationFrameRef.current = requestAnimationFrame(updateTimeState);
-//     }
-
-//     return () => {
-//       if (animationFrameRef.current) {
-//         cancelAnimationFrame(animationFrameRef.current);
-//       }
-//       audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-//       audio.removeEventListener("ended", handleEnded);
-//       audio.removeEventListener("error", handleError);
-//       audio.removeEventListener("timeupdate", handleTimeUpdate);
-//     };
-//   }, [isPlaying]); // Add isPlaying to dependencies
-
-//   const togglePlay = async () => {
-//     const audio = audioRef.current;
-//     if (!audio) return;
-
-//     try {
-//       if (isPlaying) {
-//         audio.pause();
-//         if (animationFrameRef.current) {
-//           cancelAnimationFrame(animationFrameRef.current);
-//         }
-//       } else {
-//         await audio.play();
-//         animationFrameRef.current = requestAnimationFrame(
-//           function updateTime() {
-//             setCurrentTime(audio.currentTime);
-//             animationFrameRef.current = requestAnimationFrame(updateTime);
-//           }
-//         );
-//       }
-//       setIsPlaying(!isPlaying);
-//     } catch (e) {
-//       console.error("Playback failed:", e);
-//       setError("Playback failed. Please try again.");
-//     }
-//   };
-
-//   const toggleMute = () => {
-//     const audio = audioRef.current;
-//     if (audio) {
-//       audio.muted = !isMuted;
-//       setIsMuted(!isMuted);
-//     }
-//   };
-
-//   const handleSeek = (time: number) => {
-//     const audio = audioRef.current;
-//     if (audio) {
-//       audio.currentTime = time;
-//       setCurrentTime(time);
-//       if (time < duration) {
-//         setIsAudioEnded(false);
-//       }
-//     }
-//   };
-
-//   const formatTime = (time: number) => {
-//     const minutes = Math.floor(time / 60);
-//     const seconds = Math.floor(time % 60);
-//     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-//   };
-
-//   const progress = duration ? (currentTime / duration) * 100 : 0;
-//   const totalBars = 50;
-//   const activeBarIndex = Math.floor((progress / 100) * totalBars);
-
-//   return (
-//     <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-b from-purple-900 to-black">
-//       <div className="max-w-md w-full bg-black/30 backdrop-blur-xl p-6 rounded-xl shadow-lg text-white">
-//         <audio ref={audioRef} src={AUDIO_URL} preload="metadata" />
-//         <div className="text-center mb-6">
-//           <h1 className="text-2xl font-semibold">Baby Elephant Walk</h1>
-//           <p className="text-sm text-gray-300">Henry Mancini</p>
-//         </div>
-
-//         {error ? (
-//           <div className="text-red-500 text-center mb-4">{error}</div>
-//         ) : (
-//           <>
-//             <div className="relative w-full h-16 mb-2 flex items-center">
-//               <div className="absolute inset-0 flex items-center justify-between">
-//                 {waveHeights.map((height, index) => (
-//                   <WaveBar
-//                     key={index}
-//                     active={index <= activeBarIndex}
-//                     height={isPlaying ? height : 4}
-//                   />
-//                 ))}
-//               </div>
-//               <input
-//                 type="range"
-//                 className="absolute inset-0 w-full opacity-0 cursor-pointer"
-//                 min="0"
-//                 max={duration || 100}
-//                 step="0.1"
-//                 value={currentTime}
-//                 onChange={(e) => handleSeek(Number(e.target.value))}
-//               />
-//             </div>
-
-//             <div className="flex justify-between text-sm text-gray-400 mb-6">
-//               <span>{formatTime(currentTime)}</span>
-//               <span>{formatTime(duration)}</span>
-//             </div>
-
-//             <div className="flex items-center justify-between px-4">
-//               <div className="relative group">
-//                 <button
-//                   className="text-white/80 hover:text-amber-400 transition-colors relative"
-//                   onClick={() => handleSeek(Math.max(currentTime - 10, 0))}
-//                   title="Rewind 10 seconds"
-//                 >
-//                   <SkipBack size={28} />
-//                   <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs">
-//                     -10
-//                   </span>
-//                 </button>
-//               </div>
-
-//               <motion.button
-//                 className="bg-amber-400 text-black p-4 rounded-full"
-//                 onClick={togglePlay}
-//                 whileHover={{ scale: 1.1 }}
-//                 whileTap={{ scale: 0.95 }}
-//               >
-//                 {isPlaying ? (
-//                   <Pause size={28} />
-//                 ) : (
-//                   <Play size={28} className="ml-1" />
-//                 )}
-//               </motion.button>
-
-//               <div className="relative group">
-//                 <button
-//                   className="text-white/80 hover:text-amber-400 transition-colors relative"
-//                   onClick={() =>
-//                     handleSeek(Math.min(currentTime + 10, duration))
-//                   }
-//                   title="Forward 10 seconds"
-//                 >
-//                   <SkipForward size={28} />
-//                   <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs">
-//                     +10
-//                   </span>
-//                 </button>
-//               </div>
-
-//               <button
-//                 className="text-white/80 hover:text-amber-400 transition-colors"
-//                 onClick={toggleMute}
-//               >
-//                 {isMuted ? <VolumeX size={28} /> : <Volume2 size={28} />}
-//               </button>
-//             </div>
-
-//             <AnimatePresence>
-//               {isAudioEnded && (
-//                 <motion.div
-//                   initial={{ opacity: 0, y: 20 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   exit={{ opacity: 0, y: -20 }}
-//                   className="mt-6 text-center text-sm text-gray-300"
-//                 >
-//                   <p>Playback has ended. Replay or choose another track.</p>
-//                 </motion.div>
-//               )}
-//             </AnimatePresence>
-//           </>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AudioPlayer;
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -313,7 +23,7 @@ const summaries = [
   {
     Interval_Time: 120,
     Psychometric_Summary:
-      "During the analyzed video segment, the individual expresses profound psychological distress rooted in their experience with dissociative identity disorder (DID), which they attribute to a history of recurrent childhood trauma. They describe the debilitating nature of their memory lapses, illustrating a struggle with amnesia that has persisted over two decades, leading to significant confusion regarding daily activities and events. This narrative is punctuated by an acknowledgment of their therapeutic journey, where the diagnosis of DID was eventually revealed, highlighting a sense of relief mixed with ongoing confusion about their identity and experiences. Throughout the discourse, emotional cues reveal a predominance of confusion and doubt, underscored by moments of concentration as they process their complex identity involving multiple alters. The emotional analysis indicates fluctuating feelings of empathic pain and distress, illustrating the depth of their internal conflict and the weight of their experiences. The individual\u2019s description of past and present alters suggests an ongoing negotiation with their fragmented identities, evoking both a sense of burden and a glimmer of resilience as they navigate their therapeutic path. Overall, their psychological state is marked by a profound struggle for coherence amidst fragmentation, characterized by confusion and an earnest desire for understanding and integration.",
+      "During the analyzed video segment, the individual expresses profound psychological distress rooted in their experience with dissociative identity disorder (DID), which they attribute to a history of recurrent childhood trauma. They describe the debilitating nature of their memory lapses, illustrating a struggle with amnesia that has persisted over two decades, leading to significant confusion regarding daily activities and events. This narrative is punctuated by an acknowledgment of their therapeutic journey, where the diagnosis of DID was eventually revealed, highlighting a sense of relief mixed with ongoing confusion about their identity and experiences. Throughout the discourse, emotional cues reveal a predominance of confusion and doubt, underscored by moments of concentration as they process their complex identity involving multiple alters. The emotional analysis indicates fluctuating feelings of empathic pain and distress, illustrating the depth of their internal conflict and the weight of their experiences. The individual’s description of past and present alters suggests an ongoing negotiation with their fragmented identities, evoking both a sense of burden and a glimmer of resilience as they navigate their therapeutic path. Overall, their psychological state is marked by a profound struggle for coherence amidst fragmentation, characterized by confusion and an earnest desire for understanding and integration.",
   },
   {
     Interval_Time: 240,
@@ -328,7 +38,7 @@ const summaries = [
   {
     Interval_Time: 480,
     Psychometric_Summary:
-      'During the observed interval, the individual exhibits a complex psychological state characterized by introspection and a nuanced understanding of their experiences with dissociative identity dynamics. The repeated references to "Devin" and "Minnie," along with the mention of traumatic experiences, suggest a struggle with identity fragmentation often associated with dissociative disorders. The individual articulates a journey towards acceptance of their alters, indicating a shift from resistance to collaboration, which reflects a degree of emotional resilience. This transformation is underscored by a growing awareness of the signs preceding switches, such as dizziness and fatigue, which indicates a developing self-awareness and coping strategy. \n\nSupporting emotional data reveals a predominance of confusion and contemplation, underscoring the individual\'s internal conflict while navigating these complex experiences. Facial expressions indicate significant interest and moments of amusement, perhaps suggesting a bittersweet recognition of their situation and a desire for understanding. Prosodic cues further enhance this picture, revealing a calm yet determined demeanor in their speech, which contrasts with moments of distress and tiredness. Overall, the individual\'s narrative reflects an ongoing process of integration and adaptation to their multifaceted identity, marked by both confusion and a hopeful engagement with their alters, as they continue to seek communication and understanding through mechanisms like journaling.',
+      "During the observed interval, the individual exhibits a complex psychological state characterized by introspection and a nuanced understanding of their experiences with dissociative identity dynamics. The repeated references to 'Devin' and 'Minnie,' along with the mention of traumatic experiences, suggest a struggle with identity fragmentation often associated with dissociative disorders. The individual articulates a journey towards acceptance of their alters, indicating a shift from resistance to collaboration, which reflects a degree of emotional resilience. This transformation is underscored by a growing awareness of the signs preceding switches, such as dizziness and fatigue, which indicates a developing self-awareness and coping strategy.\n\nSupporting emotional data reveals a predominance of confusion and contemplation, underscoring the individual's internal conflict while navigating these complex experiences. Facial expressions indicate significant interest and moments of amusement, perhaps suggesting a bittersweet recognition of their situation and a desire for understanding. Prosodic cues further enhance this picture, revealing a calm yet determined demeanor in their speech, which contrasts with moments of distress and tiredness. Overall, the individual's narrative reflects an ongoing process of integration and adaptation to their multifaceted identity, marked by both confusion and a hopeful engagement with their alters, as they continue to seek communication and understanding through mechanisms like journaling.",
   },
 ];
 
@@ -1962,30 +1672,31 @@ const messages = [
   },
 ];
 const overallSummary = `
-  The individual discusses their experience with Dissociative Identity Disorder (DID), 
-  characterized by the presence of multiple personalities,
-   which they refer to as "alters." This condition, often misunderstood and stigmatized, 
-   is presented as a complex interplay of traumatic childhood experiences leading to 
-   the development of distinct identities as coping mechanisms. 
-   The speaker reflects on the challenges of living with this disorder, 
-   particularly the feelings of confusion and disorientation that accompany 
-   frequent switches between alters. They describe early symptoms,
-    such as amnesia, which escalated over time, initially dismissed as normal 
-    forgetfulness until therapy revealed a deeper underlying condition. 
-    The narrative indicates a struggle for acceptance and understanding of this 
-    identity, alongside an acknowledgment that these alters serve protective 
-    roles formed in response to past trauma. Throughout the discourse, emotional cues 
-    reveal a tapestry of feelings—confusion and doubt are prevalent as the individual 
-    navigates their experiences and the societal perceptions of their condition. 
-    There are moments of sadness intertwined with a sense of nostalgia for a unified self, 
-    alongside expressions of amusement when discussing certain alters. The desire for control
-     and understanding of their identity is evident, reflecting a journey from resistance to a 
-     more collaborative approach with their alters, which has fostered a greater sense of 
-     calmness and acceptance. The integration of these emotional states conveys a multifaceted 
-     psychological landscape marked by both distress and resilience, highlighting the 
-     complexities of living with DID and the ongoing therapeutic process that aims 
-  to reconcile these divided aspects of the self.
-  `;
+  During the analyzed audio session, the individual discusses their experience 
+  with Dissociative Identity Disorder (DID), characterized by the presence of 
+  multiple identities or \'alters.\’ This often misunderstood and stigmatized 
+  condition is presented as emerging from traumatic childhood experiences, 
+  leading to the development of distinct personalities as coping mechanisms.
+  
+  The speaker reflects on the confusion and disorientation that accompany 
+  frequent switches between alters, mentioning early symptoms such as amnesia 
+  that were initially dismissed as common forgetfulness until therapeutic 
+  intervention unveiled a deeper, underlying condition. This narrative reveals 
+  an internal struggle for acceptance and understanding, acknowledging the 
+  protective roles these alters have played in response to past trauma.
+  
+  Emotional cues within the discourse highlight a range of feelings—confusion, 
+  doubt, and sadness are interwoven with moments of nostalgia for a once unified 
+  self and even occasional amusement when discussing certain alters. Over time, 
+  there appears to be a shift from resistance toward a more collaborative 
+  engagement with these internal identities, fostering a growing sense of calmness 
+  and acceptance.
+  
+  Ultimately, this perspective paints a multifaceted psychological landscape, 
+  marked by both distress and resilience. It underscores the complex realities 
+  of living with DID and the ongoing therapeutic process aimed at integrating 
+  these divided aspects of the self. 
+`;
 
 // Wave Bar Component
 const WaveBar = ({ active, height }: { active: boolean; height: number }) => (
@@ -2188,7 +1899,7 @@ const AudioPlayer = () => {
   const activeBarIndex = Math.floor((progress / 100) * totalBars);
 
   return (
-    <div className="w-screen min-h-screen flex flex-col bg-white">
+    <div className="w-screen min-h-screen rounded-3xl flex flex-col bg-white ">
       <div className="max-w-7xl w-full mx-auto p-6">
         <h2 className="text-2xl font-semibold text-[#2A6F97] mb-6">
           Audio Insights
@@ -2208,9 +1919,9 @@ const AudioPlayer = () => {
 
           <div className="text-center mb-6">
             <h1 className="text-2xl font-semibold">Audio Analysis</h1>
-            <p className="text-sm text-gray-300">
+            {/* <p className="text-sm text-black">
               Real-time Transcription & Analysis
-            </p>
+            </p> */}
           </div>
 
           {error ? (
@@ -2295,8 +2006,8 @@ const AudioPlayer = () => {
         {/* Transcript and Summary Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Transcript Panel */}
-          <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-            <h3 className="text-xl font-semibold text-[#e66e36] mb-4">
+          <div className="bg-gray-50 rounded-xl p-6 shadow-sm">
+            <h3 className="text-xl font-semibold text-[#2A6F97] mb-4">
               Transcript
             </h3>
             <div
@@ -2312,11 +2023,11 @@ const AudioPlayer = () => {
 
           {/* Summary/Final Report Panel */}
           <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-            <h3 className="text-xl font-semibold text-[#e66e36] mb-4">
+            <h3 className="text-xl font-semibold text-[#2A6F97] mb-4">
               {isAudioEnded ? "Final Report" : "Summary"}
             </h3>
             <div
-              className={`text-gray-700 text-lg ${
+              className={`text-gray-700 text-lg justify-content${
                 findCurrentSummary()?.split(".").length > 10
                   ? "h-[500px] overflow-y-auto"
                   : "min-h-fit"

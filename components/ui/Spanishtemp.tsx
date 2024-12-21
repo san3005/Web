@@ -1,475 +1,3 @@
-// "use client";
-
-// import React, { useState, useRef, useEffect } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import {
-//   Play,
-//   Pause,
-//   SkipForward,
-//   SkipBack,
-//   Volume2,
-//   VolumeX,
-// } from "lucide-react";
-
-// const AUDIO_URL = "/English.webm";
-
-// const translations = {
-//   en: {
-//     title: "Audio Analysis",
-//     subtitle: "Real-time Transcription & Analysis",
-//     transcript: "Transcript",
-//     summary: "Summary",
-//     finalReport: "Final Report",
-//     playbackEnded: "Playback has ended. Replay to continue analysis.",
-//     rewind: "Rewind 10 seconds",
-//     forward: "Forward 10 seconds",
-//   },
-//   es: {
-//     title: "Análisis de Audio",
-//     subtitle: "Transcripción y Análisis en Tiempo Real",
-//     transcript: "Transcripción",
-//     summary: "Resumen",
-//     finalReport: "Informe Final",
-//     playbackEnded:
-//       "La reproducción ha terminado. Reproduce de nuevo para continuar con el análisis.",
-//     rewind: "Retroceder 10 segundos",
-//     forward: "Avanzar 10 segundos",
-//   },
-// };
-
-// // Wave Bar Component
-// const WaveBar = ({ active, height }: { active: boolean; height: number }) => (
-//   <motion.div
-//     className={`w-0.5 mx-[0.5px] rounded-full ${
-//       active ? "bg-amber-400" : "bg-gray-600/50"
-//     }`}
-//     animate={{
-//       height: height,
-//     }}
-//     transition={{
-//       duration: 0.2,
-//       ease: "easeOut",
-//     }}
-//   />
-// );
-
-// const AudioPlayer = () => {
-//   // Existing state
-//   const [isPlaying, setIsPlaying] = useState(false);
-//   const [isMuted, setIsMuted] = useState(false);
-//   const [currentTime, setCurrentTime] = useState(0);
-//   const [duration, setDuration] = useState(0);
-//   const [isAudioEnded, setIsAudioEnded] = useState(false);
-//   const [error, setError] = useState<string | null>(null);
-//   const [waveHeights, setWaveHeights] = useState<number[]>([]);
-//   const [language, setLanguage] = useState<"en" | "es">("en"); // Language state
-//   const audioRef = useRef<HTMLAudioElement | null>(null);
-//   const animationFrameRef = useRef<number>();
-
-//   // Initialize wave heights
-//   useEffect(() => {
-//     const heights = Array.from(
-//       { length: 128 },
-//       () => Math.floor(Math.random() * 16) + 4
-//     );
-//     setWaveHeights(heights);
-//   }, []);
-
-//   const toggleLanguage = () => {
-//     setLanguage((prev) => (prev === "en" ? "es" : "en"));
-//   };
-
-//   const t = translations[language];
-
-//   const formatTime = (time: number) => {
-//     const minutes = Math.floor(time / 60);
-//     const seconds = Math.floor(time % 60);
-//     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-//   };
-
-//   const findCurrentSummary = () => {
-//     // Replace this with dynamic summary content based on language
-//     return "Dynamic summary goes here...";
-//   };
-
-//   const findCurrentMessage = () => {
-//     // Replace this with dynamic transcript content based on language
-//     return "Dynamic transcript goes here...";
-//   };
-
-//   const progress = duration ? (currentTime / duration) * 100 : 0;
-//   const totalBars = 128;
-//   const activeBarIndex = Math.floor((progress / 100) * totalBars);
-
-//   return (
-//     <div className="w-screen min-h-screen flex flex-col bg-white">
-//       <div className="max-w-7xl w-full mx-auto p-6">
-//         <div className="flex justify-between items-center mb-6">
-//           <h2 className="text-2xl font-semibold text-[#2A6F97]">{t.title}</h2>
-//           <button
-//             onClick={toggleLanguage}
-//             className="bg-blue-500 text-white px-4 py-2 rounded-lg"
-//           >
-//             {language === "en" ? "Español" : "English"}
-//           </button>
-//         </div>
-
-//         <div className="w-full bg-black/30 backdrop-blur-xl p-6 rounded-xl shadow-lg text-white bg-gradient-to-b from-purple-900 to-black mb-8">
-//           <audio ref={audioRef} src={AUDIO_URL} preload="auto" />
-
-//           <div className="text-center mb-6">
-//             <h1 className="text-2xl font-semibold">{t.title}</h1>
-//             <p className="text-sm text-gray-300">{t.subtitle}</p>
-//           </div>
-
-//           {error ? (
-//             <div className="text-red-500 text-center mb-4">{error}</div>
-//           ) : (
-//             <>
-//               <div className="relative w-full h-16 mb-2 flex items-center">
-//                 <div className="absolute inset-0 flex items-center justify-between">
-//                   {waveHeights.map((height, index) => (
-//                     <WaveBar
-//                       key={index}
-//                       active={index <= activeBarIndex}
-//                       height={isPlaying ? height : 4}
-//                     />
-//                   ))}
-//                 </div>
-//               </div>
-
-//               <div className="flex justify-between text-sm text-gray-400 mb-6">
-//                 <span>{formatTime(currentTime)}</span>
-//                 <span>{formatTime(duration)}</span>
-//               </div>
-//             </>
-//           )}
-//         </div>
-
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//           <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-//             <h3 className="text-xl font-semibold text-[#2A6F97] mb-4">
-//               {t.transcript}
-//             </h3>
-//             <div className="text-gray-700 text-lg">{findCurrentMessage()}</div>
-//           </div>
-
-//           <div className="bg-gray-50 rounded-lg p-6 shadow-sm">
-//             <h3 className="text-xl font-semibold text-[#2A6F97] mb-4">
-//               {isAudioEnded ? t.finalReport : t.summary}
-//             </h3>
-//             <div className="text-gray-700 text-lg">{findCurrentSummary()}</div>
-//           </div>
-//         </div>
-
-//         <AnimatePresence>
-//           {isAudioEnded && (
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               animate={{ opacity: 1, y: 0 }}
-//               exit={{ opacity: 0, y: -20 }}
-//               className="mt-6 text-center text-sm text-gray-600"
-//             >
-//               <p>{t.playbackEnded}</p>
-//             </motion.div>
-//           )}
-//         </AnimatePresence>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AudioPlayer;
-// "use client";
-
-// import React, { useState, useRef, useEffect } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import {
-//   Play,
-//   Pause,
-//   SkipForward,
-//   SkipBack,
-//   Volume2,
-//   VolumeX,
-// } from "lucide-react";
-
-// const AUDIO_URL = "/English.webm";
-
-// const WaveBar = ({ active, height }: { active: boolean; height: number }) => (
-//   <motion.div
-//     className={`w-1 mx-[1px] rounded-full ${
-//       active ? "bg-amber-400" : "bg-gray-600/50"
-//     }`}
-//     animate={{
-//       height: height,
-//     }}
-//     transition={{
-//       duration: 0.2,
-//       ease: "easeOut",
-//     }}
-//   />
-// );
-
-// const AudioPlayer = () => {
-//   const [isPlaying, setIsPlaying] = useState(false);
-//   const [isMuted, setIsMuted] = useState(false);
-//   const [currentTime, setCurrentTime] = useState(0);
-//   const [duration, setDuration] = useState(0);
-//   const [isAudioEnded, setIsAudioEnded] = useState(false);
-//   const [error, setError] = useState<string | null>(null);
-//   const [waveHeights, setWaveHeights] = useState<number[]>([]);
-//   const audioRef = useRef<HTMLAudioElement | null>(null);
-//   const animationFrameRef = useRef<number>();
-
-//   // Initialize wave heights
-//   useEffect(() => {
-//     const heights = Array.from(
-//       { length: 50 },
-//       () => Math.floor(Math.random() * 12) + 4
-//     );
-//     setWaveHeights(heights);
-//   }, []);
-
-//   // Update wave heights periodically when playing
-//   useEffect(() => {
-//     const updateWaveHeights = () => {
-//       if (isPlaying) {
-//         setWaveHeights((prev) =>
-//           prev.map(() => Math.floor(Math.random() * 12) + 4)
-//         );
-//       }
-//     };
-
-//     let interval: NodeJS.Timeout;
-//     if (isPlaying) {
-//       interval = setInterval(updateWaveHeights, 100);
-//     }
-
-//     return () => {
-//       if (interval) clearInterval(interval);
-//     };
-//   }, [isPlaying]);
-
-//   useEffect(() => {
-//     const audio = audioRef.current;
-//     if (!audio) return;
-
-//     const updateTimeState = () => {
-//       setCurrentTime(audio.currentTime);
-//       if (isPlaying) {
-//         animationFrameRef.current = requestAnimationFrame(updateTimeState);
-//       }
-//     };
-
-//     const handleLoadedMetadata = () => {
-//       console.log("Metadata loaded - Duration:", audio.duration);
-//       setDuration(audio.duration);
-//       setCurrentTime(0);
-//     };
-
-//     const handleEnded = () => {
-//       setIsPlaying(false);
-//       setIsAudioEnded(true);
-//       if (animationFrameRef.current) {
-//         cancelAnimationFrame(animationFrameRef.current);
-//       }
-//     };
-
-//     const handleError = (e: Event) => {
-//       console.error("Audio error:", e);
-//       setError("Failed to load audio. Please try again later.");
-//     };
-
-//     // Add timeupdate event for backup
-//     const handleTimeUpdate = () => {
-//       setCurrentTime(audio.currentTime);
-//     };
-
-//     audio.addEventListener("loadedmetadata", handleLoadedMetadata);
-//     audio.addEventListener("ended", handleEnded);
-//     audio.addEventListener("error", handleError);
-//     audio.addEventListener("timeupdate", handleTimeUpdate);
-
-//     // Only start animation frame when playing
-//     if (isPlaying) {
-//       animationFrameRef.current = requestAnimationFrame(updateTimeState);
-//     }
-
-//     return () => {
-//       if (animationFrameRef.current) {
-//         cancelAnimationFrame(animationFrameRef.current);
-//       }
-//       audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
-//       audio.removeEventListener("ended", handleEnded);
-//       audio.removeEventListener("error", handleError);
-//       audio.removeEventListener("timeupdate", handleTimeUpdate);
-//     };
-//   }, [isPlaying]); // Add isPlaying to dependencies
-
-//   const togglePlay = async () => {
-//     const audio = audioRef.current;
-//     if (!audio) return;
-
-//     try {
-//       if (isPlaying) {
-//         audio.pause();
-//         if (animationFrameRef.current) {
-//           cancelAnimationFrame(animationFrameRef.current);
-//         }
-//       } else {
-//         await audio.play();
-//         animationFrameRef.current = requestAnimationFrame(
-//           function updateTime() {
-//             setCurrentTime(audio.currentTime);
-//             animationFrameRef.current = requestAnimationFrame(updateTime);
-//           }
-//         );
-//       }
-//       setIsPlaying(!isPlaying);
-//     } catch (e) {
-//       console.error("Playback failed:", e);
-//       setError("Playback failed. Please try again.");
-//     }
-//   };
-
-//   const toggleMute = () => {
-//     const audio = audioRef.current;
-//     if (audio) {
-//       audio.muted = !isMuted;
-//       setIsMuted(!isMuted);
-//     }
-//   };
-
-//   const handleSeek = (time: number) => {
-//     const audio = audioRef.current;
-//     if (audio) {
-//       audio.currentTime = time;
-//       setCurrentTime(time);
-//       if (time < duration) {
-//         setIsAudioEnded(false);
-//       }
-//     }
-//   };
-
-//   const formatTime = (time: number) => {
-//     const minutes = Math.floor(time / 60);
-//     const seconds = Math.floor(time % 60);
-//     return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-//   };
-
-//   const progress = duration ? (currentTime / duration) * 100 : 0;
-//   const totalBars = 50;
-//   const activeBarIndex = Math.floor((progress / 100) * totalBars);
-
-//   return (
-//     <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-b from-purple-900 to-black">
-//       <div className="max-w-md w-full bg-black/30 backdrop-blur-xl p-6 rounded-xl shadow-lg text-white">
-//         <audio ref={audioRef} src={AUDIO_URL} preload="metadata" />
-//         <div className="text-center mb-6">
-//           <h1 className="text-2xl font-semibold">Baby Elephant Walk</h1>
-//           <p className="text-sm text-gray-300">Henry Mancini</p>
-//         </div>
-
-//         {error ? (
-//           <div className="text-red-500 text-center mb-4">{error}</div>
-//         ) : (
-//           <>
-//             <div className="relative w-full h-16 mb-2 flex items-center">
-//               <div className="absolute inset-0 flex items-center justify-between">
-//                 {waveHeights.map((height, index) => (
-//                   <WaveBar
-//                     key={index}
-//                     active={index <= activeBarIndex}
-//                     height={isPlaying ? height : 4}
-//                   />
-//                 ))}
-//               </div>
-//               <input
-//                 type="range"
-//                 className="absolute inset-0 w-full opacity-0 cursor-pointer"
-//                 min="0"
-//                 max={duration || 100}
-//                 step="0.1"
-//                 value={currentTime}
-//                 onChange={(e) => handleSeek(Number(e.target.value))}
-//               />
-//             </div>
-
-//             <div className="flex justify-between text-sm text-gray-400 mb-6">
-//               <span>{formatTime(currentTime)}</span>
-//               <span>{formatTime(duration)}</span>
-//             </div>
-
-//             <div className="flex items-center justify-between px-4">
-//               <div className="relative group">
-//                 <button
-//                   className="text-white/80 hover:text-amber-400 transition-colors relative"
-//                   onClick={() => handleSeek(Math.max(currentTime - 10, 0))}
-//                   title="Rewind 10 seconds"
-//                 >
-//                   <SkipBack size={28} />
-//                   <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs">
-//                     -10
-//                   </span>
-//                 </button>
-//               </div>
-
-//               <motion.button
-//                 className="bg-amber-400 text-black p-4 rounded-full"
-//                 onClick={togglePlay}
-//                 whileHover={{ scale: 1.1 }}
-//                 whileTap={{ scale: 0.95 }}
-//               >
-//                 {isPlaying ? (
-//                   <Pause size={28} />
-//                 ) : (
-//                   <Play size={28} className="ml-1" />
-//                 )}
-//               </motion.button>
-
-//               <div className="relative group">
-//                 <button
-//                   className="text-white/80 hover:text-amber-400 transition-colors relative"
-//                   onClick={() =>
-//                     handleSeek(Math.min(currentTime + 10, duration))
-//                   }
-//                   title="Forward 10 seconds"
-//                 >
-//                   <SkipForward size={28} />
-//                   <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs">
-//                     +10
-//                   </span>
-//                 </button>
-//               </div>
-
-//               <button
-//                 className="text-white/80 hover:text-amber-400 transition-colors"
-//                 onClick={toggleMute}
-//               >
-//                 {isMuted ? <VolumeX size={28} /> : <Volume2 size={28} />}
-//               </button>
-//             </div>
-
-//             <AnimatePresence>
-//               {isAudioEnded && (
-//                 <motion.div
-//                   initial={{ opacity: 0, y: 20 }}
-//                   animate={{ opacity: 1, y: 0 }}
-//                   exit={{ opacity: 0, y: -20 }}
-//                   className="mt-6 text-center text-sm text-gray-300"
-//                 >
-//                   <p>Playback has ended. Replay or choose another track.</p>
-//                 </motion.div>
-//               )}
-//             </AnimatePresence>
-//           </>
-//         )}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AudioPlayer;
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -484,36 +12,35 @@ import {
 } from "lucide-react";
 
 const AUDIO_URL = "/Spanish.webm";
-
 const summaries = [
   {
     Interval_Time: 0,
     Psychometric_Summary_Spanish:
-      "Durante el intervalo analizado, la persona muestra una profunda reflexión sobre el manejo de la ansiedad y las dificultades emocionales que enfrenta en su vida personal y profesional. La oradora, quien se identifica como psicóloga, comparte su experiencia sobre la importancia de escuchar las señales del cuerpo y comprender que la ansiedad actúa como un mecanismo de alerta ante situaciones de malestar. Se expresa un reconocimiento de la tristeza y el dolor asociados a experiencias de pérdida y trauma, especialmente al recordar la muerte de su padre en la adolescencia, lo que sugiere un impacto emocional significativo y un proceso de duelo no resuelto. A lo largo de su discurso, se evidencian emociones como la confusión y la tristeza, junto con momentos de determinación y esperanza, reflejando una lucha interna entre la aceptación de experiencias difíciles y el deseo de encontrar un sentido de resiliencia. Las emociones faciales y prosódicas capturadas, como la calma y la confusión, complementan esta narrativa, sugiriendo un estado emocional complejo que combina momentos de reflexión y vulnerabilidad. En general, la oradora parece estar en un proceso de autoexploración y búsqueda de entendimiento sobre su propio bienestar, manifestando tanto una conciencia de sus dificultades como una aspiración hacia la sanación y la superación personal.",
+      "Durante el intervalo analizado, la persona habla sobre la ansiedad y las dificultades emocionales, destacando la importancia de prestar atención a las señales del cuerpo. Al recordar la muerte de su padre durante la adolescencia, se percibe un duelo no resuelto. Su tono refleja tristeza y vulnerabilidad, pero también determinación y esperanza. La voz muestra un estado emocional complejo, con momentos de calma y confusión, sugiriendo introspección y deseo de resiliencia.",
     Psychometric_Summary_English:
-      "During the analyzed interval, the person demonstrates a deep reflection on managing anxiety and the emotional difficulties they face in their personal and professional life. The speaker, who identifies as a psychologist, shares her experience about the importance of listening to the body's signals and understanding that anxiety acts as a warning mechanism in situations of discomfort. There is recognition of sadness and pain associated with experiences of loss and trauma, especially when recalling the death of her father during adolescence, suggesting significant emotional impact and an unresolved grieving process. Throughout her speech, emotions such as confusion and sadness, along with moments of determination and hope, are evident, reflecting an internal struggle between accepting difficult experiences and the desire to find a sense of resilience. The captured facial and prosodic emotions, such as calmness and confusion, complement this narrative, suggesting a complex emotional state combining moments of reflection and vulnerability. Overall, the speaker seems to be in a process of self-exploration and seeking understanding of her own well-being, manifesting both an awareness of her difficulties and an aspiration toward healing and personal growth.",
+      "During the analyzed interval, the person discusses anxiety and emotional challenges, emphasizing the importance of paying attention to bodily signals. In recalling her father’s death during adolescence, unresolved grief is apparent. Her tone reflects sadness and vulnerability, but also determination and hope. The voice suggests a complex emotional state, with moments of calmness and confusion, indicating introspection and a desire for resilience.",
   },
   {
     Interval_Time: 120,
     Psychometric_Summary_Spanish:
-      "Durante el intervalo analizado, la persona manifiesta una profunda reflexión sobre la ansiedad y su relación con las experiencias de vida adversas. Expresa la necesidad de reconocer la ansiedad como una señal de alerta más que como un estado permanente, sugiriendo que es crucial escuchar las señales del cuerpo para identificar lo que nos afecta negativamente. El relato revela momentos de vulnerabilidad, donde recuerda situaciones dolorosas como la pérdida de un ser querido en su adolescencia, lo que generó un sentimiento de desesperanza y confusión. Esta narrativa está acompañada de emociones como la tristeza y la confusión, que son evidentes en sus expresiones faciales y en su tono, que denotan determinación a pesar de las dificultades. La capacidad de reflexionar sobre experiencias pasadas y reconocer que ha superado situaciones difíciles resalta una resiliencia subyacente, aunque también se percibe un estado de fatiga emocional y una lucha con la ansiedad en situaciones cotidianas, como el regreso al trabajo tras las vacaciones. En conjunto, la persona parece atravesar un proceso de autoconocimiento, donde la ansiedad se presenta como un tema recurrente que invita a la introspección y a la búsqueda de apoyo profesional, reflejando una mezcla de emociones complejas que incluyen la tristeza, la calma y un leve sentido de asombro ante la capacidad humana de recuperación.",
+      "Durante el intervalo analizado, la persona reflexiona sobre la ansiedad como una señal de alerta más que como un estado permanente. Su tono revela vulnerabilidad al hablar sobre la pérdida de un ser querido en su adolescencia, lo que provocó desesperanza y confusión. Aunque expresa fatiga emocional, su determinación es evidente. Su tono fluctúa entre tristeza y calma, reflejando autoconocimiento y la búsqueda de apoyo profesional para enfrentar las dificultades.",
     Psychometric_Summary_English:
-      "During the analyzed interval, the person manifests a deep reflection on anxiety and its relationship with adverse life experiences. She expresses the need to recognize anxiety as a warning signal rather than a permanent state, suggesting that it is crucial to listen to the body's signals to identify what negatively affects us. The account reveals moments of vulnerability, where she recalls painful situations such as the loss of a loved one during adolescence, which generated feelings of hopelessness and confusion. This narrative is accompanied by emotions such as sadness and confusion, evident in her facial expressions and tone, denoting determination despite difficulties. The ability to reflect on past experiences and recognize having overcome difficult situations highlights an underlying resilience, although emotional fatigue and struggles with anxiety in everyday situations, such as returning to work after a vacation, are also evident. Overall, the person seems to be undergoing a process of self-awareness, where anxiety emerges as a recurring theme inviting introspection and the search for professional support, reflecting a mix of complex emotions, including sadness, calmness, and a slight sense of awe at human resilience.",
+      "During the analyzed interval, the person reflects on anxiety as a warning signal rather than a permanent state. Her tone reveals vulnerability when discussing the loss of a loved one during adolescence, which led to hopelessness and confusion. Emotional fatigue is apparent, yet her determination stands out. The tone alternates between sadness and calmness, reflecting self-awareness and a search for professional support to face challenges.",
   },
   {
     Interval_Time: 240,
     Psychometric_Summary_Spanish:
-      "Durante el intervalo analizado, la persona expresa una profunda reflexión sobre la ansiedad y el sufrimiento emocional, subrayando la importancia de reconocer y atender las señales que el cuerpo envía ante situaciones adversas. Identifica la ansiedad como un mecanismo de alerta, indicando que es crucial escuchar lo que el cuerpo comunica, especialmente en contextos de estrés laboral o relaciones interpersonales dañinas. Su discurso revela una mezcla de tristeza y confusión, evidenciada por momentos de introspección sobre experiencias pasadas de pérdida y dolor, como la muerte de un ser querido en su adolescencia. Esta vivencia marcó un punto de inflexión en su vida, donde la sensación de desesperanza fue abrumadora. A pesar de estas dificultades, también transmite un mensaje de resiliencia, resaltando que, aunque hay eventos que pueden dejar a las personas 'fuera de juego', existe la capacidad de recuperarse y salir adelante. Las emociones faciales y prosódicas sugieren un estado de determinación y concentración, aunque también se perciben signos de tristeza y confusión, reflejando el conflicto interno que enfrenta al lidiar con su propia ansiedad y la de otros. En conjunto, estos elementos indican una persona que navega entre la lucha personal y la esperanza, destacando la complejidad de su estado emocional y la necesidad de buscar apoyo y atención a las propias necesidades psicológicas.",
+      "Durante el intervalo analizado, la persona enfatiza que la ansiedad actúa como un mecanismo de alerta y resalta la importancia de reconocer las señales físicas. Su tono refleja introspección al recordar experiencias de pérdida, mostrando tristeza y confusión. Sin embargo, también transmite determinación al abordar la capacidad de superar obstáculos. Su tono sugiere un estado emocional complejo, entre vulnerabilidad y esperanza, mientras navega por el proceso de autoexploración.",
     Psychometric_Summary_English:
-      "During the analyzed interval, the person expresses a deep reflection on anxiety and emotional suffering, emphasizing the importance of recognizing and addressing the signals the body sends in adverse situations. She identifies anxiety as a warning mechanism, stating that it is crucial to listen to what the body communicates, especially in contexts of work stress or harmful interpersonal relationships. Her speech reveals a mixture of sadness and confusion, evidenced by moments of introspection about past experiences of loss and pain, such as the death of a loved one during adolescence. This experience marked a turning point in her life, where the sense of hopelessness was overwhelming. Despite these difficulties, she also conveys a message of resilience, highlighting that although there are events that can leave people 'out of the game,' there is the capacity to recover and move forward. Facial and prosodic emotions suggest a state of determination and focus, although signs of sadness and confusion are also present, reflecting the internal conflict she faces in dealing with her own anxiety and that of others. Overall, these elements indicate a person navigating between personal struggles and hope, emphasizing the complexity of her emotional state and the need to seek support and attend to her own psychological needs.",
+      "During the analyzed interval, the person emphasizes that anxiety functions as a warning mechanism and highlights the importance of recognizing physical signals. Her tone reflects introspection when recalling experiences of loss, showing sadness and confusion. However, she also conveys determination when addressing the ability to overcome obstacles. Her tone suggests a complex emotional state, balancing vulnerability and hope while navigating self-exploration.",
   },
 ];
 
 const overallSummary = {
   Psychometric_Summary_Spanish:
-    "Durante la sesión, la oradora, una psicóloga, aborda la complejidad de la ansiedad y su relación con las experiencias de vida. Expresa la importancia de reconocer y escuchar las señales del cuerpo como un indicador de malestar emocional. Asimismo, comparte vivencias personales que subrayan la carga emocional que puede acarrear la pérdida y el duelo, destacando cómo eventos traumáticos pueden llevar a un estado de desesperanza y parálisis emocional. La repetición de ciertas frases y la profundización en sus recuerdos revelan una introspección significativa, sugiriendo que, a pesar de las dificultades, hay un reconocimiento del potencial resiliente del ser humano. Esto se manifiesta en su creencia en la capacidad de recuperación, aunque también se observa una lucha interna con la tristeza y la ansiedad, evidenciada por sus descripciones de síntomas físicos y emocionales asociados a situaciones que no puede cambiar. Los datos emocionales de apoyo revelan una mezcla de emociones que enriquecen esta narrativa. La expresión de confusión y tristeza, combinada con momentos de calma y determinación, sugiere que, aunque la oradora enfrenta retos significativos, también halla momentos de claridad y fortaleza. Las emociones de alegría y asombro que emergen en ciertos momentos indican una capacidad de asimilar experiencias y reflexionar sobre el crecimiento personal. Sin embargo, la ansiedad persiste, especialmente en contextos laborales, donde se siente abrumada antes de enfrentar su entorno. Este conflicto interno entre el deseo de superación y la lucha constante con la ansiedad revela un estado psicológico complejo que merece atención y posiblemente intervención profesional para facilitar su proceso de sanación. En resumen, la oradora muestra una profunda comprensión de las emociones humanas, combinada con un deseo de ayudar a otros a navegar por sus propios desafíos emocionales, lo que refleja un compromiso tanto profesional como personal con la salud mental.",
+    "Durante la sesión, la oradora reflexiona sobre la ansiedad y sus efectos emocionales, resaltando la importancia de escuchar las señales del cuerpo como indicadores de malestar. Comparte experiencias personales, incluyendo la pérdida de su padre en la adolescencia, lo que subraya el impacto emocional del duelo y el trauma. Su tono revela vulnerabilidad, tristeza y confusión, pero también determinación y esperanza, lo que refleja un proceso de introspección y búsqueda de resiliencia. A pesar de las dificultades emocionales descritas, expresa momentos de claridad y reconocimiento de su capacidad para superar adversidades. Las emociones capturadas, como la calma y la tristeza, sugieren un estado emocional complejo, mezclando vulnerabilidad con determinación. También surgen emociones como asombro y alegría, indicando una capacidad para reflexionar sobre el crecimiento personal. Sin embargo, persiste la ansiedad, especialmente en contextos laborales, donde describe sentirse abrumada antes de enfrentar el entorno. Este conflicto interno entre el deseo de mejora y la lucha continua con la ansiedad resalta la necesidad de apoyo emocional y profesional. En resumen, la oradora muestra una profunda conciencia emocional, combinando momentos de vulnerabilidad y fortaleza. Su capacidad para compartir estas experiencias demuestra un compromiso tanto personal como profesional con la salud mental, enfatizando la importancia de abordar los desafíos emocionales de manera proactiva.",
   Psychometric_Summary_English:
-    "During the session, the speaker, a psychologist, addresses the complexity of anxiety and its relationship with life experiences. She expresses the importance of recognizing and listening to the body's signals as an indicator of emotional distress. Additionally, she shares personal experiences that underscore the emotional burden that loss and grief can carry, highlighting how traumatic events can lead to a state of hopelessness and emotional paralysis. The repetition of certain phrases and the deepening of her memories reveal significant introspection, suggesting that, despite the difficulties, there is an acknowledgment of the resilient potential of human beings. This is manifested in her belief in the capacity for recovery, although an internal struggle with sadness and anxiety is also observed, evidenced by her descriptions of physical and emotional symptoms associated with situations she cannot change.The supporting emotional data reveal a mix of emotions that enrich this narrative. The expression of confusion and sadness, combined with moments of calm and determination, suggests that, although the speaker faces significant challenges, she also finds moments of clarity and strength. The emotions of joy and wonder that emerge at certain moments indicate an ability to assimilate experiences and reflect on personal growth. However, anxiety persists, especially in work contexts, where she feels overwhelmed before facing her environment. This internal conflict between the desire for improvement and the constant struggle with anxiety reveals a complex psychological state that deserves attention and possibly professional intervention to facilitate her healing process. In summary, the speaker demonstrates a deep understanding of human emotions, combined with a desire to help others navigate their own emotional challenges, reflecting both a professional and personal commitment to mental health.",
+    "During the session, the speaker reflects on anxiety and its emotional effects, emphasizing the importance of listening to bodily signals as indicators of distress. She shares personal experiences, including the loss of her father during adolescence, highlighting the emotional impact of grief and trauma. Her tone conveys vulnerability, sadness, and confusion, but also determination and hope, reflecting introspection and a pursuit of resilience. Despite emotional struggles, she describes moments of clarity and acknowledges her ability to overcome difficulties. Captured emotions, such as calmness and sadness, suggest a complex emotional state blending vulnerability with determination. Emotions like wonder and joy also emerge, reflecting an ability to consider personal growth. However, anxiety persists, particularly in work settings, where she describes feeling overwhelmed before facing challenges. This internal conflict between the desire for growth and ongoing struggles with anxiety underscores the need for emotional and professional support. In summary, the speaker demonstrates deep emotional awareness, balancing vulnerability and strength. Her ability to share these reflections shows both personal and professional dedication to mental health, emphasizing the importance of addressing emotional challenges proactively.",
 };
 
 const messages = [
@@ -1075,13 +602,13 @@ const AudioPlayer = () => {
   const activeBarIndex = Math.floor((progress / 100) * totalBars);
 
   return (
-    <div className="w-screen min-h-screen flex flex-col bg-white">
-      <div className="max-w-7xl w-full mx-auto p-6">
-        <h2 className="text-2xl font-semibold text-[#2A6F97] mb-6">
-          Audio Insights
+    <div className="w-screen min-h-screen rounded-3xl flex flex-col bg-white ">
+      <div className="max-w-7xl w-full mx-auto p-6 ">
+        <h2 className="text-2xl font-semibold text-[#e66e36] mb-6">
+          {isEnglish ? "Audio Insights" : "Percepciones de audio"}
         </h2>
         {/* Audio Player Section */}
-        <div className="w-full bg-white backdrop-blur-xl p-6 rounded-xl shadow-lg text-black mb-8">
+        <div className="w-full bg-white backdrop-blur-xl p-6  shadow-lg rounded-3xl text-black mb-8">
           <audio
             ref={audioRef}
             src={AUDIO_URL}
@@ -1097,11 +624,11 @@ const AudioPlayer = () => {
             <h1 className="text-2xl font-semibold">
               {isEnglish ? "Audio Analysis" : "Análisis de Audio"}
             </h1>
-            <p className="text-sm text-black">
+            {/* <p className="text-sm text-black">
               {isEnglish
                 ? "Real-time Transcription & Analysis"
                 : "Transcripción y Análisis en Tiempo Real"}
-            </p>
+            </p> */}
           </div>
 
           {error ? (
@@ -1224,7 +751,7 @@ const AudioPlayer = () => {
                   : "Resumen"}
             </h3>
             <div
-              className={`text-gray-700 text-lg ${
+              className={`text-gray-700 text-lg justify-content${
                 findCurrentSummary()?.split(".").length > 10
                   ? "h-[500px] overflow-y-auto"
                   : "min-h-fit"

@@ -118,11 +118,10 @@ export default function Home() {
           </div>
         </BackgroundGradientAnimation>
         {/* How It Works Section */}
-        <div id="video-analysis" className="bg-white -top-30 ">
+        <div id="video-analysis" className="bg-white -top-30 pb-2">
           <TabbedDashboard />
         </div>
-        <div className="bg-white -top-30 mb-30"></div>
-        <div id="video-analysis" className="bg-white -top-30 ">
+        <div id="" className="bg-white -mt-10  ">
           <AudioTabbedDashboard />
         </div>
         <div id="HowItworks">
