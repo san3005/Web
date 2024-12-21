@@ -1902,7 +1902,7 @@ const AudioPlayer = () => {
           />
 
           <div className="text-center mb-6">
-            <h1 className="text-2xl font-semibold">Audio Analysis</h1>
+            {/* <h1 className="text-2xl font-semibold">Audio Analysis</h1> */}
             {/* <p className="text-sm text-black">
               Real-time Transcription & Analysis
             </p> */}
