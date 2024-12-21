@@ -11,14 +11,14 @@ export default function AboutPage() {
     {
       name: "Chandra N Sekharan",
       role: "Professor",
-      workingAt: "Texas A&M University Corpus Christi.",
+      workingAt: "Texas A&M University Corpus Christi",
       image: "/Professor Illustration.png",
       email: "chandra.sekharan@tamucc.edu",
     },
     {
       name: "Santosh G.",
       role: "Task Research Worker",
-      workingAt: "Texas A&M University Corpus Christi.",
+      workingAt: "Texas A&M University Corpus Christi",
       image: "/Male Avatar.svg",
       email: "venkata.gurajada@tamucc.edu",
       linkedin: "https://linkedin.com/in/aaron",
@@ -26,7 +26,7 @@ export default function AboutPage() {
     {
       name: "Bala K.",
       role: "Task Research Worker",
-      workingAt: "Texas A&M University Corpus Christi.",
+      workingAt: "Texas A&M University Corpus Christi",
       image: "/Profile Picture Illustration.png",
       email: "nisarg@example.com",
       linkedin: "https://linkedin.com/in/nisarg",
