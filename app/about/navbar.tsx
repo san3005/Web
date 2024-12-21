@@ -59,7 +59,7 @@ export default function Navbar() {
             <Link href="/" className="text-2xl font-bold text-black">
               <Image
                 className="w-[4rem] h-15"
-                src="/logo1.jpg"
+                src="/logo1.png"
                 alt="logo"
                 width={900}
                 height={600}
