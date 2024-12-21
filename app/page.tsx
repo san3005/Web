@@ -117,7 +117,6 @@ export default function Home() {
             </main>
           </div>
         </BackgroundGradientAnimation>
-
         {/* How It Works Section */}
         <div id="video-analysis" className="bg-white -top-30 ">
           <TabbedDashboard />

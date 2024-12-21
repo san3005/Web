@@ -1,14 +1,14 @@
 export default function HowItWorks() {
   return (
     <section className="w-full py-0 md:py-2 lg:pt-0 lg:pb-4 bg-white flex justify-center md:pb-4 sm:pb-4">
-      <div className="w-[100%] max-h-full px-0 md:px-1">
+      <div className="w-[100%] max-h-full px-0 md:px-1 py-3">
         {/* Uncomment either light blue or lavender background */}
-        <div className="border border-gray-200 rounded-3xl bg-[#E3EDF7] pt-0 md:p-12">
+        <div className="border border-gray-200 rounded-3xl bg-[#E3EDF7] pt-0 md:p-12 py-3">
           {" "}
           {/* Light Blue Background */}
           {/* <div className="border border-gray-200 rounded-3xl bg-[#E6E6FA] p-8 md:p-12"> */}{" "}
           {/* Lavender Background */}
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="flex py-10 flex-col items-center justify-center space-y-4 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#4B4453]">
               How it works
             </h2>

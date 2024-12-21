@@ -8,8 +8,8 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { cn } from "@/lib/utils";
-import EnglishPlayer from "@/components/ui/englishaudio";
-import SpanishPlayer from "@/components/ui/Spanishaudio";
+import AudioPlayer from "@/components/ui/temp";
+import BilingualAudioPlayer from "@/components/ui/Spanishtemp";
 
 export default function Component() {
   const [activeTab, setActiveTab] = useState("english");
@@ -33,7 +33,7 @@ export default function Component() {
   return (
     <div className="rounded-3xl flex flex-col items-center mx-auto">
       <motion.div
-        className="bg-[#F9F9F9] rounded-3xl shadow-lg"
+        className="bg-[#fff] rounded-3xl shadow-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -82,7 +82,11 @@ export default function Component() {
             exit={{ opacity: 0, y: -100 }}
             transition={{ duration: 0.3 }}
           >
-            {activeTab === "english" ? <EnglishPlayer /> : <SpanishPlayer />}
+            {activeTab === "english" ? (
+              <AudioPlayer />
+            ) : (
+              <BilingualAudioPlayer />
+            )}
           </motion.div>
         </AnimatePresence>
       </motion.div>
