@@ -10,12 +10,12 @@ const faqData: FAQItem[] = [
   {
     question: "What is MindMatrix?",
     answer:
-      "MindMatrix is an advanced technology designed to provide real-time behavioral analysis and insights through interactive sessions. It analyzes communication patterns, cognitive responses, and behavioral indicators to offer a comprehensive understanding of an individual's mental health.",
+      "MindMatrix is an advanced technology designed to provide real-time behavioral analysis and insights through interactive sessions. It analyzes communication patterns, cognitive responses, and behavioral indicators to offer a comprehensive understanding of an individual's behavior and interactions.",
   },
   {
     question: "How does MindMatrix work?",
     answer:
-      "MindMatrix uses multi-modal input analysis to examine both visual and audio signals. It captures behavioral indicators, interaction patterns, and communication styles to detect behavioral variations and provide a holistic view of mental health.",
+      "MindMatrix uses multi-modal input analysis to examine both visual and audio signals. It captures behavioral indicators, interaction patterns, and communication styles to detect variations and provide a holistic view of behavior and communication.",
   },
   {
     question: "What are the key features of MindMatrix?",
@@ -25,14 +25,15 @@ const faqData: FAQItem[] = [
   {
     question: "Who can benefit from using MindMatrix?",
     answer:
-      "MindMatrix can benefit mental health professionals, therapists, counselors, and individuals seeking to gain deeper insights into their cognitive and mental well-being.",
+      "MindMatrix can benefit professionals, coaches, consultants, and individuals seeking to gain deeper insights into their cognitive patterns and communication styles.",
   },
   {
-    question: "Is MindMatrix a replacement for traditional therapy?",
+    question: "Is MindMatrix a replacement for traditional counseling?",
     answer:
-      "No, MindMatrix is not a replacement for traditional therapy. It's a tool designed to complement and enhance the work of mental health professionals by providing additional insights and data.",
+      "No, MindMatrix is not a replacement for traditional counseling. It's a tool designed to complement and enhance professional practices by providing additional insights and data.",
   },
 ];
+
 // const faqData: FAQItem[] = [
 //   {
 //     question: "What is MindMatrix?",
