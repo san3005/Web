@@ -296,7 +296,7 @@ export default function Testimonials() {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 50}%)` }}
         >
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
               className="flex-shrink-0 w-full md:w-[50%] px-2"
