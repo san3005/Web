@@ -1752,7 +1752,6 @@ const AudioPlayer = () => {
     };
 
     const handleError = (e: Event) => {
-      console.error("Audio error:", e);
       setError("Failed to load audio. Please try again later.");
     };
 

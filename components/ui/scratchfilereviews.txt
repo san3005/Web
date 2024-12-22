@@ -1,0 +1,315 @@
+"use client";
+
+import React, { useState, useEffect, useCallback } from "react";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../../lib/firebase";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+interface Testimonial {
+  id: string;
+  quote: string;
+  name: string;
+  src: string;
+}
+
+export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchReviews = useCallback(async () => {
+    try {
+      const q = query(
+        collection(db, "feedback"),
+        where("status", "==", "Pending")
+      );
+      const querySnapshot = await getDocs(q);
+
+      const fetchedTestimonials = querySnapshot.docs.map((doc, index) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          quote: data.feedback || "No feedback provided.",
+          name: data.name || "Anonymous",
+          src: staticTestimonials[index % staticTestimonials.length].src,
+        };
+      });
+
+      setTestimonials(
+        fetchedTestimonials.length > 0 ? fetchedTestimonials : []
+      );
+    } catch (error) {
+      console.error("Error fetching testimonials:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchReviews();
+  }, [fetchReviews]);
+
+  const nextSlide = useCallback(() => {
+    if (testimonials.length > 0) {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }
+  }, [testimonials.length]);
+
+  const prevSlide = useCallback(() => {
+    if (testimonials.length > 0) {
+      setCurrentIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + testimonials.length) % testimonials.length
+      );
+    }
+  }, [testimonials.length]);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
+
+  if (isLoading) {
+    return (
+      <section className="py-16 px-4 max-w-6xl mx-auto">
+        <div className="space-y-4 animate-pulse">
+          <div className="h-8 bg-gray-200 rounded w-32" />
+          <div className="h-12 bg-gray-200 rounded w-64" />
+          <div className="h-6 bg-gray-200 rounded w-48" />
+          <div className="h-[400px] bg-gray-200 rounded-2xl" />
+        </div>
+      </section>
+    );
+  }
+
+  if (testimonials.length === 0) {
+    return (
+      <section className="py-16 px-4 max-w-6xl mx-auto">
+        <div className="space-y-4 mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
+            What our clients{" "}
+            <span className="italic font-serif text-black">said</span>
+          </h2>
+          <p className="text-muted-foreground">
+            No reviews available at the moment.
+          </p>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-16 px-4 max-w-6xl mx-auto">
+      <div className="space-y-4 mb-12">
+        <p className="text-orange-500 font-medium tracking-wide uppercase">
+          TESTIMONIALS
+        </p>
+        <div className="flex items-center justify-between">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
+            What our clients{" "}
+            <span className="italic font-serif text-orange-500">said</span>
+          </h2>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={prevSlide}
+              className="rounded-full hover:bg-orange-50"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              <span className="sr-only">Previous testimonial</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={nextSlide}
+              className="rounded-full hover:bg-orange-50"
+            >
+              <ChevronRight className="h-4 w-4" />
+              <span className="sr-only">Next testimonial</span>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative bg-orange-50 rounded-2xl p-8 md:p-12">
+        <div className="grid md:grid-cols-[300px,1fr] gap-8 items-center">
+          <div className="relative aspect-[3/4] rounded-lg overflow-hidden">
+            <Image
+              src={testimonials[currentIndex]?.src || staticTestimonials[0].src}
+              alt={`Testimonial from ${testimonials[currentIndex]?.name}`}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-6">
+            <div className="text-orange-500 text-6xl font-serif">‟</div>
+            <h3 className="text-xl md:text-xl text-gray-800 font-bold">
+              {testimonials[currentIndex]?.quote}
+            </h3>
+            <p className="text-orange-500 font-medium">
+              ~{testimonials[currentIndex]?.name}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+//main
+
+("use client");
+
+import React, { useState, useEffect, useCallback } from "react";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../../lib/firebase";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+interface Testimonial {
+  id: string;
+  quote: string;
+  name: string;
+  src: string;
+}
+
+const staticTestimonials = [
+  { src: "/Image1.jpg", caption: "Amazing service!" },
+  { src: "/Image2.jpg", caption: "Highly recommended!" },
+  { src: "/Image3.jpg", caption: "User-friendly and efficient." },
+  { src: "/Image4.jpg", caption: "A wonderful experience." },
+  { src: "/Image5.jpg", caption: "Would use it again!" },
+];
+
+export default function Testimonials() {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchReviews = useCallback(async () => {
+    try {
+      const q = query(
+        collection(db, "feedback"),
+        where("status", "==", "Pending")
+      );
+      const querySnapshot = await getDocs(q);
+
+      const fetchedTestimonials = querySnapshot.docs.map((doc, index) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          quote: data.feedback || "No feedback provided.",
+          name: data.name || "Anonymous",
+          src: staticTestimonials[index % staticTestimonials.length].src,
+        };
+      });
+
+      setTestimonials(
+        fetchedTestimonials.length > 0
+          ? fetchedTestimonials
+          : staticTestimonials
+      );
+    } catch (error) {
+      console.error("Error fetching testimonials:", error);
+      setTestimonials(staticTestimonials);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchReviews();
+  }, [fetchReviews]);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+  }, [testimonials.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length
+    );
+  }, [testimonials.length]);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
+
+  if (isLoading) {
+    return (
+      <section className="py-16 px-4 max-w-6xl mx-auto">
+        <div className="space-y-4 animate-pulse">
+          <div className="h-8 bg-gray-200 rounded w-32" />
+          <div className="h-12 bg-gray-200 rounded w-64" />
+          <div className="h-6 bg-gray-200 rounded w-48" />
+          <div className="h-[400px] bg-gray-200 rounded-2xl" />
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-16 px-4 max-w-6xl mx-auto">
+      <div className="space-y-4 mb-12">
+        <p className="text-orange-500 font-medium tracking-wide uppercase">
+          TESTIMONIALS
+        </p>
+        <div className="flex items-center justify-between">
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
+            What our clients{" "}
+            <span className="italic font-serif text-orange-500">said</span>
+          </h2>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={prevSlide}
+              className="rounded-full bg-orange-600 hover:bg-orange-50"
+            >
+              <ChevronLeft className="h-4 w-4" />
+              <span className="sr-only">Previous testimonial</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={nextSlide}
+              className="rounded-full bg-orange-600  hover:bg-orange-50"
+            >
+              <ChevronRight className="h-4 w-4" />
+              <span className="sr-only">Next testimonial</span>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative bg-orange-50 rounded-2xl p-8 md:p-12">
+        <div className="grid md:grid-cols-[300px,1fr] gap-8 items-center">
+          <div className="relative w-[200px] aspect-square rounded-lg overflow-hidden">
+            <Image
+              src={testimonials[currentIndex]?.src}
+              alt={`Testimonial from ${testimonials[currentIndex]?.name}`}
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="space-y-6">
+            <div className="text-orange-500 text-6xl font-serif">‟</div>
+            <h3 className="text-xl md:text-xl text-gray-800 ">
+              {testimonials[currentIndex]?.quote}
+            </h3>
+            <p className="text-orange-500 font-medium">
+              ~{testimonials[currentIndex]?.name}
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
