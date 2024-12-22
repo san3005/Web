@@ -82,9 +82,7 @@ export default function AboutPage() {
                     {member.name}
                   </h4>
                   <p className="text-[#FFA726] font-semibold">{member.role}</p>
-                  <p className="text-sm text-[#4A4A4A]">
-                    Working at: {member.workingAt}
-                  </p>
+                  <p className="text-sm text-[#4A4A4A]">{member.workingAt}</p>
 
                   <div className="flex space-x-4 mt-4">
                     <a
