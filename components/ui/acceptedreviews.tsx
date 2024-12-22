@@ -161,12 +161,22 @@ interface Testimonial {
   src: string;
 }
 
-const staticTestimonials = [
-  { src: "/Image1.jpg", caption: "Amazing service!" },
-  { src: "/Image2.jpg", caption: "Highly recommended!" },
-  { src: "/Image3.jpg", caption: "User-friendly and efficient." },
-  { src: "/Image4.jpg", caption: "A wonderful experience." },
-  { src: "/Image5.jpg", caption: "Would use it again!" },
+const staticTestimonials: Testimonial[] = [
+  { id: "1", quote: "Amazing service!", name: "User 1", src: "/Image1.jpg" },
+  { id: "2", quote: "Highly recommended!", name: "User 2", src: "/Image2.jpg" },
+  {
+    id: "3",
+    quote: "User-friendly and efficient.",
+    name: "User 3",
+    src: "/Image3.jpg",
+  },
+  {
+    id: "4",
+    quote: "A wonderful experience.",
+    name: "User 4",
+    src: "/Image4.jpg",
+  },
+  { id: "5", quote: "Would use it again!", name: "User 5", src: "/Image5.jpg" },
 ];
 
 export default function Testimonials() {
@@ -183,15 +193,17 @@ export default function Testimonials() {
       );
       const querySnapshot = await getDocs(q);
 
-      const fetchedTestimonials = querySnapshot.docs.map((doc, index) => {
-        const data = doc.data();
-        return {
-          id: doc.id,
-          quote: data.feedback || "No feedback provided.",
-          name: data.name || "Anonymous",
-          src: staticTestimonials[index % staticTestimonials.length].src,
-        };
-      });
+      const fetchedTestimonials: Testimonial[] = querySnapshot.docs.map(
+        (doc, index) => {
+          const data = doc.data();
+          return {
+            id: doc.id,
+            quote: data.feedback || "No feedback provided.",
+            name: data.name || "Anonymous",
+            src: staticTestimonials[index % staticTestimonials.length].src,
+          };
+        }
+      );
 
       setTestimonials(
         fetchedTestimonials.length > 0
