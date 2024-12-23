@@ -47,22 +47,23 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`sticky top-0  z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "rounded-2xl bg-white/30 backdrop-blur-md shadow-lg border-b border-white/20"
-          : " bg-white/60 backdrop-blur-md shadow-lg border-b border-white/20"
+          ? "rounded-lg sm:rounded-2xl bg-white/30 backdrop-blur-md shadow-lg border-b border-white/20"
+          : "bg-white/60 backdrop-blur-md shadow-lg border-b border-white/20"
       } w-full`}
     >
-      <div className="max-w-full  px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+      <div className="max-w-full px-2 sm:px-4 lg:px-8">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-black">
               <Image
-                className="w-[4rem] h-15"
+                className="w-[3rem] sm:w-[4rem] h-auto"
                 src="/logo1.png"
                 alt="logo"
                 width={900}
                 height={600}
+                priority
               />
             </Link>
           </div>
@@ -87,9 +88,9 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden">
             <button
-              className="p-2 text-xl font-bold text-black hover:text-gray-900 focus:outline-none"
+              className="p-1.5 sm:p-2 text-xl font-bold text-black hover:text-gray-900 focus:outline-none"
               onClick={toggleMenu}
               aria-expanded={isOpen}
               aria-label="Toggle menu"
@@ -131,24 +132,24 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden fixed inset-0 top-14 sm:top-16 bg-white/95 backdrop-blur-md z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/20 backdrop-blur-md rounded-lg mt-2 shadow-md">
+            <div className="px-4 pt-2 pb-3 space-y-2">
               {menuItems.map((item, index) => (
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  transition={{ duration: 0.2, delay: index * 0.1 }}
                 >
                   <Link
                     href={item.href}
-                    className={`block px-3 py-2 text-lg font-semibold transition-all duration-300 ${
+                    className={`block px-3 py-2.5 text-base sm:text-lg font-semibold transition-all duration-300 ${
                       pathname === item.href
                         ? "text-black"
                         : "text-gray-700 hover:text-black"

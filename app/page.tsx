@@ -29,12 +29,9 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-4">
       <FloatingFeedbackButton />
-
-      {/* Navbar always accessible at the top */}
       <Navbar />
 
       <div className="h-screen relative -top-20" id="hero">
-        {/* Hero Section */}
         <BackgroundGradientAnimation
           gradientBackgroundStart="rgb(224, 255, 255)" // Light Cyan for Calmness
           gradientBackgroundEnd="rgb(255, 182, 193)" // Light Pink for Excitement
@@ -47,23 +44,23 @@ export default function Home() {
           blendingValue="overlay"
           interactive={true}
         >
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-800 z-40 rounded-3xl">
-            <main className="container px-4 py-16 md:py-24 lg:py-32 ">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-800 z-40 rounded-3xl px-4">
+            <main className="container px-4 py-16 md:py-24 lg:py-32 max-w-full">
               <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto">
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
                   <div className="font-semibold">
-                    <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl pb-10">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent pb-6">
                       <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                         MindMatrix
                       </span>
                     </h1>
-                    <p>
+                    <p className="text-xs xs:text-sm sm:text-base">
                       A state-of-the-art technology that leverages artificial
                       intelligence to deliver real-time insights. Discover
                       deeper connections with MindMatrix. We use research-based
                       technologies to understand
                     </p>
-                    <ul>
+                    <ul className="text-xs xs:text-sm sm:text-base space-y-0.5 sm:space-y-1 mt-1 sm:mt-2">
                       <li>
                         <strong>&#8226; Expressions</strong>
                       </li>
@@ -77,28 +74,30 @@ export default function Home() {
                   </div>
                 </BoxReveal>
 
-                <p className="pt-6">
-                  <strong>Wellness Insights:</strong>
-                </p>
-                <p>
-                  Captures the essence of human wellness to offer meaningful
-                  feedback.
-                </p>
+                <div className="space-y-2 sm:space-y-4 text-xs xs:text-sm sm:text-base">
+                  <p className="pt-3 sm:pt-6">
+                    <strong>Wellness Insights:</strong>
+                  </p>
+                  <p>
+                    Captures the essence of human wellness to offer meaningful
+                    feedback.
+                  </p>
 
-                <p className="pt-4">
-                  <strong>Enhancing Support:</strong>
-                </p>
-                <ul>
-                  <li>&#8226; Deepen understanding</li>
-                  <li>&#8226; Foster genuine connections</li>
-                  <li>
-                    &#8226; Embark on a compassionate journey toward wellness
-                  </li>
-                </ul>
+                  <p className="pt-2 sm:pt-4">
+                    <strong>Enhancing Support:</strong>
+                  </p>
+                  <ul className="space-y-0.5 sm:space-y-1">
+                    <li>&#8226; Deepen understanding</li>
+                    <li>&#8226; Foster genuine connections</li>
+                    <li>
+                      &#8226; Embark on a compassionate journey toward wellness
+                    </li>
+                  </ul>
+                </div>
 
                 <BoxReveal boxColor="#E8C6D4" duration={0.5}>
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-                    <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                    <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                       {/* Primary Button */}
                       <button
                         className="px-6 py-2 rounded-full bg-gray-100 text-lg font-semibold text-gray-800 transition-all duration-300 shadow-none hover:shadow-[0_0px_8px_rgba(0,0,0,0.15)] hover:bg-gray-200 hover:text-gray-900"
@@ -111,7 +110,7 @@ export default function Home() {
                       <Button
                         variant="outline"
                         className="border-purple-300 rounded-3xl font-semibold text-lg text-black hover:bg-purple-100 hover:text-purple-600 h-12 px-8"
-                        onClick={scrollToDemo} // Add click event to scroll
+                        onClick={scrollToDemo}
                       >
                         Watch Demo
                       </Button>
@@ -126,13 +125,13 @@ export default function Home() {
         <div id="video-analysis" className="bg-white -top-30 pb-2">
           <TabbedDashboard />
         </div>
-        <div id="" className="bg-white -mt-10  ">
+        <div className="bg-white -mt-10">
           <AudioTabbedDashboard />
         </div>
         <div id="HowItworks">
           <Howitworks />
         </div>
-        <div className=" bg-[#fff]  pb-5 ">
+        <div className="bg-[#fff] pb-5">
           <div className="bg-[#Fff] rounded-3xl">
             <AcceptedReviews />
           </div>
