@@ -13,9 +13,9 @@ export default function HowItWorks() {
               How it works
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              MindMatrix is a personalized mental health assistant, leveraging
-              all interactions to deliver real-time psychometric observations
-              and insights.
+              MindMatrix is a personalized assistant, leveraging all
+              interactions to deliver real-time psychometric observations and
+              insights.
             </p>
           </div>
           <div className="mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-3 md:gap-12 lg:gap-16 items-start pt-8 md:pt-10">
@@ -34,10 +34,10 @@ export default function HowItWorks() {
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
                 Captures nuances from both visual and audio cues, providing a
-                more comprehensive view of mental health.By collecting facial
-                expressions, vocal tone, and speech patterns, the system
-                captures complex states contributing to a holistic understanding
-                of mental health.
+                more comprehensive view of emotional and behavioral states. By
+                collecting facial expressions, vocal tone, and speech patterns,
+                the system identifies complex signals, contributing to a
+                holistic understanding of user experiences.
               </p>
             </div>
 
@@ -56,10 +56,10 @@ export default function HowItWorks() {
               </h3>
               <p className="text-gray-700 text-sm md:text-base">
                 Receive summarized insights for each session, designed to
-                highlight key shifts in mental health. These summaries allow
-                patients and practitioners to track changes over time, fostering
-                a better understanding of the mental health journey and
-                supporting more informed care decisions.
+                highlight key shifts in emotional and behavioral patterns. These
+                summaries allow users and professionals to track changes over
+                time, fostering a better understanding of personal growth and
+                supporting more informed decisions.
               </p>
             </div>
 
@@ -80,8 +80,8 @@ export default function HowItWorks() {
                 Leverages advanced AI-driven psychometric insights to gain a
                 deeper understanding of behavioral patterns. The system provides
                 interpretations based on data, uncovering underlying
-                psychological factors and offering a new perspective on mental
-                health.
+                psychological factors and offering a new perspective on emotions
+                and behaviors.
               </p>
             </div>
           </div>
