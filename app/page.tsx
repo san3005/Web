@@ -140,6 +140,7 @@ export default function Home() {
         <div className="bg-[#fff] " id="features">
           {/* <StickyScrollRevealDemo /> */}
         </div>
+
         <div className="bg-[#fff] mb-30 pb-30">
           <FAQ />
         </div>

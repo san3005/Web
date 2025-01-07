@@ -12,6 +12,7 @@ const menuItems = [
   // { name: "Features", href: "/#features" },
   { name: "How it Works", href: "/#HowItworks" },
   { name: "Privacy", href: "/privacy" },
+  { name: "Pre-Screening", href: "/prescreen" },
 ];
 
 export default function Navbar() {
