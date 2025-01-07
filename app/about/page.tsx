@@ -41,7 +41,7 @@ export default function AboutPage() {
         <section className="w-full py-24 bg-white text-center">
           <div className="container mx-auto px-4 md:px-6">
             <h1 className="text-5xl font-bold tracking-tighter text-[#4A4A4A]">
-              We&#39;re building
+              We are building
               <p> </p>
               <span className="text-[#FF7043]">
                 Assistive Artificial Intelligence Technologies For Improving
