@@ -19,7 +19,7 @@ export default function AboutPage() {
       name: "Santosh G.",
       role: "Task Research Worker",
       workingAt: "Texas A&M University Corpus Christi",
-      image: "/Male Avatar.svg",
+      image: "/Image.png",
       email: "venkata.gurajada@tamucc.edu",
       linkedin: "https://linkedin.com/in/aaron",
     },
