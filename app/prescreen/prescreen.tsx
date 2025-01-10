@@ -115,21 +115,27 @@ export default function GHQ28Questionnaire() {
     unaffectedCategories: string[];
   } | null>(null);
 
-  // Handles the user's choice in the current question
+  // Handle the response selection
   const handleResponse = (value: string) => {
     const selectedValue = parseInt(value);
     const updatedResponses = [...responses];
     updatedResponses[currentQuestion] = selectedValue;
     setResponses(updatedResponses);
+  };
 
-    // Move to next question automatically after selecting an option
-    if (currentQuestion < totalQuestions - 1) {
-      setCurrentQuestion(currentQuestion + 1);
+  // Handle next button click
+  const handleNext = () => {
+    if (responses[currentQuestion] >= 0) {
+      // Only proceed if a choice has been made
+      setCurrentQuestion((prev) =>
+        Math.min(ghq28Questions.length - 1, prev + 1)
+      );
     }
   };
 
   // Helper function to determine severity based on a subscale or overall average
   const calculateSeverity = (score: number): string => {
+    if (score <= 3) return "No Risk";
     if (score <= 6) return "Low";
     if (score <= 11) return "Moderate";
     return "High";
@@ -230,7 +236,7 @@ export default function GHQ28Questionnaire() {
           <>
             <CardHeader className="mb-4">
               <CardTitle className="text-4xl font-bold text-[#4A4A4A]">
-                GHQ-28 Mental Health Questionnaire
+                Pre-screening Test
               </CardTitle>
               <CardDescription className="text-2xl text-[#4A4A4A]">
                 Question {currentQuestion + 1} of {totalQuestions}
@@ -239,9 +245,9 @@ export default function GHQ28Questionnaire() {
 
             <CardContent>
               {/* Progress Bar */}
-              <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 ">
+              <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4">
                 <div
-                  className="bg-[rgb(255,112,67)] h-2.5 rounded-full"
+                  className="bg-[#FF7043] h-2.5 rounded-full"
                   style={{ width: `${progressPercentage}%` }}
                 ></div>
               </div>
@@ -265,6 +271,7 @@ export default function GHQ28Questionnaire() {
                       <RadioGroupItem
                         value={option.value.toString()}
                         id={`q${currentQuestion}_option${option.value}`}
+                        className="border-[#FF7043] text-[#FF7043] focus:text-[#FF7043] data-[state=checked]:bg-transparent data-[state=checked]:text-[#FF7043]"
                       />
                       <Label
                         htmlFor={`q${currentQuestion}_option${option.value}`}
@@ -298,13 +305,7 @@ export default function GHQ28Questionnaire() {
                 </Button>
               ) : (
                 <Button
-                  onClick={() => {
-                    if (responses[currentQuestion] >= 0) {
-                      setCurrentQuestion((prev) => prev + 1);
-                    } else {
-                      alert("Please select an option before proceeding.");
-                    }
-                  }}
+                  onClick={handleNext}
                   disabled={responses[currentQuestion] < 0}
                   className="text-[#4A4A4A]"
                 >

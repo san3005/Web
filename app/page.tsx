@@ -12,6 +12,7 @@ import FloatingFeedbackButton from "@/components/ui/FloatingFeedbackButton";
 import AcceptedReviews from "@/components/ui/acceptedreviews";
 import AudioTabbedDashboard from "@/components/ui/AudioTabbedDashboard";
 import FAQ from "@/components/ui/faq";
+import Conversation from "@/components/ui/conversation";
 
 export default function Home() {
   const scrollToDemo = () => {
@@ -131,6 +132,11 @@ export default function Home() {
         <div id="HowItworks">
           <Howitworks />
         </div>
+        <div>
+          {" "}
+          <Conversation />
+        </div>
+
         <div className="bg-[#fff] pb-5">
           <div className="bg-[#Fff] rounded-3xl">
             <AcceptedReviews />
@@ -145,6 +151,7 @@ export default function Home() {
           <FAQ />
         </div>
         <Foooter />
+
         {/* Add more sections with IDs */}
       </div>
     </div>
